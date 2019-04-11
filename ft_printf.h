@@ -7,6 +7,7 @@
 
 
 int ft_printf(const char *str, ...);
-
+void c_flag(char c);
+void s_flag(char *str);
 
 #endif
