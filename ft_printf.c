@@ -74,7 +74,7 @@ int main()
 	char b = 'l';
 	char c = 'w';
 
-	int sa = 123;
+	int sa = 1233;
 	printf("printf is |%x|\n", sa);
 	ft_printf("ft_printf int is |%x|\n", sa);
 }

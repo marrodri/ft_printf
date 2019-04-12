@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <stdio.h>
 
 int check_size(int n)
 {
@@ -26,7 +25,6 @@ int power_of(int n, int expo)
 		power = power * expo;
 		i++;
 	}
-	printf("\n%d\n", power);
 	return power;
 }
 
@@ -65,7 +63,6 @@ char *ft_int_to_hex(int n)
 	index = "0123456789abcdef";
 
 	hex = (char*)malloc((size) * sizeof(char));
-	printf("size is %d", size);
 	
 	while(size > 0)
 	{
@@ -73,49 +70,6 @@ char *ft_int_to_hex(int n)
 		i++;
 		size--;
 	}
-	printf("i is |%d|\n",i);
 	hex[i] = '\0';
 	return (hex);
 }
-
-int main()
-{
-	char *st = ft_int_to_hex(5000000);
-	printf("\nhex printf %s",st);
-}
-
-
-
-
-// 	int rem;
-// 	int next;
-// 	int ans;
-// 	int tmp;
-// 	int power;
-// 	rem  = 0;
-// 	next = 0;
-// 	ans = 0;
-// 	tmp = 0;
-// 	power = 0;
-
-// 	i = 0;
-// 	size = check_size(n);
-// 	index = "0123456789abcdef";
-
-// 	hex = (char*)malloc((size + 1) * sizeof(char));
-// 	printf("size is %d", size);
-	
-// 	while(size > 0)
-// 	{
-// 		power = (power_of(size));
-// 		ans = n/power;
-// 		next = n - (ans * power);
-// 		printf("hex|%d| is %d\n", size, ans);
-// 		n = next;
-// 		hex[i] = index[ans];
-// 		i++;
-// 		size--;
-// 	}
-// 	hex[i + 1] = '\0';
-// 	return (hex);
-// }

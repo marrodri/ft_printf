@@ -9,7 +9,6 @@ void d_form(int n)
 void x_form(int n)
 {
 	char *hex;
-	ft_putstr("converting to hex ");
-	hex = ft_itoa(n);
+	hex = ft_int_to_hex(n);
 	ft_putstr(hex);
 }
