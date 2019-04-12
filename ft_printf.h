@@ -6,8 +6,12 @@
 # include <stdarg.h>
 
 
-int ft_printf(const char *str, ...);
-void c_flag(char c);
-void s_flag(char *str);
+int ft_printf(char *str, ...);
+void c_form(char c);
+void s_form(char *str);
+
+void d_form(int n);
+void x_form(int n);
+void o_form(int n);
 
 #endif
