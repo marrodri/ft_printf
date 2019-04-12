@@ -15,7 +15,7 @@ int check_size(int n)
 	return size;
 }
 
-int power_of(int n)
+int power_of(int n, int expo)
 {
 	int i;
 	int power;
@@ -23,7 +23,7 @@ int power_of(int n)
 	power = 1;
 	while(i < n)
 	{
-		power = power * 16;
+		power = power * expo;
 		i++;
 	}
 	printf("\n%d\n", power);
@@ -44,11 +44,10 @@ char  set_hex(int *n, char *ind, int size)
 
 
 
-	power = (power_of(size));
+	power = (power_of(size, 16));
 	ans = *n/power;
 	*n = *n - (ans * power);
 	hex = ind[ans];
-	// printf("hex|%d| is %d\n", size, ans);
 	return (hex);
 }
 
