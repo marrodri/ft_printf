@@ -30,6 +30,11 @@ void check_flag(char *str, int i, va_list args)
 		num = va_arg(args, int);
 		x_form(num);
 	}
+	else if(str[i] == 'o')
+	{
+		num = va_arg(args, int);
+		o_form(num);
+	}
 	else if(str[i] == 'p')
 	{
 		p = va_arg(args, void *);
@@ -75,8 +80,19 @@ int main()
 	char c = 'w';
 
 	int sa = 1233;
+
+	ft_printf("hex test\n");
 	printf("printf is |%x|\n", sa);
 	ft_printf("ft_printf int is |%x|\n", sa);
+
+	int ht= -1927525771;
+	//ht = (long)ht;
+	printf("a typecast = %ld\n", ht);
+
+	long int oa =  333333333;
+	ft_printf("octal test\n");
+	printf("printf int is |%lo|\n", oa);
+	ft_printf("ft_printf int is |%o|\n", oa);
 }
 
 

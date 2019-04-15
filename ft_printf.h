@@ -11,6 +11,7 @@
 int ft_printf(char *str, ...);
 
 char *ft_int_to_hex(int n);
+long int ft_dec_to_oct(int n);
 
 
 void c_form(char c);

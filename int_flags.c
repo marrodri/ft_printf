@@ -12,3 +12,13 @@ void x_form(int n)
 	hex = ft_int_to_hex(n);
 	ft_putstr(hex);
 }
+
+void o_form(int n)
+{
+	char *oct;
+	int long in_oct;
+	in_oct = ft_dec_to_oct(n);
+	oct = ft_itoa(in_oct);
+	ft_putstr(oct);
+}
+
