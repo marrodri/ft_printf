@@ -87,6 +87,6 @@ unsigned char		reverse_bits(unsigned char octet);
 unsigned char		swap_bits(unsigned char octet);
 int					ft_word_count(char const *s, char c);
 int					get_next_line(const int fd, char **line);
-int					ft_assign_line(char **line, char **str, int fd, int ret);
-int					ft_read_line(int fd, char *buff, char **str);
+int					ft_power_of(int n, int expo);
+char 				*ft_int_to_hex(int n);
 #endif
