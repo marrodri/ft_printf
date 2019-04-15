@@ -25,10 +25,10 @@ void check_flag(char *str, int i, va_list args)
 		num = va_arg(args, int);
 		d_form(num);
 	}
-	else if(str[i] == 'x')
+	else if(str[i] == 'x' || str[i] == 'X')
 	{
 		num = va_arg(args, int);
-		x_form(num);
+		x_form(num, str[i]);
 	}
 	else if(str[i] == 'o')
 	{
@@ -82,8 +82,8 @@ int main()
 	int sa = 1233;
 
 	ft_printf("hex test\n");
-	printf("printf is |%x|\n", sa);
-	ft_printf("ft_printf int is |%x|\n", sa);
+	printf("printf is |%X|\n", sa);
+	ft_printf("ft_printf int is |%X|\n", sa);
 
 	int ht= -1927525771;
 	//ht = (long)ht;

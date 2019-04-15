@@ -11,14 +11,14 @@
 int ft_printf(char *str, ...);
 
 char *ft_int_to_hex(int n);
-long int ft_dec_to_oct(int n);
+int ft_dec_to_oct(int n);
 
 
 void c_form(char c);
 void s_form(char *str);
 
 void d_form(int n);
-void x_form(int n);
+void x_form(int n, char ca);
 void o_form(int n);
 
 #endif

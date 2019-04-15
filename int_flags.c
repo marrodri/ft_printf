@@ -6,10 +6,14 @@ void d_form(int n)
 	num = ft_itoa(n);
 	ft_putstr(num);
 }
-void x_form(int n)
+void x_form(int n, char ca)
 {
 	char *hex;
 	hex = ft_int_to_hex(n);
+	if(ca == 'X')
+	{
+		hex = ft_strupper(hex);
+	}
 	ft_putstr(hex);
 }
 

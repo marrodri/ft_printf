@@ -1,9 +1,9 @@
 #include "ft_printf.h"
 
 #include <stdio.h>
-long int ft_dec_to_oct(int n)
+int ft_dec_to_oct(int n)
 {
-	long int oct;
+	int oct;
 	int dec;
 	int i;
 	int tmp;
