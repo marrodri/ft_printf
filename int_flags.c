@@ -10,10 +10,10 @@ void x_form(int n, char ca)
 {
 	char *hex;
 	hex = ft_int_to_hex(n);
-	// if(ca == 'X')
-	// {
-	// 	ft_strupper(hex);
-	// }
+	if(ca == 'X')
+	{
+		ft_strupper(hex);
+	}
 	ft_putstr(hex);
 }
 
