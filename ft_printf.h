@@ -7,12 +7,11 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-
 int ft_printf(char *str, ...);
 
 char *ft_int_to_hex(int n);
 int ft_dec_to_oct(int n);
-
+void ft_strupper(char *str);
 
 void c_form(char c);
 void s_form(char *str);

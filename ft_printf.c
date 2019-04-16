@@ -61,7 +61,7 @@ int ft_printf(char *str, ...)
 			tmp = i;
 			i++;
 			while(str[i] == 'c' || str[i] == 's' || str[i] == 'p' ||
-				 str[i] == 'd' || str[i] == 'o' || str[i] == 'x')
+				 str[i] == 'd' || str[i] == 'o' || str[i] == 'x' || str[i] == 'X')
 				i++;
 			check_flag(str, tmp + 1, args);
 		}
@@ -79,20 +79,20 @@ int main()
 	char b = 'l';
 	char c = 'w';
 
-	int sa = 1233;
+	int sa = 3333332;
 
 	ft_printf("hex test\n");
-	printf("printf is |%X|\n", sa);
-	ft_printf("ft_printf int is |%X|\n", sa);
+	printf("printf is |%x|\n", sa);
+	ft_printf("ft_printf int is |%x|\n", sa);
 
-	int ht= -1927525771;
-	//ht = (long)ht;
-	printf("a typecast = %ld\n", ht);
+	// int ht= -1927525771;
+	// //ht = (long)ht;
+	// printf("a typecast = %ld\n", ht);
 
-	long int oa =  333333333;
-	ft_printf("octal test\n");
-	printf("printf int is |%lo|\n", oa);
-	ft_printf("ft_printf int is |%o|\n", oa);
+	// long int oa =  333333333;
+	// ft_printf("octal test\n");
+	// printf("printf int is |%o|\n", oa);
+	// ft_printf("ft_printf int is |%o|\n", oa);
 }
 
 

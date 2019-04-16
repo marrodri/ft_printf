@@ -1,14 +1,17 @@
 // #include "libft.h"
 #include "printf.h"
 
-char *ft_strupper(char *str)
+#include <stdio.h>
+void ft_strupper(char *str)
 {
 	int i;
 	i = 0;
 	while(str[i])
 	{
+		printf("looping upper\n");
 		ft_toupper(str[i]);
 		i++;
 	}
-	return str;
+	printf("exit\n");
+	// return str;
 }
