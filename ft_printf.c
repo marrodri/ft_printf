@@ -79,11 +79,11 @@ int main()
 	char b = 'l';
 	char c = 'w';
 
-	int sa = 3333332;
+	int sa = 3312312;
 
 	ft_printf("hex test\n");
 	printf("printf is |%x|\n", sa);
-	ft_printf("ft_printf int is |%x|\n", sa);
+	ft_printf("ft_printf int is |%X|\n", sa);
 
 	// int ht= -1927525771;
 	// //ht = (long)ht;
@@ -94,7 +94,6 @@ int main()
 	// printf("printf int is |%o|\n", oa);
 	// ft_printf("ft_printf int is |%o|\n", oa);
 }
-
 
 //chars for p test
 	// int saa[] = {123, 132};

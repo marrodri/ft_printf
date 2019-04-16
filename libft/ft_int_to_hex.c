@@ -42,6 +42,7 @@ char *ft_int_to_hex(int n)
 
 	i = 0;
 	size = check_size(n);
+	
 	hex = (char*)malloc((size) * sizeof(char));
 	hex[size] = '\0';
 
