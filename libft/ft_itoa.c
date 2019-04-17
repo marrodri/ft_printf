@@ -11,59 +11,22 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int		ft_check_size(int n)
 {
 	int	size;
 
 	size = 0;
+	if (n == 0)
+		return (1);
 	if (n <= 0)
-		size++;
+		size = size + 1;
 	while (n != 0)
 	{
-		size++;
 		n = n / 10;
+		size++;
 	}
 	return (size);
-}
-
-static int		flag_pos(int n, int flag)
-{
-	if (n == 147483648)
-		flag = 2;
-	else
-		flag = 1;
-	return (flag);
-}
-
-static char		*nbr_to_str(int n, int i, int size, char *str)
-{
-	int	temp;
-	int	flag;
-
-	flag = 0;
-	if (n < 0)
-	{
-		str[i] = '-';
-		n = n * -1;
-	}
-	if (n >= 10)
-	{
-		i = size;
-		if (str[0] == '-')
-			flag = flag_pos(n, flag);
-		while (i >= flag)
-		{
-			temp = n % 10;
-			n = n / 10;
-			str[i] = temp + '0';
-			i--;
-		}
-	}
-	else
-		str[i] = n + '0';
-	return (str);
 }
 
 char			*ft_itoa(int n)
@@ -73,20 +36,24 @@ char			*ft_itoa(int n)
 	char	*str;
 
 	i = 0;
-	size = 0;
 	size = ft_check_size(n);
-	str = (char *)malloc((size + 1) * sizeof(char *));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	str = (char*)malloc((size + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	if (n == -2147483648)
+	str[size--] = '\0';
+	if (n < 0)
 	{
-		str[i++] = '-';
-		str[i++] = '2';
-		n = 147483648;
-		str = nbr_to_str(n, i, (size - 1), str);
+		str[0] = '-';
+		n = n * -1;
+		i++;
 	}
-	else
-		str = nbr_to_str(n, i, (size - 1), str);
-	str[size] = '\0';
+	while (size >= i)
+	{
+		str[size] = (n % 10) + '0';
+		n /= 10;
+		size--;
+	}
 	return (ft_strdup(str));
 }
