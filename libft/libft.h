@@ -91,5 +91,6 @@ int					ft_power_of(int n, int expo);
 char 				*ft_int_to_hex(int n);
 int					ft_dec_to_oct(int n);
 char				*ft_strupper(char *str);
-char	*ft_itoa_base(int value, int base);
+char				*ft_itoa_base(int value, int base);
+
 #endif

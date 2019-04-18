@@ -1,48 +1,7 @@
 
+
 #include "ft_printf.h"
-
-
 #include <stdio.h>
-void check_flag(char *str, int i, va_list args)
-{
-	char c;
-	char *s;
-	unsigned char *p;
-	int num;
-
-	if(str[i] == 'c')
-	{
-		c = va_arg(args, int);
-		c_form(c);
-	}
-	else if(str[i] == 's')
-	{
-		s = va_arg(args, char *);
-		s_form(s);
-	}
-	else if(str[i] == 'd' || str[i] == 'i')
-	{
-		num = va_arg(args, int);
-		d_form(num);
-	}
-	else if(str[i] == 'x' || str[i] == 'X')
-	{
-		num = va_arg(args, int);
-		x_form(num, str[i]);
-	}
-	else if(str[i] == 'o')
-	{
-		num = va_arg(args, int);
-		o_form(num);
-	}
-	else if(str[i] == 'p')
-	{
-		p = va_arg(args, void *);
-		printf("%p", p);
-		//&p dont use because it gets the void pointer 
-		// p_form(p);
-	}
-}
 
 int ft_printf(char *str, ...)
 {
@@ -60,7 +19,7 @@ int ft_printf(char *str, ...)
 	 	{
 			tmp = i;
 			i++;
-			while(str[i] == 'c' || str[i] == 's' || str[i] == 'p' || str[i] == 'i' ||
+			while (str[i] == 'c' || str[i] == 's' || str[i] == 'p' || str[i] == 'i' ||
 				 str[i] == 'd' || str[i] == 'o' || str[i] == 'x' || str[i] == 'X')
 				i++;
 			check_flag(str, tmp + 1, args);
@@ -81,12 +40,12 @@ int main()
 
 
 	int ht= -1927525771;
-	ht = (long)ht;
+	//ht = (long)ht;
 	printf("a typecast = %ld\n", ht);
 
-	long int oa =  333333333;
+	long int oa =  3333333333;
 	ft_printf("octal test\n");
-	printf("printf int is |%o|\n", oa);
+	printf("printf int is |%lo|\n", oa);
 	ft_printf("ft_printf int is |%o|\n", oa);
 }
 

@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/17 20:33:11 by marrodri          #+#    #+#             */
+/*   Updated: 2019/04/17 20:33:15 by marrodri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
@@ -8,9 +18,8 @@
 # include <stdarg.h>
 
 int ft_printf(char *str, ...);
+void check_flag(char *str, int i, va_list args);
 
-// char *ft_int_to_hex(int n);
-int ft_dec_to_oct(int n);
 
 void c_form(char c);
 void s_form(char *str);
