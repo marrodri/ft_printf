@@ -17,8 +17,22 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
+typedef struct s_flags
+{
+	int hash_flag;
+	int cero_flag;
+	int	minus_flag;
+	int plus_flag;
+	int l_flag;
+	int ll_flag;
+	int h_flag;
+	int hh_flag;
+	int per_flag;
+}	t_flags;
+
+
 int ft_printf(char *str, ...);
-void check_flag(char *str, int i, va_list args);
+void form_check(char *str, int i, va_list args);
 
 
 void c_form(char c);

@@ -22,7 +22,7 @@ int ft_printf(char *str, ...)
 			while (str[i] == 'c' || str[i] == 's' || str[i] == 'p' || str[i] == 'i' ||
 				 str[i] == 'd' || str[i] == 'o' || str[i] == 'x' || str[i] == 'X')
 				i++;
-			check_flag(str, tmp + 1, args);
+			form_check(str, tmp + 1, args);
 		}
 		ft_putchar(str[i]);
 		i++;
@@ -40,13 +40,13 @@ int main()
 
 
 	int ht= -1927525771;
-	//ht = (long)ht;
-	printf("a typecast = %ld\n", ht);
+	// ht = (long)ht;
+	printf("a typecast = %d \n", ht);
 
-	long int oa =  3333333333;
+	int oa =  -1;
 	ft_printf("octal test\n");
-	printf("printf int is |%lo|\n", oa);
-	ft_printf("ft_printf int is |%o|\n", oa);
+	printf("printf int o is |%+d|\n", oa);
+	ft_printf("ft_printf int o is |%o|\n", oa);
 }
 
 //chars for p test

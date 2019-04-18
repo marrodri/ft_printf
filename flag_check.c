@@ -9,7 +9,7 @@ void flag_check(char *str, int i, va_list args)
 
 	if (str[i] == 'h')
 	{
-		if(str[i+1] == 'h' )
+		if(str[i+1] == 'h')
 		{
 			i++;
 		}
@@ -24,11 +24,11 @@ void flag_check(char *str, int i, va_list args)
 	{
 		if(str[i + 1] == 'l')
 		{
-			
+
 		}
 		else
 		{
-
+			
 		}
 		s = va_arg(args, char *);
 		s_form(s);
