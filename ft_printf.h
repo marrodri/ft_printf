@@ -17,18 +17,23 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-typedef struct s_flags
+typedef struct s_iflags
 {
-	int hash_flag;
-	int cero_flag;
-	int	minus_flag;
-	int plus_flag;
 	int l_flag;
 	int ll_flag;
 	int h_flag;
 	int hh_flag;
 	int per_flag;
-}	t_flags;
+}	t_iflags;
+
+typedef struct s_fflags
+{
+	int hash_flag;
+	int cero_flag;
+	int	minus_flag;
+	int plus_flag;
+	int field_width;
+}	t_fflags;
 
 
 int ft_printf(char *str, ...);

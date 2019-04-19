@@ -11,7 +11,7 @@ void d_form(int n)
 void x_form(int n, char ca)
 {
 	char *hex;
-	hex = ft_itoa_base(n, 16);
+	hex = ft_llitoa_base(n, 16);
 	if (ca == 'X')
 	{
 		ft_strupper(hex);
