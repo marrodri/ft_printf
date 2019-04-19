@@ -32,7 +32,7 @@ typedef struct s_flags
 
 
 int ft_printf(char *str, ...);
-void form_check(char *str, int i, va_list args);
+void form_check(char *str, int *i, va_list args);
 
 
 void c_form(char c);

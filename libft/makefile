@@ -32,7 +32,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 
 HDR = ./includes/
 
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror
 
 OBJ = $(SRC:.c=.o)
 
@@ -50,5 +50,3 @@ fclean: clean
 		$(RM) $(NAME)
 
 re: fclean all
-
-

@@ -22,7 +22,7 @@ void x_form(int n, char ca)
 void o_form(int n)
 {
 	char *oct;
-	oct = ft_itoa_base(n, 8);
+	oct = ft_llitoa_base(n, 8);
 	ft_putstr(oct);
 }
 

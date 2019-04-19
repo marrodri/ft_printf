@@ -17,10 +17,10 @@ int ft_printf(char *str, ...)
 	{
 	 	if (str[i] == '%')
 	 	{
-			i++;
-			if (str[i] == 'c' || str[i] == 's' || str[i] == 'p' || str[i] == 'i' ||
-				 str[i] == 'd' || str[i] == 'o' || str[i] == 'x' || str[i] == 'X' || str[i] == 'u')
-				form_check(str, i, args);
+			// i++;
+			// if (str[i] == 'c' || str[i] == 's' || str[i] == 'p' || str[i] == 'i' ||
+			// 	 str[i] == 'd' || str[i] == 'o' || str[i] == 'x' || str[i] == 'X' || str[i] == 'u')
+			form_check(str, &i, args);
 			i++;
 		}
 		ft_putchar(str[i]);
@@ -36,16 +36,16 @@ int main()
 	char b = 'l';
 	char c = 'w';
 
-	int ht= -1927525771;
+	int ht= 1927521;
 
-	int int_max = -3;
+	long int int_max = 43453;
 	// ht = (long)ht;
 	printf("a typecast = %d \n", ht);
 
 	unsigned int oa =  1;
 	ft_printf("octal test\n");
-	printf("printf int u is |%u|\n", int_max);
-	ft_printf("ft_printf int u is |%u|\n", int_max);
+	printf("printf int u is |%lx|\n", int_max);
+	ft_printf("ft_printf int u is |%x|\n", int_max);
 }
 
 //chars for p test
