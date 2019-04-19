@@ -12,19 +12,20 @@
 
 #include "libft.h"
 
-static int check_size_base(int n, int base)
+//NORM THIS
+static int	check_size_base(int n, int base)
 {
-	int size;
+	int	size;
 
 	size = 0;
-	if((n < 0) && (base == 10))
+	if ((n < 0) && (base == 10))
 	{
 		size++;
-		n = n *-1;
+		n = n * -1;
 	}
 	else if (n < 0)
 		n = n * -1;
-	while(n > 0)
+	while (n > 0)
 	{
 		n = n / base;
 		size++;
@@ -32,29 +33,26 @@ static int check_size_base(int n, int base)
 	return (size - 1);
 }
 
-char	*ft_itoa_base(int value, int base)
+char		*ft_itoa_base(int value, int base)
 {
-	char *str;
-	char *b_val;
-	int size;
-	int i;
-	int rem;
+	char	*str;
+	char	*b_val;
+	int		size;
+	int		i;
+	int		rem;
 
 	b_val = "0123456789abcdef";
 	i = 0;
 	if (value == 0)
-	{
 		return (ft_strdup("0"));
-	}
 	if (value == -2147483648 && base == 10)
 		return (ft_strdup("-2147483648"));
 	size = check_size_base(value, base);
-	if ((str = (char*)malloc((size + 1)*sizeof(char))) == NULL)
-		return NULL;
+	if ((str = (char*)malloc((size + 1) * sizeof(char))) == NULL)
+		return (NULL);
 	str[size + 1] = '\0';
 	if ((value < 0) && (base == 10))
 	{
-
 		str[0] = '-';
 		value = value * -1;
 		i++;

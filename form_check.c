@@ -18,6 +18,7 @@ void form_check(char *str, int i, va_list args)
 	char *s;
 	unsigned char *p;
 	int num;
+	unsigned int u_num;
 
 	if (str[i] == 'c')
 	{
@@ -43,6 +44,11 @@ void form_check(char *str, int i, va_list args)
 	{
 		num = va_arg(args, int);
 		o_form(num);
+	}
+	else if (str[i] == 'u')
+	{
+		u_num = va_arg(args, unsigned int);
+		u_form(u_num);
 	}
 	else if (str[i] == 'p')
 	{

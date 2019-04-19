@@ -25,3 +25,10 @@ void o_form(int n)
 	oct = ft_itoa_base(n, 8);
 	ft_putstr(oct);
 }
+
+void u_form(unsigned int n)
+{
+	char *u_num;
+	u_num = ft_uitoa(n);
+	ft_putstr(u_num);
+}

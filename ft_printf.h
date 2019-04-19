@@ -41,5 +41,6 @@ void s_form(char *str);
 void d_form(int n);
 void x_form(int n, char ca);
 void o_form(int n);
+void u_form(unsigned int n);
 
 #endif
