@@ -39,13 +39,12 @@ typedef struct s_fflags
 int ft_printf(char *str, ...);
 void form_check(char *str, int *i, va_list args);
 
-
 void c_form(char c);
 void s_form(char *str);
 
-void d_form(int n);
-void x_form(int n, char ca);
-void o_form(int n);
-void u_form(unsigned int n);
+char *d_form(int n);
+char *x_form(int n, char ca);
+char *o_form(int n);
+char *u_form(unsigned int n);
 
 #endif

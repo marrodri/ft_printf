@@ -10,24 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft/libft.h"
 
-// !!!!!!!!!!!!!!!!!! TODO FIX THIS !!!!!!!!!!!!!
-// !!!!!!!!!!!!!!!!!! TODO FIX THIS !!!!!!!!!!!!!
-// !!!!!!!!!!!!!!!!!! TODO FIX THIS !!!!!!!!!!!!!
-static int check_size_base(short int n, short int base)
+static int		check_size_base(long long int n, int base)
 {
-	short int size;
+	long long int	size;
 
 	size = 0;
-	if((n < 0) && (base == 10))
+	if ((n < 0) && (base == 10))
 	{
 		size++;
 		n = n *-1;
 	}
 	else if (n < 0)
 		n = n * -1;
-	while(n > 0)
+	while (n > 0)
 	{
 		n = n / base;
 		size++;
@@ -35,13 +32,13 @@ static int check_size_base(short int n, short int base)
 	return (size - 1);
 }
 
-char	*ft_sitoa_base(short int value, int base)
+char		*ft_llitoa_base(long long int value, int base)
 {
-	char *str;
-	char *b_val;
-	int size;
-	int i;
-	short int rem;
+	char			*str;
+	char			*b_val;
+	int				size;
+	int				i;
+	long long int	rem;
 
 	b_val = "0123456789abcdef";
 	i = 0;
@@ -57,7 +54,6 @@ char	*ft_sitoa_base(short int value, int base)
 	str[size + 1] = '\0';
 	if ((value < 0) && (base == 10))
 	{
-
 		str[0] = '-';
 		value = value * -1;
 		i++;
@@ -76,10 +72,10 @@ char	*ft_sitoa_base(short int value, int base)
 	return (str);
 }
 
+#include <stdio.h>
 int main()
 {
-
-	long int test= 33333333333333;
-	printf("tst |%s|\n", ft_litoa_base(test, 16));
-	printf("ans |%lx|\n", test);
+	short int a = 327678;
+	printf("%hd\n",a);
+	printf("%s\n",ft_llitoa_base(a, 10));
 }

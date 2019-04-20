@@ -7,8 +7,9 @@ int ft_printf(char *str, ...)
 {
 	char sum = 0;
 	int i = 0;
-	int tmp = 0;
 	va_list	args;
+	t_fflags *form_flag;
+	t_iflags *data_flag;
 
 	va_start(args, str);
 
@@ -16,13 +17,7 @@ int ft_printf(char *str, ...)
 	{
 	 	if (str[i] == '%')
 	 	{
-			// i++;
-			// if (str[i] == 'c' || str[i] == 's' || str[i] == 'p' || str[i] == 'i' ||
-			// 	 str[i] == 'd' || str[i] == 'o' || str[i] == 'x' || str[i] == 'X' || str[i] == 'u')
-			if(str[i] == 'l')
-			{
-
-			}
+			set_flag(str, &i, form_flag);
 			form_check(str, &i, args);
 			i++;
 		}
@@ -47,7 +42,7 @@ int main()
 
 	unsigned int oa =  1;
 	ft_printf("octal test\n");
-	printf("printf int u is |% +d|\n", int_max);
+	printf("printf int u is |%#15d|\n", int_max);
 	ft_printf("ft_printf int u is |%d|\n", int_max);
 }
 
