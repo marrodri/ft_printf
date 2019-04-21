@@ -10,10 +10,15 @@ void set_flags(char *str, int *i, t_fflags **st_fflag)
 {
 	if((*st_fflag = malloc(sizeof(t_fflags))) == NULL)
 		return ;
-	
+	(*st_fflag)->hash_flag = 0;
+	(*st_fflag)->cero_flag = 0;
+	(*st_fflag)->minus_flag = 0;
+	(*st_fflag)->plus_flag = 0;
+	(*st_fflag)->field_width = 0;
+
 	if(str[*i] == '#')
 	{
-
+		(*st_fflag)->hash_flag = 1;
 	}
 	// if (str[*i] == 'h')
 	// {
