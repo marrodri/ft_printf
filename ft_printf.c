@@ -5,23 +5,37 @@
 
 int ft_printf(char *str, ...)
 {
-	char sum = 0;
+	char sum;
 	char *test;
-	int i = 0;
+	int i;
 	va_list	args;
 	t_fflags *form_flag;
 	t_iflags *data_flag;
 
 	va_start(args, str);
-	if((form_flag = malloc(sizeof(t_fflags))) == NULL)
-		return 0;
+	i = 0;
+	sum = 0;
+	if ((form_flag = malloc(sizeof(t_fflags))) == NULL)
+		return (0);
 	while (str[i])
 	{
 	 	if (str[i] == '%')
 	 	{
+			// printf("char is %c\n", str[i]);
+			i++;
 			set_fflags(str, &i, &form_flag);
+			// printf("char is %c\n", str[i]);
 			test = (form_check(str, &i, args));
-			ft_putstr(test);
+			if(test != NULL)
+			{
+				test = ft_fstr(test, i, form_flag);
+				ft_putstr(test);
+			}
+			else
+			{
+				ft_putchar(str[i]);
+				ft_putstr(" format not included");
+			}
 			i++;
 		}
 		ft_putchar(str[i]);
@@ -34,19 +48,20 @@ int ft_printf(char *str, ...)
 int main()
 {
 	char a = 'h';
-	char b = 'l';
-	char c = 'w';
+	char *b = "HELLLO s";
 
 	long long int ht= 1927531;
 
 	int int_max = 1231234;
 	// ht = (long)ht;
-	printf("a typecast = %d \n", ht);
+	printf("a typecast = %lld \n", ht);
 
 	unsigned int oa =  1;
 	ft_printf("octal test\n");
-	printf("printf int u is |%15llX|\n", int_max);
-	ft_printf("ft_printf int u is |%X|\n", int_max);
+	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%p|\n", a,b,b);
+	// ft_printf("ft_printf char a is |%c|, str b is |%s|, pointer b is|%p|\n", a,b,b);
+	printf("printf int u is |%#o|\n", int_max);
+	ft_printf("ft_printf int u is |%#o|\n", int_max);
 }
 
 //chars for p test

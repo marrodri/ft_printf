@@ -26,5 +26,4 @@ void	ft_putstr(char const *s)
 		write(1, &str[i], 1);
 		i++;
 	}
-	write(1, &str[i], 1);
 }

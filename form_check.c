@@ -20,17 +20,27 @@ char *form_check(char *str, int *i, va_list args)
 	int num;
 	unsigned int u_num;
 
-	*i += 1;
 	if (str[*i] == 'c')
 	{
 		*c = va_arg(args, int);
-		return (c);
+		return (ft_strdup(c));
 	}
 	else if (str[*i] == 's')
 	{
 		s = va_arg(args, char *);
 		return ((s));
 	}
+
+
+	// else if (str[*i] == 'p')
+	// {
+	// 	p = va_arg(args, void *);
+	// 	// printf("%p", p);
+	// 	//&p dont use because it gets the void pointer 
+	// 	// p_form(p);
+	// }
+
+
 	else if (str[*i] == 'd' || str[*i] == 'i')
 	{
 		num = va_arg(args, int);
@@ -57,11 +67,5 @@ char *form_check(char *str, int *i, va_list args)
 		return (u_form(u_num));
 	}
 
-	// else if (str[*i] == 'p')
-	// {
-	// 	p = va_arg(args, void *);
-	// 	// printf("%p", p);
-	// 	//&p dont use because it gets the void pointer 
-	// 	// p_form(p);
-	// }
+	return (NULL);
 }
