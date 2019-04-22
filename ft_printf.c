@@ -28,7 +28,7 @@ int ft_printf(char *str, ...)
 			test = (form_check(str, &i, args));
 			if(test != NULL)
 			{
-				test = ft_fstr(test, i, form_flag);
+				test = ft_fstr(test, str[i], form_flag);
 				ft_putstr(test);
 			}
 			else
@@ -60,8 +60,8 @@ int main()
 	ft_printf("octal test\n");
 	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%p|\n", a,b,b);
 	// ft_printf("ft_printf char a is |%c|, str b is |%s|, pointer b is|%p|\n", a,b,b);
-	printf("printf int u is |%#o|\n", int_max);
-	ft_printf("ft_printf int u is |%#o|\n", int_max);
+	printf("printf int u is |%#x|\n", int_max);
+	ft_printf("ft_printf int u is |%#x|\n", int_max);
 }
 
 //chars for p test

@@ -23,7 +23,6 @@ typedef struct s_iflags
 	int ll_flag;
 	int h_flag;
 	int hh_flag;
-	int per_flag;
 }	t_iflags;
 
 typedef struct s_fflags
@@ -37,7 +36,6 @@ typedef struct s_fflags
 
 
 int ft_printf(char *str, ...);
-
 
 void set_fflags(char *str, int *i, t_fflags **st_fflag);
 void set_iflags(char *str, int *i, t_iflags **st_iflag);
