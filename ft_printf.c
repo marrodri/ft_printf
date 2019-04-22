@@ -12,12 +12,13 @@ int ft_printf(char *str, ...)
 	t_iflags *data_flag;
 
 	va_start(args, str);
-
+	if((form_flag = malloc(sizeof(t_fflags))) == NULL)
+		return 0;
 	while (str[i])
 	{
 	 	if (str[i] == '%')
 	 	{
-			set_flag(str, &i, form_flag);
+			set_fflags(str, &i, &form_flag);
 			form_check(str, &i, args);
 			i++;
 		}
@@ -34,16 +35,16 @@ int main()
 	char b = 'l';
 	char c = 'w';
 
-	int ht= 1927521;
+	long long int ht= 1927531;
 
-	int int_max = -1234;
+	int int_max = 1231234;
 	// ht = (long)ht;
 	printf("a typecast = %d \n", ht);
 
 	unsigned int oa =  1;
 	ft_printf("octal test\n");
-	printf("printf int u is |%#15d|\n", int_max);
-	ft_printf("ft_printf int u is |%d|\n", int_max);
+	printf("printf int u is |%15llX|\n", int_max);
+	ft_printf("ft_printf int u is |%X|\n", int_max);
 }
 
 //chars for p test

@@ -6,10 +6,9 @@ void check_flags()
 
 }
 
-void set_flags(char *str, int *i, t_fflags **st_fflag)
+void set_fflags(char *str, int *i, t_fflags **st_fflag)
 {
-	if((*st_fflag = malloc(sizeof(t_fflags))) == NULL)
-		return ;
+	
 	(*st_fflag)->hash_flag = 0;
 	(*st_fflag)->cero_flag = 0;
 	(*st_fflag)->minus_flag = 0;

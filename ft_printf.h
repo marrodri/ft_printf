@@ -37,6 +37,10 @@ typedef struct s_fflags
 
 
 int ft_printf(char *str, ...);
+
+
+void set_fflags(char *str, int *i, t_fflags **st_fflag);
+void set_iflags(char *str, int *i, t_iflags **st_iflag);
 void form_check(char *str, int *i, va_list args);
 
 void c_form(char c);
