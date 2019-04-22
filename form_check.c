@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-void form_check(char *str, int *i, va_list args)
+char *form_check(char *str, int *i, va_list args)
 {
-	char c;
+	char *c;
 	char *s;
 	unsigned char *p;
 	int num;
@@ -23,33 +23,38 @@ void form_check(char *str, int *i, va_list args)
 	*i += 1;
 	if (str[*i] == 'c')
 	{
-		c = va_arg(args, int);
-		c_form(c);
+		*c = va_arg(args, int);
+		return (c);
 	}
 	else if (str[*i] == 's')
 	{
 		s = va_arg(args, char *);
-		s_form(s);
+		return ((s));
 	}
 	else if (str[*i] == 'd' || str[*i] == 'i')
 	{
 		num = va_arg(args, int);
-		d_form(num);
+		return (d_form(num));
 	}
-	else if (str[*i] == 'x' || str[*i] == 'X')
+	else if (str[*i] == 'x')
 	{
 		num = va_arg(args, int);
-		x_form(num, str[*i]);
+		return (x_form(num));
+	}
+	else if (str[*i] == 'X')
+	{
+		num = va_arg(args, int);
+		return (X_form(num));
 	}
 	else if (str[*i] == 'o')
 	{
 		num = va_arg(args, int);
-		o_form(num);
+		return (o_form(num));
 	}
 	else if (str[*i] == 'u')
 	{
 		u_num = va_arg(args, unsigned int);
-		u_form(u_num);
+		return (u_form(u_num));
 	}
 
 	// else if (str[*i] == 'p')

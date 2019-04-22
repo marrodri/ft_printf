@@ -41,13 +41,14 @@ int ft_printf(char *str, ...);
 
 void set_fflags(char *str, int *i, t_fflags **st_fflag);
 void set_iflags(char *str, int *i, t_iflags **st_iflag);
-void form_check(char *str, int *i, va_list args);
+char *form_check(char *str, int *i, va_list args);
 
 void c_form(char c);
 void s_form(char *str);
 
 char *d_form(int n);
-char *x_form(int n, char ca);
+char *x_form(int n);
+char *X_form(int n);
 char *o_form(int n);
 char *u_form(unsigned int n);
 

@@ -8,14 +8,18 @@ char *d_form(int n)
 	return(num);
 }
 
-char *x_form(int n, char ca)
+char *x_form(int n)
 {
 	char *hex;
 	hex = ft_llitoa_base(n, 16);
-	if (ca == 'X')
-	{
-		ft_strupper(hex);
-	}
+	return(hex);
+}
+
+char *X_form(int n)
+{
+	char *hex;
+	hex = ft_llitoa_base(n, 16);
+	ft_strupper(hex);
 	return(hex);
 }
 

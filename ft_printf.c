@@ -6,6 +6,7 @@
 int ft_printf(char *str, ...)
 {
 	char sum = 0;
+	char *test;
 	int i = 0;
 	va_list	args;
 	t_fflags *form_flag;
@@ -19,7 +20,8 @@ int ft_printf(char *str, ...)
 	 	if (str[i] == '%')
 	 	{
 			set_fflags(str, &i, &form_flag);
-			form_check(str, &i, args);
+			test = (form_check(str, &i, args));
+			ft_putstr(test);
 			i++;
 		}
 		ft_putchar(str[i]);
