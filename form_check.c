@@ -37,6 +37,7 @@ char *form_check(char *str, int *i, va_list args)
 	{
 		p = va_arg(args, void *);
 		s = ft_llitoa_base((long long int)p, 16);
+		s =ft_strjoin("0x",s);
 		return (s);
 	}
 
