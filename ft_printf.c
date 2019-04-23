@@ -48,7 +48,8 @@ int ft_printf(char *str, ...)
 int main()
 {
 	char a = 'h';
-	char *b = "HELLLO s";
+	char b = 's';
+	char *c = "HELLLO s";
 
 	long long int ht= 1927531;
 
@@ -58,10 +59,10 @@ int main()
 
 	unsigned int oa =  1;
 	ft_printf("octal test\n");
-	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%p|\n", a,b,b);
-	// ft_printf("ft_printf char a is |%c|, str b is |%s|, pointer b is|%p|\n", a,b,b);
-	printf("printf int u is |%#x|\n", int_max);
-	ft_printf("ft_printf int u is |%#x|\n", int_max);
+	printf("printf char a is |%c|, str b is |%c|, pointer b is|%p|\n", a,b,c);
+	ft_printf("ft_printf char a is |%c| , str b is |%c|, pointer b is|%p|\n",a,b,c);
+	// printf("printf int u is |%#x|\n", int_max);
+	// ft_printf("ft_printf int u is |%#x|\n", int_max);
 }
 
 //chars for p test
