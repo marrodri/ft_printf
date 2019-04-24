@@ -3,7 +3,7 @@
 
 
 #include <stdio.h>
-char *ft_fstr(char *str, char f, t_fflags *fflags)
+char *ft_fstr(char *str, char f, t_flags *fflags)
 {
 	char *fstr;
 	// printf("f is %c\n", f);

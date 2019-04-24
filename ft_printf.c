@@ -6,30 +6,36 @@
 int ft_printf(char *str, ...)
 {
 	char sum;
-	char *test;
+	char *tstr;
 	int i;
 	va_list	args;
-	t_fflags *form_flag;
-	t_iflags *data_flag;
+	t_flags *st_flag;
+	// t_iflags *data_flag;
 
 	va_start(args, str);
 	i = 0;
 	sum = 0;
-	if ((form_flag = malloc(sizeof(t_fflags))) == NULL)
+	if ((st_flag = malloc(sizeof(t_flags))) == NULL)
 		return (0);
+	
 	while (str[i])
 	{
 	 	if (str[i] == '%')
 	 	{
 			// printf("char is %c\n", str[i]);
 			i++;
-			set_fflags(str, &i, &form_flag);
+			set_fflags(str, &i, &st_flag);
+			// for(int j = 0; j < 4; j++)
+			// {
+			// 	printf("fo_flag[%d] is %d\n", j, st_flag->fo_flag[i]);
+			// }
+			// printf("fi width is %d\n", st_flag->fi_width);
 			// printf("char is %c\n", str[i]);
-			test = (set_form(str[i], args));
-			if(test != NULL)
+			tstr = (set_form(str[i], args));
+			if(str != NULL)
 			{
-				test = ft_fstr(test, str[i], form_flag);
-				ft_putstr(test);
+				// str = ft_fstr(str, str[i], st_flag);
+				ft_putstr(tstr);
 			}
 			else
 			{
@@ -38,8 +44,11 @@ int ft_printf(char *str, ...)
 			}
 			i++;
 		}
-		ft_putchar(str[i]);
-		i++;
+		if(str[i] != '%')
+		{
+			ft_putchar(str[i]);
+			i++;
+		}
 	}
 	va_end(args);
 	return (sum);
@@ -47,18 +56,18 @@ int ft_printf(char *str, ...)
 
 int main()
 {
-	char a = 'H';
-	char b = 's';
-	char *c = "HELLLO s";
+	// char a = 'H';
+	// char b = 's';
+	// char *c = "HELLLO s";
 
-	int int_max = -12300041;
+	int int_max = 1234;
 
-	unsigned int oa =  1;
+	// unsigned int oa =  1;
 	ft_printf("octal test\n");
-	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%p|\n", a,c,c);
+	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
 	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	printf("printf int u is |%u|\n", int_max);
-	ft_printf("ft_printf int u is |%u|\n", int_max);
+	printf("printf int u is |%%%x|\n", int_max);
+	ft_printf("ft_printf int d is |%%%x| tweet\n", int_max);
 }
 
 //chars for p test

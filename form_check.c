@@ -41,6 +41,10 @@ char	*set_form(char f, va_list args)
 	int				pos;
 	char_form		*c_str[8];
 
+	if(f == '%')
+	{
+		return "\%";
+	}
 	pos = check_form(f);
 	c_str[0] = c_form;
 	c_str[1] = s_form;

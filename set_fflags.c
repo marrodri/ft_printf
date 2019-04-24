@@ -13,112 +13,48 @@
 #include "ft_printf.h"
 
 #include <stdio.h>
+void init_flags(t_flags **st_flag)
+{
+	int i;
+	// int *fo_flag;
+	int *fi_flag;
+	
+	i = 0;
+	// fo_flag = st_flag->fo_flag;
+	fi_flag = (*st_flag)->fi_flag;
+	(*st_flag)->fo_flag[1] = 1;
+	while(i < 4)
+	{
+		(*st_flag)->fo_flag[1] = 1;
+		i++;
+	}
+	i = 0;
+	while(fi_flag[i])
+	{
+		fi_flag[i] = 2;
+		i++;
+	}
+	(*st_flag)->fi_width = 3;
+	return ;
+}
 void check_flags()
 {
 
 }
 
-void set_fflags(char *str, int *i, t_fflags **st_fflag)
+void set_fflags(char *str, int *i, t_flags **st_flag)
 {
-	(*st_fflag)->hash_flag = 0;
-	(*st_fflag)->cero_flag = 0;
-	(*st_fflag)->minus_flag = 0;
-	(*st_fflag)->plus_flag = 0;
-	(*st_fflag)->field_width = 0;
+	int pos;
+	char fre;
 
-	if(str[*i] == '#')
-	{
-		(*st_fflag)->hash_flag = 1;
-		*i += 1;
-		return ;
-	}
-	if(str[*i] == '0')
-	{
-		(*st_fflag)->cero_flag = 1;
-		*i += 1;
-		if(str[*i] >= '1' && str[*i] <= '9')
-		{
-			(*st_fflag)->field_width = ft_atoi(&str[*i]);
-		}
-		while(str[*i] >= '1' && str[*i] <= '9')
-		{
-			*i += 1;
-		}
-		return ;
-	}
-
-	if (str[*i] == '-')
-	{
-		(*st_fflag)->minus_flag = 1;
-		*i += 1;
-		if(str[*i] >= '1' && str[*i] <= '9')
-		{
-			(*st_fflag)->field_width = ft_atoi(&str[*i]);
-		}
-		while(str[*i] >= '1' && str[*i] <= '9')
-		{
-			*i += 1;
-		}
-		return ;
-	}
-	else if (str[*i] == '-')
-	{
-		(*st_fflag)->minus_flag = 1;
-		*i += 1;
-		if(str[*i] >= '1' && str[*i] <= '9')
-		{
-			(*st_fflag)->field_width = ft_atoi(&str[*i]);
-		}
-		while(str[*i] >= '1' && str[*i] <= '9')
-		{
-			*i += 1;
-		}
-		return ;
-	}
-	else if (str[*i] == ' ')
-	{
-		(*st_fflag)->minus_flag = 1;
-		*i += 1;
-		if(str[*i] >= '1' && str[*i] <= '9')
-		{
-			(*st_fflag)->field_width = ft_atoi(&str[*i]);
-		}
-		while(str[*i] >= '1' && str[*i] <= '9')
-		{
-			*i += 1;
-		}
-		return ;
-	}
-
-	// if (str[*i] == 'h')
+	fre = str[*i];
+	pos = 0;
+	init_flags(&*st_flag);
+	
+	// if(str[*i] == '#')
 	// {
-	// 	if(str[*i + 1] == 'h')
-	// 	{
-	// 		i++;
-	// 	}
-	// 	else
-	// 	{
-
-	// 	}
-	// 	c = va_arg(args, short int);
-
-	// }
-	// else if (str[*i] == 'l')
-	// {
-	// 	if(str[*i + 1] == 'l')
-	// 	{
-
-	// 	}
-	// 	else
-	// 	{
-
-	// 	}
-	// 	s = va_arg(args, char *);
-	// 	s_form(s);
-	// }
-	// else if (str[*i] == 'h' || str[*i] == 'i')
-	// {
-	// 	num = va_arg(args, int);
-	// 	d_form(num);
+	// 	(*st_flag)->hash_flag = 1;
+	// 	*i += 1;
+	// 	return ;
 	// }
 }
