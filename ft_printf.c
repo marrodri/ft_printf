@@ -61,7 +61,7 @@ int main()
 	ft_printf("octal test\n");
 	printf("printf char a is |%c|, str b is |%c|, pointer b is|%p|\n", a,b,c);
 	ft_printf("ft_printf char a is |%c| , str b is |%c|, pointer b is|%p|\n",a,b,c);
-	// printf("printf int u is |%#x|\n", int_max);
+	// printf("printf int u is |%+d|\n", int_max);
 	// ft_printf("ft_printf int u is |%#x|\n", int_max);
 }
 

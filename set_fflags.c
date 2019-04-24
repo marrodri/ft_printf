@@ -28,12 +28,11 @@ void set_fflags(char *str, int *i, t_fflags **st_fflag)
 
 	if(str[*i] == '#')
 	{
-		// printf("hash found\n");
 		(*st_fflag)->hash_flag = 1;
 		*i += 1;
 		return ;
 	}
-	else if(str[*i] == '0')
+	if(str[*i] == '0')
 	{
 		(*st_fflag)->cero_flag = 1;
 		*i += 1;
@@ -47,7 +46,36 @@ void set_fflags(char *str, int *i, t_fflags **st_fflag)
 		}
 		return ;
 	}
-	else if(str[*i] == '-')
+
+	if (str[*i] == '-')
+	{
+		(*st_fflag)->minus_flag = 1;
+		*i += 1;
+		if(str[*i] >= '1' && str[*i] <= '9')
+		{
+			(*st_fflag)->field_width = ft_atoi(&str[*i]);
+		}
+		while(str[*i] >= '1' && str[*i] <= '9')
+		{
+			*i += 1;
+		}
+		return ;
+	}
+	else if (str[*i] == '-')
+	{
+		(*st_fflag)->minus_flag = 1;
+		*i += 1;
+		if(str[*i] >= '1' && str[*i] <= '9')
+		{
+			(*st_fflag)->field_width = ft_atoi(&str[*i]);
+		}
+		while(str[*i] >= '1' && str[*i] <= '9')
+		{
+			*i += 1;
+		}
+		return ;
+	}
+	else if (str[*i] == ' ')
 	{
 		(*st_fflag)->minus_flag = 1;
 		*i += 1;

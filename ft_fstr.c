@@ -3,11 +3,11 @@
 
 
 #include <stdio.h>
-char *ft_fstr(char *str, char f, t_fflags *flags)
+char *ft_fstr(char *str, char f, t_fflags *fflags)
 {
 	char *fstr;
 	// printf("f is %c\n", f);
-	if(flags->hash_flag == 1)
+	if(fflags->hash_flag == 1)
 	{
 		// printf("hash flag act\n");
 		if(f == 'o')
@@ -27,5 +27,14 @@ char *ft_fstr(char *str, char f, t_fflags *flags)
 			return fstr;
 		}
 	}
+	if(fflags->plus_flag == 1)
+	{
+
+	}
+	if(fflags->minus_flag == 1)
+	{
+
+	}
+
 	return str;
 }

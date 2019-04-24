@@ -12,60 +12,43 @@
 
 #include "ft_printf.h"
 
-char *form_check(char *str, int *i, va_list args)
+char	*form_check(char *str, int *i, va_list args)
 {
-	static char c[2];
-	char *s;
-	void *p;
-	int num;
-	unsigned int u_num;
+	
+	int				num;
+	unsigned int	u_num;
 
-	if (str[*i] == 'c')
+	if (str[*i] == 'c' || str[*i] == 's' || str[*i] == 'p')
 	{
-		c[0] = (char)va_arg(args, int);
-		c[1] = '\0';
-		return ((c));
-	}
-	else if (str[*i] == 's')
-	{
-		s = va_arg(args, char *);
-		return ((s));
+
+		return (char_form(str[*i], args));
 	}
 
-
-	else if (str[*i] == 'p')
-	{
-		p = va_arg(args, void *);
-		s = ft_llitoa_base((long long int)p, 16);
-		s =ft_strjoin("0x",s);
-		return (s);
-	}
-
-
-	else if (str[*i] == 'd' || str[*i] == 'i')
+	else if (str[*i] == 'd' || str[*i] == 'i' || str[*i] == 'o' ||
+		str[*i] == 'u' || str[*i] == 'x' || str[*i] == 'X')
 	{
 		num = va_arg(args, int);
 		return (d_form(num));
 	}
-	else if (str[*i] == 'x')
-	{
-		num = va_arg(args, int);
-		return (x_form(num));
-	}
-	else if (str[*i] == 'X')
-	{
-		num = va_arg(args, int);
-		return (X_form(num));
-	}
-	else if (str[*i] == 'o')
-	{
-		num = va_arg(args, int);
-		return (o_form(num));
-	}
-	else if (str[*i] == 'u')
-	{
-		u_num = va_arg(args, unsigned int);
-		return (u_form(u_num));
-	}
+	// else if (str[*i] == 'x')
+	// {
+	// 	num = va_arg(args, int);
+	// 	return (x_form(num));
+	// }
+	// else if (str[*i] == 'X')
+	// {
+	// 	num = va_arg(args, int);
+	// 	return (X_form(num));
+	// }
+	// else if (str[*i] == 'o')
+	// {
+	// 	num = va_arg(args, int);
+	// 	return (o_form(num));
+	// }
+	// else if (str[*i] == 'u')
+	// {
+	// 	u_num = va_arg(args, unsigned int);
+	// 	return (u_form(u_num));
+	// }
 	return (NULL);
 }

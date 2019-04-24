@@ -42,8 +42,7 @@ void set_iflags(char *str, int *i, t_iflags **st_iflag);
 char *form_check(char *str, int *i, va_list args);
 char *ft_fstr(char *str, char f, t_fflags *flags);
 
-void c_form(char c);
-void s_form(char *str);
+char *char_form(char f, va_list args);
 
 char *d_form(int n);
 char *x_form(int n);
