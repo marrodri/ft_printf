@@ -50,7 +50,7 @@ char	*set_form(char f, va_list args)
 	c_str[5] = u_form;
 	c_str[6] = x_form;
 	c_str[7] = uppx_form;
-	if (pos >= 0 && pos <= 7)
+	if (pos != -1)
 		return (c_str[pos](args));
 	else
 		return (NULL);

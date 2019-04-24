@@ -14,8 +14,8 @@
 
 char	*d_form(va_list args)
 {
-	char *num;
-	int n;
+	char	*num;
+	int		n;
 
 	n = va_arg(args, int);
 	num = ft_itoa(n);
@@ -24,8 +24,8 @@ char	*d_form(va_list args)
 
 char	*x_form(va_list args)
 {
-	char *hex;
-	int n;
+	char	*hex;
+	int		n;
 
 	n = va_arg(args, int);
 	hex = ft_llitoa_base(n, 16);
@@ -34,9 +34,9 @@ char	*x_form(va_list args)
 
 char	*uppx_form(va_list args)
 {
-	char *hex;
-	int n;
-	
+	char	*hex;
+	int		n;
+
 	n = va_arg(args, int);
 	hex = ft_llitoa_base(n, 16);
 	ft_strupper(hex);
@@ -45,8 +45,8 @@ char	*uppx_form(va_list args)
 
 char	*o_form(va_list args)
 {
-	char *oct;
-	int n;
+	char	*oct;
+	int		n;
 
 	n = va_arg(args, int);
 	oct = ft_llitoa_base(n, 8);
@@ -55,11 +55,10 @@ char	*o_form(va_list args)
 
 char	*u_form(va_list args)
 {
-	char *u_num;
-	unsigned int n;
+	char			*u_num;
+	unsigned int	n;
 
 	n = va_arg(args, unsigned int);
 	u_num = ft_uitoa(n);
 	return (u_num);
 }
-
