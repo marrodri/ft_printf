@@ -25,7 +25,7 @@ int ft_printf(char *str, ...)
 			i++;
 			set_fflags(str, &i, &form_flag);
 			// printf("char is %c\n", str[i]);
-			test = (form_check(str, &i, args));
+			test = (set_form(str[i], args));
 			if(test != NULL)
 			{
 				test = ft_fstr(test, str[i], form_flag);
@@ -47,22 +47,18 @@ int ft_printf(char *str, ...)
 
 int main()
 {
-	char a = 'h';
+	char a = 'H';
 	char b = 's';
 	char *c = "HELLLO s";
 
-	long long int ht= 1927531;
-
-	int int_max = 1231234;
-	// ht = (long)ht;
-	printf("a typecast = %lld \n", ht);
+	int int_max = -12300041;
 
 	unsigned int oa =  1;
 	ft_printf("octal test\n");
-	printf("printf char a is |%c|, str b is |%c|, pointer b is|%p|\n", a,b,c);
-	ft_printf("ft_printf char a is |%c| , str b is |%c|, pointer b is|%p|\n",a,b,c);
-	// printf("printf int u is |%+d|\n", int_max);
-	// ft_printf("ft_printf int u is |%#x|\n", int_max);
+	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%p|\n", a,c,c);
+	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
+	printf("printf int u is |%u|\n", int_max);
+	ft_printf("ft_printf int u is |%u|\n", int_max);
 }
 
 //chars for p test

@@ -12,49 +12,54 @@
 
 #include "ft_printf.h"
 
-char	*d_form(int n)
+char	*d_form(va_list args)
 {
 	char *num;
+	int n;
 
+	n = va_arg(args, int);
 	num = ft_itoa(n);
 	return (num);
 }
 
-char	*x_form(int n)
+char	*x_form(va_list args)
 {
 	char *hex;
+	int n;
 
+	n = va_arg(args, int);
 	hex = ft_llitoa_base(n, 16);
 	return (hex);
 }
 
-char	*upper_x_form(int n)
+char	*uppx_form(va_list args)
 {
 	char *hex;
-
+	int n;
+	
+	n = va_arg(args, int);
 	hex = ft_llitoa_base(n, 16);
 	ft_strupper(hex);
 	return (hex);
 }
 
-char	*o_form(int n)
+char	*o_form(va_list args)
 {
 	char *oct;
+	int n;
 
+	n = va_arg(args, int);
 	oct = ft_llitoa_base(n, 8);
 	return (oct);
 }
 
-char	*u_form(unsigned int n)
+char	*u_form(va_list args)
 {
 	char *u_num;
+	unsigned int n;
 
+	n = va_arg(args, unsigned int);
 	u_num = ft_uitoa(n);
 	return (u_num);
 }
 
-char *int_form(char f, va_list args)
-{
-	
-
-}
