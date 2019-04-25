@@ -10,7 +10,6 @@ int ft_printf(char *str, ...)
 	int i;
 	va_list	args;
 	t_flags *st_flag;
-	// t_iflags *data_flag;
 
 	va_start(args, str);
 	i = 0;
@@ -25,9 +24,13 @@ int ft_printf(char *str, ...)
 			// printf("char is %c\n", str[i]);
 			i++;
 			set_fflags(str, &i, &st_flag);
-			// for(int j = 0; j < 4; j++)
+			// for(int j = 0;j < FO_FLAG_SIZE; j++)
 			// {
-			// 	printf("fo_flag[%d] is %d\n", j, st_flag->fo_flag[i]);
+			// 	printf("fo_flag[%d] is %d\n", j, st_flag->fo_flag[j]);
+			// }
+			// for(int x = 0; x < FI_FLAG_SIZE; x++)
+			// {
+			// 	printf("fi_flag[%d] is %d\n", x, st_flag->fi_flag[x]);
 			// }
 			// printf("fi width is %d\n", st_flag->fi_width);
 			// printf("char is %c\n", str[i]);
@@ -66,8 +69,8 @@ int main()
 	ft_printf("octal test\n");
 	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
 	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	printf("printf int u is |%%%x|\n", int_max);
-	ft_printf("ft_printf int d is |%%%x| tweet\n", int_max);
+	printf("printf int u is |%d %x|\n", int_max, int_max);
+	ft_printf("ft_printf int d is |%d %x| tweet\n", int_max, int_max);
 }
 
 //chars for p test

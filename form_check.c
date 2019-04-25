@@ -14,17 +14,10 @@
 
 int		check_form(char f)
 {
-	int		pos;
-	char	form[8];
+	int			pos;
+	const char	form[SPEC_FORM_SIZE] = SPEC_FORM;
 
-	form[0] = 'c';
-	form[1] = 's';
-	form[2] = 'p';
-	form[3] = 'd';
-	form[4] = 'o';
-	form[5] = 'u';
-	form[6] = 'x';
-	form[7] = 'X';
+
 	pos = 0;
 	if (f == 'i')
 		return (3);
@@ -39,12 +32,10 @@ int		check_form(char f)
 char	*set_form(char f, va_list args)
 {
 	int				pos;
-	char_form		*c_str[8];
+	t_char_form		*c_str[SPEC_FORM_SIZE];
 
-	if(f == '%')
-	{
-		return "\%";
-	}
+	if (f == '%')
+		return ("%");
 	pos = check_form(f);
 	c_str[0] = c_form;
 	c_str[1] = s_form;
