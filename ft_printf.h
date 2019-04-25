@@ -12,8 +12,8 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# define FO_FLAG_SIZE 4
-# define FI_FLAG_SIZE 2
+# define FI_FLAG_SIZE 4
+# define FO_FLAG_SIZE 2
 # define SPEC_FORM_SIZE 8
 # define FI_FLAG {'#','0','-','+'}
 # define FO_FLAG {'h','l'}
@@ -23,8 +23,8 @@
 
 typedef struct	s_flags
 {
-	int fo_flag[2]; //hh, h, l, ll
-	int	fi_flag[4]; // #,0,-,+
+	int fo_flag[2]; //h, l
+	int	fi_flag[4]; 
 	int fi_width;
 }				t_flags;
 

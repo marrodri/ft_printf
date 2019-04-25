@@ -33,16 +33,18 @@ void init_flags(t_flags *st_flag)
 	st_flag->fi_width = 0;
 	return ;
 }
-void check_flags(char f, t_flags *st_flag)
+void check_flags(char f, int *i, t_flags *st_flag)
 {
+	int pos;
 	const char fi_flags[FI_FLAG_SIZE] = FI_FLAG;
-	// if(str[*i] == '#')
+
+	pos = 0;
+	while (fi_flags[*i] == f)
 	// {
 	// 	(*st_flag)->hash_flag = 1;
 	// 	*i += 1;
 	// 	return ;
 	// }
-
 }
 
 void set_fflags(char *str, int *i, t_flags **st_flag)
@@ -52,7 +54,7 @@ void set_fflags(char *str, int *i, t_flags **st_flag)
 
 	pos = 0;
 	init_flags(*st_flag);
-	check_flags(str[*i], *st_flag);
+	check_flags(str[*i], &i, *st_flag);
 	// while (str[*i] != '%' && str[*i] != 'x')
 	// {
 	// 	*i += 1;
