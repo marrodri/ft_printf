@@ -20,7 +20,7 @@ int		check_form(char f)
 	pos = 0;
 	if (f == 'i')
 		return (3);
-	while (f != form[pos] && form[pos])
+	while (f != form[pos] && pos < (SPEC_FORM_SIZE - 1))
 		pos++;
 	if (f == form[pos])
 		return (pos);

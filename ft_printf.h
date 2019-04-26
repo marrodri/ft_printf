@@ -15,9 +15,9 @@
 # define FI_FLAG_SIZE 4
 # define FO_FLAG_SIZE 2
 # define SPEC_FORM_SIZE 8
-# define FI_FLAG {'#','0','-','+'}
-# define FO_FLAG {'h','l'}
-# define SPEC_FORM {'c','s','p','d','o','u','x','X'}
+# define FI_FLAG {'#','0','-','+'};
+# define FO_FLAG {'h','l'};
+# define SPEC_FORM {'c','s','p','d','o','u','x','X'};
 # include "libft/libft.h"
 # include <stdarg.h>
 
@@ -26,6 +26,7 @@ typedef struct	s_flags
 	int fo_flag[2]; //h, l
 	int	fi_flag[4]; 
 	int fi_width;
+	int error;
 }				t_flags;
 
 typedef char	*t_char_form(va_list args);
@@ -33,6 +34,7 @@ int				ft_printf(char *str, ...);
 void			set_fflags(char *str, int *i, t_flags **st_flag);
 void			set_iflags(char *str, int *i, t_flags **st_flag);
 char			*set_form(char f, va_list args);
+int				check_form(char f);
 char			*c_form(va_list args);
 char			*percen_char(va_list args);
 char			*s_form(va_list args);
