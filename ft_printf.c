@@ -70,7 +70,7 @@ int main()
 	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
 	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
 	printf("printf int u is |%#o %-x|\n", int_max, int_max);
-	ft_printf("ft_printf int d is |%#o %-x| tweet\n", int_max, int_max);
+	ft_printf("ft_printf int d is |%#+0o %-x| tweet\n", int_max, int_max);
 }
 
 //chars for p test
