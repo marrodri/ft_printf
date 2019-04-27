@@ -34,8 +34,8 @@ char	*x_form(va_list args)
 
 char	*uppx_form(va_list args)
 {
-	char	*hex;
-	unsigned int		n;
+	char			*hex;
+	unsigned int	n;
 
 	n = va_arg(args, unsigned int);
 	hex = ft_llitoa_base(n, 16);

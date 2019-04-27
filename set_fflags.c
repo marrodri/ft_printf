@@ -19,15 +19,15 @@ void init_flags(t_flags *st_flag)
 	int i;
 
 	i = 0;
-	while (i < FO_FLAG_SIZE)
-	{
-		st_flag->fo_flag[i] = 0;
-		i++;
-	}
-	i = 0;
 	while (i < FI_FLAG_SIZE)
 	{
 		st_flag->fi_flag[i] = 0;
+		i++;
+	}
+	i = 0;
+	while (i < FO_FLAG_SIZE)
+	{
+		st_flag->fo_flag[i] = 0;
 		i++;
 	}
 	st_flag->fi_width = 0;
@@ -50,7 +50,7 @@ void check_flags(char f, t_flags *st_flag)
 	while(pos < FO_FLAG_SIZE)
 	{
 		if(fo_flags[pos] == f)
-			st_flag->fi_flag[pos] += 1;
+			st_flag->fo_flag[pos] += 1;
 		pos++;
 	}
 	return ;
