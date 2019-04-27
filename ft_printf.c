@@ -24,18 +24,18 @@ int ft_printf(char *str, ...)
 			// printf("char is %c\n", str[i]);
 			i++;
 			set_fflags(str, &i, &st_flag);
-			for(int j = 0;j < FO_FLAG_SIZE; j++)
-			{
-				printf("fo_flag[%d] is %d\n", j, st_flag->fo_flag[j]);
-			}
-			for(int x = 0; x < FI_FLAG_SIZE; x++)
-			{
-				printf("fi_flag[%d] is %d\n", x, st_flag->fi_flag[x]);
-			}
-			printf("fi width is %d\n", st_flag->fi_width);
-			printf("char is %c\n", str[i]);
+			// for(int j = 0;j < FO_FLAG_SIZE; j++)
+			// {
+			// 	printf("fo_flag[%d] is %d\n", j, st_flag->fo_flag[j]);
+			// }
+			// for(int x = 0; x < FI_FLAG_SIZE; x++)
+			// {
+			// 	printf("fi_flag[%d] is %d\n", x, st_flag->fi_flag[x]);
+			// }
+			// printf("fi width is %d\n", st_flag->fi_width);
+			// printf("char is %c\n", str[i]);
 			tstr = (set_form(str[i], args));
-			if(str != NULL)
+			if (str != NULL)
 			{
 				tstr = ft_fstr(tstr, str[i], st_flag);
 				ft_putstr(tstr);
@@ -47,7 +47,7 @@ int ft_printf(char *str, ...)
 			}
 			i++;
 		}
-		if(str[i] != '%')
+		if (str[i] != '%')
 		{
 			ft_putchar(str[i]);
 			i++;
@@ -63,14 +63,14 @@ int main()
 	// char b = 's';
 	// char *c = "HELLLO s";
 
-	int int_max = 1;
+	int int_max = -1;
 
 	// unsigned int oa =  1;
 	ft_printf("octal test\n");
 	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
 	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	printf("printf int u is |%+011d| |%hhx|\n", int_max, int_max);
-	ft_printf("ft_printf int d is |%#+110d %#x| tweet\n", int_max, int_max);
+	printf("printf int u is |%4d| |%hhx|\n", int_max, int_max);
+	ft_printf("ft_printf int d is |% 4d| |%#x| tweet\n", int_max, int_max);
 }
 
 //chars for p test

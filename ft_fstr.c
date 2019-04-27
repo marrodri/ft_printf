@@ -27,7 +27,15 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 	{
 		if (st_flags->fi_width != 0)
 		{
-			printf("add func\n");
+			int dif;
+			char *zero;
+			dif =st_flags->fi_width - ft_strlen(fstr);
+			if(dif > 0)
+			{
+				//fix when there is a minus or an 0x sign
+				zero = ft_strnewc('0',dif);
+				fstr = ft_strjoin(zero, fstr);
+			}
 		}
 		else
 		{
@@ -38,11 +46,15 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 	{
 		if (st_flags->fi_width != 0)
 		{
-			printf("add func\n");
-		}
-		else
-		{
-			
+			int dif;
+			char *space;
+			dif =st_flags->fi_width - ft_strlen(fstr);
+			if(dif > 0)
+			{
+				//fix when there is a minus or an 0x sign  with the # flag
+				space = ft_strnewc(' ',dif);
+				fstr = ft_strjoin(fstr, space);
+			}
 		}
 	}
 	if (st_flags->fi_flag[3] == 1)

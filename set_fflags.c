@@ -33,6 +33,20 @@ void init_flags(t_flags *st_flag)
 	st_flag->fi_width = 0;
 	return ;
 }
+
+void ignore_case(t_flags *st_flag)
+{
+	if (st_flag->fi_flag[2] == 1)
+	{
+		st_flag->fi_flag[1] = 0;
+	}
+	if (st_flag->fi_flag[3] == 1)
+	{
+		st_flag->fi_flag[4] = 0;
+	}
+	return ;
+}
+
 void check_flags(char f, t_flags *st_flag)
 {
 	int pos;
@@ -42,17 +56,18 @@ void check_flags(char f, t_flags *st_flag)
 	pos = 0;
 	while (pos < FI_FLAG_SIZE)
 	{
-		if(fi_flags[pos] == f)
+		if (fi_flags[pos] == f)
 			st_flag->fi_flag[pos] = 1;
 		pos++;
 	}
 	pos = 0;
-	while(pos < FO_FLAG_SIZE)
+	while (pos < FO_FLAG_SIZE)
 	{
-		if(fo_flags[pos] == f)
+		if (fo_flags[pos] == f)
 			st_flag->fo_flag[pos] += 1;
 		pos++;
 	}
+	ignore_case(st_flag);
 	return ;
 }
 
@@ -63,7 +78,6 @@ void check_field(char *str, int *i, t_flags *st_flag)
 		st_flag->fi_width = ft_atoi(&str[*i]);
 		while (str[*i] >= '0' && str[*i] <= '9')
 		{
-			printf("moving num\n");
 			*i += 1;
 		}
 	}
