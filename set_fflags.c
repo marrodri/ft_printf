@@ -56,6 +56,19 @@ void check_flags(char f, t_flags *st_flag)
 	return ;
 }
 
+void check_field(char *str, int *i, t_flags *st_flag)
+{
+	if (str[*i] >= '1' && str[*i] <= '9')
+	{
+		st_flag->fi_width = ft_atoi(&str[*i]);
+		while (str[*i] >= '0' && str[*i] <= '9')
+		{
+			printf("moving num\n");
+			*i += 1;
+		}
+	}
+}
+
 void set_fflags(char *str, int *i, t_flags **st_flag)
 {
 	int			pos;
@@ -67,6 +80,7 @@ void set_fflags(char *str, int *i, t_flags **st_flag)
 	{
 		check_flags(str[*i], *st_flag);
 		*i += 1;
+		check_field(str, i, *st_flag);
 	}
 	return ;
 }

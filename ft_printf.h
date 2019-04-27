@@ -12,10 +12,10 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# define FI_FLAG_SIZE 4
+# define FI_FLAG_SIZE 5
 # define FO_FLAG_SIZE 2
 # define SPEC_FORM_SIZE 8
-# define FI_FLAG {'#','0','-','+'};
+# define FI_FLAG {'#','0','-','+',' '};
 # define FO_FLAG {'h','l'};
 # define SPEC_FORM {'c','s','p','d','o','u','x','X'};
 # include "libft/libft.h"
@@ -23,8 +23,8 @@
 
 typedef struct	s_flags
 {
-	int fo_flag[2]; //h, l
-	int	fi_flag[4]; 
+	int fo_flag[FO_FLAG_SIZE]; //h, l
+	int	fi_flag[FI_FLAG_SIZE]; 
 	int fi_width;
 	int error;
 }				t_flags;
