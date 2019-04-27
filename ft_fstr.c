@@ -3,20 +3,18 @@
 
 
 #include <stdio.h>
-char *ft_fstr(char *str, char f, t_flags *fflags)
+char *ft_fstr(char *str, char f, t_flags *st_flags)
 {
 	char *fstr;
+
 	fstr = str;
-	// printf("f is %c\n", f);
-	if (fflags->fi_flag[0] == 1)
+	if (st_flags->fi_flag[0] == 1)
 	{
-		// printf("hash flag act\n");
-		if(f == 'o')
+		if (f == 'o')
 		{
-			// printf("octal with has enter\n");
 			fstr = ft_strjoin("0", str);
 		}
-		else if(f == 'x')
+		else if (f == 'x')
 		{
 			fstr = ft_strjoin("0x", str);
 		}
@@ -25,21 +23,45 @@ char *ft_fstr(char *str, char f, t_flags *fflags)
 			fstr = ft_strjoin("0X", str);
 		}
 	}
-	if (fflags->fi_flag[1] == 1)
+	if (st_flags->fi_flag[1] == 1)
 	{
-
+		if (st_flags->fi_width != 0)
+		{
+			printf("add func\n");
+		}
+		else
+		{
+			
+		}
 	}
-	if (fflags->fi_flag[2] == 1)
+	if (st_flags->fi_flag[2] == 1)
 	{
-
+		if (st_flags->fi_width != 0)
+		{
+			printf("add func\n");
+		}
+		else
+		{
+			
+		}
 	}
-	if (fflags->fi_flag[3] == 1)
+	if (st_flags->fi_flag[3] == 1)
 	{
-		if((f == 'd' || f == 'i') && str[0] != '-')
+		if ((f == 'd' || f == 'i') && str[0] != '-')
 		{
 			fstr= ft_strjoin("+", str);
 		}
 	}
-
+	if (st_flags->fi_flag[4] == 1)
+	{
+		if (st_flags->fi_width != 0)
+		{
+			printf("add func\n");
+		}
+		else
+		{
+			fstr = ft_strjoin(" ",fstr);
+		}
+	}
 	return (fstr);
 }
