@@ -20,7 +20,7 @@ static int		check_size_base(long long int n, int base)
 	if ((n < 0) && (base == 10))
 	{
 		size++;
-		n = n *-1;
+		n = n * -1;
 	}
 	else if (n < 0)
 		n = n * -1;
@@ -32,7 +32,7 @@ static int		check_size_base(long long int n, int base)
 	return (size - 1);
 }
 
-char		*ft_llitoa_base(long long int value, int base)
+char			*ft_llitoa_base(long long int value, int base)
 {
 	char			*str;
 	char			*b_val;
@@ -49,8 +49,8 @@ char		*ft_llitoa_base(long long int value, int base)
 	if (value == -2147483648 && base == 10)
 		return (ft_strdup("-2147483648"));
 	size = check_size_base(value, base);
-	if ((str = (char*)malloc((size + 1)*sizeof(char))) == NULL)
-		return NULL;
+	if ((str = (char*)malloc((size + 1) * sizeof(char))) == NULL)
+		return (NULL);
 	str[size + 1] = '\0';
 	if ((value < 0) && (base == 10))
 	{

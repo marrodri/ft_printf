@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_dec_to_oct(int n)
+int		ft_dec_to_oct(int n)
 {
 	int oct;
 	int dec;
@@ -28,7 +28,7 @@ int ft_dec_to_oct(int n)
 	{
 		dec = n / 8;
 		tmp = n % 8;
-		oct = oct + (tmp * (ft_power_of(10,i)));
+		oct = oct + (tmp * (ft_power_of(10, i)));
 		i++;
 		n = dec;
 	}

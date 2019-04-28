@@ -1,12 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_fstr.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/27 20:22:49 by marrodri          #+#    #+#             */
+/*   Updated: 2019/04/27 20:22:56 by marrodri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
-
-
 #include <stdio.h>
 
 void field_management(char *str, t_flags *st_flags)
 {
-	
+
+}
+
+char *hash_flag(char *fstr, char f)
+{
+			if (f == 'o')
+		{
+			fstr = ft_strjoin("0", fstr);
+		}
+		else if (f == 'x')
+		{
+			fstr = ft_strjoin("0x", fstr);
+		}
+		else if (f == 'X')
+		{
+			fstr = ft_strjoin("0X", fstr);
+		}
+		return (fstr);
 }
 
 char *ft_fstr(char *str, char f, t_flags *st_flags)
@@ -14,28 +40,24 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 	char *fstr;
 
 	fstr = str;
-	if (st_flags->fi_flag[0] == 1)
+	if (st_flags->fi_flag[0] == 1) //hash flag
 	{
-		if (f == 'o')
+		fstr = hash_flag(fstr, f);
+	}
+	if (st_flags->fi_flag[3] == 1) // plus flag
+	{
+		if ((f == 'd' || f == 'i') && str[0] != '-')
 		{
-			fstr = ft_strjoin("0", str);
-		}
-		else if (f == 'x')
-		{
-			fstr = ft_strjoin("0x", str);
-		}
-		else if (f == 'X')
-		{
-			fstr = ft_strjoin("0X", str);
+			fstr= ft_strjoin("+", str);
 		}
 	}
-	if (st_flags->fi_flag[1] == 1)
+	if (st_flags->fi_flag[1] == 1) // zero flag, TODO!!! move to field precision
 	{
 		if (st_flags->fi_width != 0)
 		{
 			int dif;
 			char *zero;
-			dif =st_flags->fi_width - ft_strlen(fstr);
+			dif = st_flags->fi_width - ft_strlen(fstr);
 			if(dif > 0)
 			{
 				//fix when there is a minus or an 0x sign
@@ -44,13 +66,9 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 				// if (st_flags[])
 			}
 		}
-		else
-		{
-			
-		}
 	}
 	//default field precision not implemented, put this inside in field management
-	if (st_flags->fi_flag[2] == 1)
+	if (st_flags->fi_flag[2] == 1) // minus flag, TODO!!! move to field precision
 	{
 		if (st_flags->fi_width != 0)
 		{
@@ -65,14 +83,7 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 			}
 		}
 	}
-	if (st_flags->fi_flag[3] == 1)
-	{
-		if ((f == 'd' || f == 'i') && str[0] != '-')
-		{
-			fstr= ft_strjoin("+", str);
-		}
-	}
-	if (st_flags->fi_flag[4] == 1)
+	if (st_flags->fi_flag[4] == 1) //space flag, TODO move to field precision
 	{
 		int dif;
 		char *space;

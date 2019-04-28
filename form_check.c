@@ -31,7 +31,7 @@ int		check_form(char f)
 char	*set_form(char f, va_list args)
 {
 	int				pos;
-	t_char_form	*c_str[SPEC_FORM_SIZE];
+	t_char_form		*c_str[SPEC_FORM_SIZE];
 
 	if (f == '%')
 		return ("%");

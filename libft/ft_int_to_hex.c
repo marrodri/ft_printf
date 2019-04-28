@@ -16,7 +16,7 @@ int		check_size(int n)
 {
 	int	size;
 	int	i;
-	
+
 	size = 0;
 	i = 1;
 	while (i <= n)
@@ -38,7 +38,7 @@ char	set_hex(int *n, int size)
 	power = 0;
 	index = "0123456789abcdef";
 	power = (ft_power_of(16, size - 1));
-	ans = *n/power;
+	ans = *n / power;
 	*n = *n - (ans * power);
 	hex = index[ans];
 	return (hex);
@@ -54,7 +54,6 @@ char	*ft_int_to_hex(int n)
 	size = check_size(n);
 	hex = (char*)malloc((size) * sizeof(char));
 	hex[size] = '\0';
-
 	while (size > 0)
 	{
 		hex[i] = set_hex(&n, size);

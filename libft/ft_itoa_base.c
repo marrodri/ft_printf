@@ -12,8 +12,7 @@
 
 #include "libft.h"
 
-//NORM THIS
-static int	check_size_base(int n, int base)
+static int		check_size_base(int n, int base)
 {
 	int	size;
 
@@ -33,7 +32,7 @@ static int	check_size_base(int n, int base)
 	return (size - 1);
 }
 
-char		*ft_itoa_base(int value, int base)
+char			*ft_itoa_base(int value, int base)
 {
 	char	*str;
 	char	*b_val;

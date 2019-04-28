@@ -88,7 +88,7 @@ unsigned char		swap_bits(unsigned char octet);
 int					ft_word_count(char const *s, char c);
 int					get_next_line(const int fd, char **line);
 int					ft_power_of(int n, int expo);
-char 				*ft_int_to_hex(int n);
+char				*ft_int_to_hex(int n);
 int					ft_dec_to_oct(int n);
 char				*ft_strupper(char *str);
 char				*ft_itoa_base(int value, int base);

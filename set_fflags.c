@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void init_flags(t_flags *st_flag)
+void	init_flags(t_flags *st_flag)
 {
 	int i;
 
@@ -32,7 +32,7 @@ void init_flags(t_flags *st_flag)
 	return ;
 }
 
-void ignore_case(t_flags *st_flag)
+void	ignore_case(t_flags *st_flag)
 {
 	if (st_flag->fi_flag[2] == 1)
 	{
@@ -45,11 +45,11 @@ void ignore_case(t_flags *st_flag)
 	return ;
 }
 
-void check_flags(char f, t_flags *st_flag)
+void	check_flags(char f, t_flags *st_flag)
 {
-	int pos;
-	const char fi_flags[FI_FLAG_SIZE] = FI_FLAG;
-	const char fo_flags[FO_FLAG_SIZE] = FO_FLAG;
+	int			pos;
+	const char	fi_flags[FI_FLAG_SIZE] = FI_FLAG;
+	const char	fo_flags[FO_FLAG_SIZE] = FO_FLAG;
 
 	pos = 0;
 	while (pos < FI_FLAG_SIZE)
@@ -69,19 +69,17 @@ void check_flags(char f, t_flags *st_flag)
 	return ;
 }
 
-void check_field(char *str, int *i, t_flags *st_flag)
+void	check_field(char *str, int *i, t_flags *st_flag)
 {
 	if (str[*i] >= '1' && str[*i] <= '9')
 	{
 		st_flag->fi_width = ft_atoi(&str[*i]);
 		while (str[*i] >= '0' && str[*i] <= '9')
-		{
 			*i += 1;
-		}
 	}
 }
 
-void set_fflags(char *str, int *i, t_flags **st_flag)
+void	set_fflags(char *str, int *i, t_flags **st_flag)
 {
 	int			pos;
 	const char	forms[8] = SPEC_FORM;

@@ -12,9 +12,10 @@
 
 #include "libft.h"
 
-char *ft_strupper(char *str)
+char	*ft_strupper(char *str)
 {
 	int i;
+
 	i = 0;
 	while (str[i])
 	{

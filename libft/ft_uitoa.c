@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-// #include <stdio.h>
-
 static int		ft_check_size(unsigned int n)
 {
 	int	size;
@@ -49,10 +47,3 @@ char			*ft_uitoa(unsigned int n)
 	}
 	return (str);
 }
-
-// int main()
-// {
-// 	unsigned int a = 0;
-// 	printf("tst |%s|\n", ft_uitoa(a));
-// 	printf("ans |%u|\n", a);
-// }
