@@ -3,6 +3,12 @@
 
 
 #include <stdio.h>
+
+void field_management(char *str, t_flags *st_flags)
+{
+	
+}
+
 char *ft_fstr(char *str, char f, t_flags *st_flags)
 {
 	char *fstr;
@@ -35,6 +41,7 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 				//fix when there is a minus or an 0x sign
 				zero = ft_strnewc('0',dif);
 				fstr = ft_strjoin(zero, fstr);
+				// if (st_flags[])
 			}
 		}
 		else
@@ -42,18 +49,19 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 			
 		}
 	}
+	//default field precision not implemented, put this inside in field management
 	if (st_flags->fi_flag[2] == 1)
 	{
 		if (st_flags->fi_width != 0)
 		{
 			int dif;
-			char *space;
+			char *end_space;
 			dif =st_flags->fi_width - ft_strlen(fstr);
-			if(dif > 0)
+			if (dif > 0)
 			{
 				//fix when there is a minus or an 0x sign  with the # flag
-				space = ft_strnewc(' ',dif);
-				fstr = ft_strjoin(fstr, space);
+				end_space = ft_strnewc(' ',dif);
+				fstr = ft_strjoin(fstr, end_space);
 			}
 		}
 	}
@@ -66,9 +74,12 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 	}
 	if (st_flags->fi_flag[4] == 1)
 	{
-		if (st_flags->fi_width != 0)
+		int dif;
+		char *space;
+		if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
 		{
-			printf("add func\n");
+			space = ft_strnewc(' ',dif);
+			fstr = ft_strjoin(space, fstr);
 		}
 		else
 		{

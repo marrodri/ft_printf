@@ -26,7 +26,7 @@ typedef struct	s_flags
 	int fo_flag[FO_FLAG_SIZE]; //h, l
 	int	fi_flag[FI_FLAG_SIZE]; 
 	int fi_width;
-	int error;
+	// int error;
 }				t_flags;
 
 typedef char	*t_char_form(va_list args);

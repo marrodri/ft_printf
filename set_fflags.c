@@ -12,8 +12,6 @@
 
 #include "ft_printf.h"
 
-
-#include <stdio.h>
 void init_flags(t_flags *st_flag)
 {
 	int i;
