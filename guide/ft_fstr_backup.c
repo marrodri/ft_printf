@@ -13,8 +13,44 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-char *field_management(char *fstr, t_flags *st_flags)
+void field_management(char *str, t_flags *st_flags)
 {
+
+}
+
+char *hash_flag(char *fstr, char f)
+{
+			if (f == 'o')
+		{
+			fstr = ft_strjoin("0", fstr);
+		}
+		else if (f == 'x')
+		{
+			fstr = ft_strjoin("0x", fstr);
+		}
+		else if (f == 'X')
+		{
+			fstr = ft_strjoin("0X", fstr);
+		}
+		return (fstr);
+}
+
+char *ft_fstr(char *str, char f, t_flags *st_flags)
+{
+	char *fstr;
+
+	fstr = str;
+	if (st_flags->fi_flag[0] == 1) //hash flag
+	{
+		fstr = hash_flag(fstr, f);
+	}
+	if (st_flags->fi_flag[3] == 1) // plus flag
+	{
+		if ((f == 'd' || f == 'i') && str[0] != '-')
+		{
+			fstr= ft_strjoin("+", str);
+		}
+	}
 	if (st_flags->fi_flag[1] == 1) // zero flag, TODO!!! move to field precision
 	{
 		if (st_flags->fi_width != 0)
@@ -38,7 +74,7 @@ char *field_management(char *fstr, t_flags *st_flags)
 		{
 			int dif;
 			char *end_space;
-			dif = st_flags->fi_width - ft_strlen(fstr);
+			dif =st_flags->fi_width - ft_strlen(fstr);
 			if (dif > 0)
 			{
 				//fix when there is a minus or an 0x sign  with the # flag
@@ -60,46 +96,6 @@ char *field_management(char *fstr, t_flags *st_flags)
 		{
 			fstr = ft_strjoin(" ",fstr);
 		}
-	}
-	return fstr;
-}
-
-char *hash_flag(char *fstr, char f)
-{
-	if (f == 'o')
-	{
-		fstr = ft_strjoin("0", fstr);
-	}
-	else if (f == 'x')
-	{
-		fstr = ft_strjoin("0x", fstr);
-	}
-	else if (f == 'X')
-	{
-		fstr = ft_strjoin("0X", fstr);
-	}
-	return (fstr);
-}
-
-char *ft_fstr(char *str, char f, t_flags *st_flags)
-{
-	char *fstr;
-
-	fstr = str;
-	if (st_flags->fi_flag[0] == 1) //hash flag
-	{
-		fstr = hash_flag(fstr, f);
-	}
-	if (st_flags->fi_flag[3] == 1) // plus flag
-	{
-		if ((f == 'd' || f == 'i') && str[0] != '-')
-		{
-			fstr= ft_strjoin("+", str);
-		}
-	}
-	if(st_flags->fi_width > 0)
-	{
-		fstr = field_management(fstr, st_flags);
 	}
 	return (fstr);
 }

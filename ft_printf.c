@@ -79,7 +79,7 @@ int main()
 	ft_printf("octal test\n");
 	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
 	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	printf("printf int u is |%+-08d| |%hhx|\n", int_max, int_max);
+	printf("printf int u is |% x| |%hhx|\n", int_max, int_max);
 	ft_printf("ft_printf int d is |% #-+8d| |%#x| tweet\n", int_max, int_max);
 }
 
