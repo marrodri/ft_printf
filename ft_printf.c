@@ -31,7 +31,6 @@ int ft_printf(char *str, ...)
 	{
 	 	if (str[i] == '%')
 	 	{
-			// printf("char is %c\n", str[i]);
 			i++;
 			set_fflags(str, &i, &st_flag);
 			// for(int j = 0;j < FO_FLAG_SIZE; j++)
@@ -79,8 +78,8 @@ int main()
 	ft_printf("octal test\n");
 	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
 	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	printf("printf int u is |%10d| |%#x|\n", int_max, int_max);
-	ft_printf("ft_printf int d is |%10d| |%#x| tweet\n", int_max, int_max);
+	printf("   printf is |%%%0 18d| |%#x|\n", int_max, int_max);
+	ft_printf("ft_printf is |%%%0 18d| |%#x| tweet\n", int_max, int_max);
 }
 
 //chars for p test

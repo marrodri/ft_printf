@@ -18,6 +18,8 @@ int		check_form(char f)
 	const char	form[SPEC_FORM_SIZE] = SPEC_FORM;
 
 	pos = 0;
+	if(f == '%')
+		return (1);
 	if (f == 'i')
 		return (3);
 	while (f != form[pos] && pos < (SPEC_FORM_SIZE - 1))
@@ -34,7 +36,9 @@ char	*set_form(char f, va_list args)
 	t_char_form		*c_str[SPEC_FORM_SIZE];
 
 	if (f == '%')
+	{
 		return ("%");
+	}
 	pos = check_form(f);
 	c_str[0] = c_form;
 	c_str[1] = s_form;
