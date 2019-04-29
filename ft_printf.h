@@ -44,5 +44,7 @@ char			*x_form(va_list args);
 char			*uppx_form(va_list args);
 char			*o_form(va_list args);
 char			*u_form(va_list args);
+
 char			*ft_fstr(char *str, char f, t_flags *st_flag);
+char			*zero_flag(char *fstr, char f, t_flags *st_flags);
 #endif

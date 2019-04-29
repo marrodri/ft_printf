@@ -26,7 +26,7 @@ int ft_printf(char *str, ...)
 	sum = 0;
 	if ((st_flag = malloc(sizeof(t_flags))) == NULL)
 		return (0);
-	
+
 	while (str[i])
 	{
 	 	if (str[i] == '%')
@@ -53,7 +53,7 @@ int ft_printf(char *str, ...)
 			else
 			{
 				ft_putchar(str[i]);
-				ft_putstr(" format not included");
+				ft_putstr("format not included");
 			}
 			i++;
 		}
@@ -73,14 +73,14 @@ int main()
 	// char b = 's';
 	// char *c = "HELLLO s";
 
-	int int_max = 1342       ;
+	int int_max = -1342;
 
 	// unsigned int oa =  1;
 	ft_printf("octal test\n");
 	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
 	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	printf("printf int u is |%+06d| |%hhx|\n", int_max, int_max);
-	ft_printf("ft_printf int d is |%0+6d| |%#x| tweet\n", int_max, int_max);
+	printf("printf int u is |%015d| |%hhx|\n", int_max, int_max);
+	ft_printf("ft_printf int d is |%015d| |%#x| tweet\n", int_max, int_max);
 }
 
 //chars for p test

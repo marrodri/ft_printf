@@ -13,35 +13,20 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-char *field_management(char *fstr, t_flags *st_flags)
+char *field_management(char *fstr, char f, t_flags *st_flags)
 {
-	if (st_flags->fi_flag[1] == 1) // zero flag, TODO!!! move to field precision
+	if (st_flags->fi_flag[1] == 1) // zero flag
 	{
 		if (st_flags->fi_width != 0)
 		{
-			int dif;
-			char *zero;
-			dif = st_flags->fi_width - ft_strlen(fstr);
-			if(dif > 0)
-			{
-				//fix when there is a minus neg, plus (fi_flag[4]) or an 0x sign (fi_flag[0])
-				zero = ft_strnewc('0',dif);
-				fstr = ft_strjoin(zero, fstr);
-				if (st_flags->fi_flag[3] == 1)
-				{
-					int i;
- 
-					i = 0;
-					while(fstr[i])
-					{
-
-					}
-				}
-			}
+			fstr = zero_flag(fstr, f, st_flags);
 		}
+		return (fstr);
 	}
-	//default field precision not implemented, put this inside in field management
-	if (st_flags->fi_flag[2] == 1) // minus flag, TODO!!! move to field precision
+
+	// default field precision not implemented, put this inside in field management
+	
+	if (st_flags->fi_flag[2] == 1) // minus flag, spaces to right
 	{
 		if (st_flags->fi_width != 0)
 		{
@@ -51,23 +36,23 @@ char *field_management(char *fstr, t_flags *st_flags)
 			if (dif > 0)
 			{
 				//fix when there is a minus or an 0x sign  with the # flag
-				end_space = ft_strnewc(' ',dif);
+				end_space = ft_strnewc(' ', dif);
 				fstr = ft_strjoin(fstr, end_space);
 			}
 		}
 	}
-	if (st_flags->fi_flag[4] == 1) //space flag, TODO move to field precision
+	if (st_flags->fi_flag[4] == 1) //space flag, spaces to left
 	{
 		int dif;
 		char *space;
 		if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
 		{
-			space = ft_strnewc(' ',dif);
+			space = ft_strnewc(' ', dif);
 			fstr = ft_strjoin(space, fstr);
 		}
 		else
 		{
-			fstr = ft_strjoin(" ",fstr);
+			fstr = ft_strjoin(" ", fstr);
 		}
 	}
 	return fstr;
@@ -103,12 +88,12 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 	{
 		if ((f == 'd' || f == 'i') && str[0] != '-')
 		{
-			fstr= ft_strjoin("+", str);
+			fstr = ft_strjoin("+", fstr);
 		}
 	}
-	if(st_flags->fi_width > 0)
+	if (st_flags->fi_width > 0)
 	{
-		fstr = field_management(fstr, st_flags);
+		fstr = field_management(fstr, f, st_flags);
 	}
 	return (fstr);
 }
