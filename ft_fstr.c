@@ -24,8 +24,6 @@ char *field_management(char *fstr, char f, t_flags *st_flags)
 		return (fstr);
 	}
 
-	// default field precision not implemented, put this inside in field management
-	
 	if (st_flags->fi_flag[2] == 1) // minus flag, spaces to right
 	{
 		if (st_flags->fi_width != 0)
@@ -50,9 +48,16 @@ char *field_management(char *fstr, char f, t_flags *st_flags)
 			space = ft_strnewc(' ', dif);
 			fstr = ft_strjoin(space, fstr);
 		}
-		else
+	}
+	else
+	{
+		//default field management
+		int		dif;
+		char	*space;
+		if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
 		{
-			fstr = ft_strjoin(" ", fstr);
+			space = ft_strnewc(' ', dif);
+			fstr = ft_strjoin(space, fstr);
 		}
 	}
 	return fstr;
@@ -90,6 +95,10 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 		{
 			fstr = ft_strjoin("+", fstr);
 		}
+	}
+	if (st_flags->fi_flag[4] == 1) //space flag
+	{
+		fstr = ft_strjoin(" ", fstr);
 	}
 	if (st_flags->fi_width > 0)
 	{

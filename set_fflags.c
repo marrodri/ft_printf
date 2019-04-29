@@ -86,11 +86,11 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 
 	pos = 0;
 	init_flags(*st_flag);
-	while ((check_form(str[*i])) == -1)
+	while ((check_form(str[*i])) == -1 && (!(str[*i] >= '1' && str[*i] <= '9')))
 	{
 		check_flags(str[*i], *st_flag);
 		*i += 1;
-		check_field(str, i, *st_flag);
 	}
+	check_field(str, i, *st_flag);
 	return ;
 }

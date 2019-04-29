@@ -73,14 +73,14 @@ int main()
 	// char b = 's';
 	// char *c = "HELLLO s";
 
-	int int_max = -1342;
+	int int_max = 1342;
 
 	// unsigned int oa =  1;
 	ft_printf("octal test\n");
 	// printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
 	// ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	printf("printf int u is |%015d| |%hhx|\n", int_max, int_max);
-	ft_printf("ft_printf int d is |%015d| |%#x| tweet\n", int_max, int_max);
+	printf("printf int u is |%10d| |%#x|\n", int_max, int_max);
+	ft_printf("ft_printf int d is |%10d| |%#x| tweet\n", int_max, int_max);
 }
 
 //chars for p test
