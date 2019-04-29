@@ -82,7 +82,7 @@ void	check_field(char *str, int *i, t_flags *st_flag)
 void	set_fflags(char *str, int *i, t_flags **st_flag)
 {
 	int			pos;
-	const char	forms[8] = SPEC_FORM;
+	// const char	forms[8] = SPEC_FORM;
 
 	pos = 0;
 	init_flags(*st_flag);

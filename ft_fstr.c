@@ -13,13 +13,13 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-char *field_management(char *fstr, char f, t_flags *st_flags)
+char *field_management(char *fstr, t_flags *st_flags)
 {
 	if (st_flags->fi_flag[1] == 1) // zero flag
 	{
 		if (st_flags->fi_width != 0)
 		{
-			fstr = zero_flag(fstr, f, st_flags);
+			fstr = zero_flag(fstr, st_flags);
 		}
 		return (fstr);
 	}
@@ -102,7 +102,7 @@ char *ft_fstr(char *str, char f, t_flags *st_flags)
 	}
 	if (st_flags->fi_width > 0)
 	{
-		fstr = field_management(fstr, f, st_flags);
+		fstr = field_management(fstr, st_flags);
 	}
 	return (fstr);
 }

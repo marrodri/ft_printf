@@ -1,7 +1,7 @@
 
 #include "ft_printf.h"
 
-char	*zero_flag(char *fstr, char f, t_flags *st_flags)
+char	*zero_flag(char *fstr, t_flags *st_flags)
 {
 	int		dif;
 	char	*zero;
