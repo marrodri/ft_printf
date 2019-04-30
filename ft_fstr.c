@@ -11,32 +11,25 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 char *field_management(char *fstr, t_flags *st_flags)
 {
 	if (st_flags->fi_flag[1] == 1) // zero flag
 	{
 		if (st_flags->fi_width != 0)
-		{
 			fstr = zero_flag(fstr, st_flags);
-		}
-		return (fstr);
+		//return (fstr);
 	}
 
 	if (st_flags->fi_flag[2] == 1) // minus flag, spaces to right
 	{
-		if (st_flags->fi_width != 0)
+		int dif;
+		char *end_space;
+		if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
 		{
-			int dif;
-			char *end_space;
-			dif = st_flags->fi_width - ft_strlen(fstr);
-			if (dif > 0)
-			{
-				//fix when there is a minus or an 0x sign  with the # flag
-				end_space = ft_strnewc(' ', dif);
-				fstr = ft_strjoin(fstr, end_space);
-			}
+			//fix when there is a minus or an 0x sign  with the # flag
+			end_space = ft_strnewc(' ', dif);
+			fstr = ft_strjoin(fstr, end_space);
 		}
 	}
 	if (st_flags->fi_flag[4] == 1) //space flag, spaces to left
@@ -60,10 +53,10 @@ char *field_management(char *fstr, t_flags *st_flags)
 			fstr = ft_strjoin(space, fstr);
 		}
 	}
-	return fstr;
+	return (fstr);
 }
 
-char *hash_flag(char *fstr, char f)
+char	*hash_flag(char *fstr, char f)
 {
 	if (f == 'o')
 	{
@@ -80,7 +73,7 @@ char *hash_flag(char *fstr, char f)
 	return (fstr);
 }
 
-char *ft_fstr(char *str, char f, t_flags *st_flags)
+char	*ft_fstr(char *str, char f, t_flags *st_flags)
 {
 	char *fstr;
 
