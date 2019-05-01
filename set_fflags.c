@@ -108,8 +108,8 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 		check_fo_flags(str[*i], *st_flag);
 		*i += 1;
 	}
-	printf("\nfo flag h is |%d|\n", (*st_flag)->fo_flag[0]);
-	printf("fo flag l is |%d|\n", (*st_flag)->fo_flag[1]);
+	// printf("\nfo flag h is |%d|\n", (*st_flag)->fo_flag[0]);
+	// printf("fo flag l is |%d|\n", (*st_flag)->fo_flag[1]);
 	return ;
 
 }

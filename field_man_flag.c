@@ -47,7 +47,6 @@ char	*minus_flag(char *fstr, t_flags *st_flags)
 
 	if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
 	{
-		//fix when there is a minus or an 0x sign  with the # flag
 		end_space = ft_strnewc(' ', dif);
 		fstr = ft_strjoin(fstr, end_space);
 	}
