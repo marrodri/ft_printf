@@ -25,6 +25,7 @@ char *field_management(char *fstr, t_flags *st_flags)
 	{
 		int dif;
 		char *end_space;
+
 		if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
 		{
 			//fix when there is a minus or an 0x sign  with the # flag
@@ -36,6 +37,7 @@ char *field_management(char *fstr, t_flags *st_flags)
 	{
 		int dif;
 		char *space;
+
 		if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
 		{
 			space = ft_strnewc(' ', dif);
@@ -93,7 +95,7 @@ char	*ft_fstr(char *str, char f, t_flags *st_flags)
 	{
 		fstr = ft_strjoin(" ", fstr);
 	}
-	if (st_flags->fi_width > 0)
+	if (st_flags->fi_width > 0) //field management
 	{
 		fstr = field_management(fstr, st_flags);
 	}
