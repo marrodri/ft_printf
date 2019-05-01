@@ -16,8 +16,8 @@ INC = -I libft/
 RM = rm -f
 SRC = ft_printf.c \
 	ft_fstr.c set_fflags.c \
-	zero_flag.c char_form.c \
-	int_form.c form_check.c 
+	field_man_flag.c char_form.c \
+	int_form.c set_form.c field_flags.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -37,7 +37,7 @@ $(NAME): $(LIBFT)
 
 all: $(NAME)
 
-clean: 
+clean:
 	$(RM) $(OBJ)
 
 fclean: clean

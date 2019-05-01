@@ -44,4 +44,9 @@ char			*o_form(va_list args);
 char			*u_form(va_list args);
 char			*ft_fstr(char *str, char f, t_flags *st_flag);
 char			*zero_flag(char *fstr, t_flags *st_flags);
+char 			*default_field(char *fstr, t_flags *st_flags);
+char 			*minus_flag(char *fstr, t_flags *st_flags);
+char			*hash_flag(char *fstr, char f);
+char			*plus_flag(char *fstr, char f);
+char			*space_flag(char *fstr, char f);
 #endif
