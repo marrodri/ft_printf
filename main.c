@@ -23,9 +23,9 @@ int main()
 	int int_max = 1342;
 
 	unsigned int oa =  1;
-	ft_printf("octal test\n");
-	printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
-	ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	printf("   printf is |%#018hhX| |%#x|\n", int_max, int_max);
-	ft_printf("ft_printf is |%#018hhX| |%#x| tweet\n", int_max, int_max);
+	//ft_printf("octal test\n");
+	//printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
+	//ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
+	//printf("   printf is |%#018hhX| |%#x|\n", int_max, int_max);
+	ft_printf("ft_printf is |%#hX| |%#lx| tweet\n", int_max, int_max);
 }

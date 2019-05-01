@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 
+#include <stdio.h>
 void	init_flags(t_flags *st_flag)
 {
 	int i;
@@ -45,24 +46,17 @@ void	ignore_case(t_flags *st_flag)
 	return ;
 }
 
-void	check_flags(char f, t_flags *st_flag)
+void	check_fi_flags(char f, t_flags *st_flag)
 {
 	int			pos;
 	const char	fi_flags[FI_FLAG_SIZE] = FI_FLAG;
-	const char	fo_flags[FO_FLAG_SIZE] = FO_FLAG;
+	// const char	fo_flags[FO_FLAG_SIZE] = FO_FLAG;
 
 	pos = 0;
 	while (pos < FI_FLAG_SIZE)
 	{
 		if (fi_flags[pos] == f)
 			st_flag->fi_flag[pos] = 1;
-		pos++;
-	}
-	pos = 0;
-	while (pos < FO_FLAG_SIZE)
-	{
-		if (fo_flags[pos] == f)
-			st_flag->fo_flag[pos] += 1;
 		pos++;
 	}
 	ignore_case(st_flag);
@@ -79,6 +73,20 @@ void	check_field(char *str, int *i, t_flags *st_flag)
 	}
 }
 
+void	check_fo_flags(char f, t_flags *st_flag)
+{
+	int pos;
+	const char	fo_flags[FO_FLAG_SIZE] = FO_FLAG;
+
+	pos = 0;
+	while (pos < FO_FLAG_SIZE)
+	{
+		if (fo_flags[pos] == f)
+			st_flag->fo_flag[pos] += 1;
+		pos++;
+	}
+}
+
 void	set_fflags(char *str, int *i, t_flags **st_flag)
 {
 	int			pos;
@@ -86,11 +94,20 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 
 	pos = 0;
 	init_flags(*st_flag);
+	//bug when there is no 
 	while ((check_form(str[*i])) == -1 && (!(str[*i] >= '1' && str[*i] <= '9')))
 	{
-		check_flags(str[*i], *st_flag);
+		check_fi_flags(str[*i], *st_flag);
 		*i += 1;
 	}
 	check_field(str, i, *st_flag);
+	while ((check_form(str[*i])) == -1)
+	{
+		check_fo_flags(str[*i], *st_flag);
+		*i += 1;
+	}
+	printf("\nfo flag h is |%d|\n", (*st_flag)->fo_flag[0]);
+	printf("fo flag l is |%d|\n", (*st_flag)->fo_flag[1]);
 	return ;
+
 }
