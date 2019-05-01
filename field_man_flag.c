@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   field_man_flag.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/01 15:50:58 by marrodri          #+#    #+#             */
+/*   Updated: 2019/05/01 15:51:01 by marrodri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
@@ -11,7 +22,7 @@ char	*zero_flag(char *fstr, t_flags *st_flags)
 	dif = st_flags->fi_width - ft_strlen(fstr);
 	if (dif > 0)
 	{
-		zero = ft_strnewc('0',dif);
+		zero = ft_strnewc('0', dif);
 		fstr = ft_strjoin(zero, fstr);
 		while (fstr[i])
 		{
@@ -29,10 +40,10 @@ char	*zero_flag(char *fstr, t_flags *st_flags)
 	return (fstr);
 }
 
-char *minus_flag(char *fstr, t_flags *st_flags)
+char	*minus_flag(char *fstr, t_flags *st_flags)
 {
-	int dif;
-	char *end_space;
+	int		dif;
+	char	*end_space;
 
 	if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
 	{
@@ -43,7 +54,7 @@ char *minus_flag(char *fstr, t_flags *st_flags)
 	return (fstr);
 }
 
-char *default_field(char *fstr, t_flags *st_flags)
+char	*default_field(char *fstr, t_flags *st_flags)
 {
 	int		dif;
 	char	*space;

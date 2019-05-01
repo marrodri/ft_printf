@@ -71,6 +71,7 @@ void	check_field(char *str, int *i, t_flags *st_flag)
 		while (str[*i] >= '0' && str[*i] <= '9')
 			*i += 1;
 	}
+	return ;
 }
 
 void	check_fo_flags(char f, t_flags *st_flag)
@@ -85,17 +86,18 @@ void	check_fo_flags(char f, t_flags *st_flag)
 			st_flag->fo_flag[pos] += 1;
 		pos++;
 	}
+	return ;
 }
 
 void	set_fflags(char *str, int *i, t_flags **st_flag)
 {
 	int			pos;
-	// const char	forms[8] = SPEC_FORM;
 
 	pos = 0;
 	init_flags(*st_flag);
-	//bug when there is no 
-	while ((check_form(str[*i])) == -1 && (!(str[*i] >= '1' && str[*i] <= '9')))
+	//bug when there is no specifier width
+	while ((check_form(str[*i])) == -1 && (!(str[*i] == 'l' || str[*i] == 'h')) 
+		&& (!(str[*i] >= '1' && str[*i] <= '9')))
 	{
 		check_fi_flags(str[*i], *st_flag);
 		*i += 1;
@@ -106,8 +108,8 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 		check_fo_flags(str[*i], *st_flag);
 		*i += 1;
 	}
-	// printf("\nfo flag h is |%d|\n", (*st_flag)->fo_flag[0]);
-	// printf("fo flag l is |%d|\n", (*st_flag)->fo_flag[1]);
+	printf("\nfo flag h is |%d|\n", (*st_flag)->fo_flag[0]);
+	printf("fo flag l is |%d|\n", (*st_flag)->fo_flag[1]);
 	return ;
 
 }

@@ -12,13 +12,12 @@
 
 #include "ft_printf.h"
 
-char *field_management(char *fstr, t_flags *st_flags)
+char	*field_management(char *fstr, t_flags *st_flags)
 {
 	if (st_flags->fi_flag[1] == 1) // zero flag
 	{
 		fstr = zero_flag(fstr, st_flags);
 	}
-
 	if (st_flags->fi_flag[2] == 1) // minus flag, spaces to right
 	{
 		fstr = minus_flag(fstr, st_flags);
