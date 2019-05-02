@@ -48,6 +48,7 @@ int ft_printf(char *str, ...)
 			{
 				tstr = ft_fstr(tstr, str[i], st_flag);
 				ft_putstr(tstr);
+				sum = sum + (ft_strlen(tstr));
 			}
 			else
 			{
@@ -56,10 +57,11 @@ int ft_printf(char *str, ...)
 			}
 			i++;
 		}
-		if (str[i] != '%')
+		if (str[i] != '%' && str[i])
 		{
 			ft_putchar(str[i]);
 			i++;
+			sum++;
 		}
 	}
 	va_end(args);

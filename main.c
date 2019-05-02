@@ -16,20 +16,10 @@
 
 int main()
 {
-	signed char ch = 65;
-	char b = 's';
-	char *c = "HELLLO s";
-
-	int int_max = 1342232;
-
-	unsigned int oa =  1;
-	
-	printf("   printf is |%c| |%d|\n", ch, int_max);
-	ft_printf("ft_printf is |%c| |%d| tweet\n", ch, int_max);
-
-	char *str = "hello";
-	int num1 = 12345679;
-    printf("float2 |%10.8d|\n",num1);
+	static long		l_pos_1 = 22337203685477, l_neg_1 = -22337203685477;
+	printf("%ld", l_pos_1);
+	printf("\n");
+	ft_printf("%ld", l_pos_1);
 
 	return (0);
 }

@@ -31,7 +31,7 @@ $(LIBFT):
 	@make -C libft
 
 $(NAME): $(LIBFT)
-	@gcc $(CFLAGS) $(INC) -c $(SRC)
+	@gcc $(CFLAGS) $(INC) -c $(SRC) -g
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
