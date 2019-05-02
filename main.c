@@ -16,7 +16,7 @@
 
 int main()
 {
-	signed char ch = 21387;
+	signed char ch = 65;
 	char b = 's';
 	char *c = "HELLLO s";
 
@@ -24,9 +24,8 @@ int main()
 
 	unsigned int oa =  1;
 	
-	printf("   printf is |%d| |%hd|\n", ch, int_max);
-	ft_printf("ft_printf is |%d| |%hd| tweet\n", ch, int_max);
-
+	printf("   printf is |%c| |%d|\n", ch, int_max);
+	ft_printf("ft_printf is |%c| |%d| tweet\n", ch, int_max);
 
 	char *str = "hello";
 	int num1 = 12345679;
