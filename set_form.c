@@ -30,11 +30,11 @@ int		check_form(char f)
 		return (-1);
 }
 
-char	*set_form(char f, va_list args)
+char	*set_form(char f, va_list args, t_flags *st_flag)
 {
 	int				pos;
 	t_char_form		*c_str[SPEC_FORM_SIZE];
-
+	// t_csp_form	*c_str[CSP_FORM_SIZE];
 	if (f == '%')
 	{
 		return ("%");
@@ -43,13 +43,13 @@ char	*set_form(char f, va_list args)
 	c_str[0] = c_form;
 	c_str[1] = s_form;
 	c_str[2] = p_form;
-	c_str[3] = d_form;
-	c_str[4] = o_form;
-	c_str[5] = u_form;
-	c_str[6] = x_form;
-	c_str[7] = uppx_form;
+	c_str[3] = d_check;
+	c_str[4] = o_check;
+	c_str[5] = u_check;
+	c_str[6] = x_check;
+	c_str[7] = uppx_check;
 	if (pos != -1)
-		return (c_str[pos](args));
+		return (c_str[pos](args, st_flag));
 	else
 		return (NULL);
 }

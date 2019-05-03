@@ -46,7 +46,6 @@ char	*llu_form(va_list args)
 	char					*u_num;
 	unsigned long long int	ll_n;
 
-
 	ll_n = va_arg(args, unsigned long long int);
 	u_num = ft_uitoa(ll_n);
 	return (u_num);

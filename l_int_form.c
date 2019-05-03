@@ -13,9 +13,8 @@ char	*ld_form(va_list args)
 
 char	*lx_form(va_list args)
 {
-	char			*hex;
+	char				*hex;
 	unsigned long int	l_n;
-
 
 	l_n = va_arg(args, unsigned long int);
 	hex = ft_llitoa_base(l_n, 16);
@@ -24,9 +23,8 @@ char	*lx_form(va_list args)
 
 char	*luppx_form(va_list args)
 {
-	char			*hex;
+	char				*hex;
 	unsigned long int	l_n;
-
 
 	l_n = va_arg(args, unsigned long int);
 	hex = ft_llitoa_base(l_n, 16);
@@ -37,7 +35,7 @@ char	*luppx_form(va_list args)
 char	*lo_form(va_list args)
 {
 	char				*oct;
-	unsigned long int		l_n;
+	unsigned long int	l_n;
 
 	l_n = va_arg(args, unsigned long int);
 	oct = ft_llitoa_base(l_n, 8);
@@ -46,7 +44,7 @@ char	*lo_form(va_list args)
 
 char	*lu_form(va_list args)
 {
-	char			*u_num;
+	char				*u_num;
 	unsigned long int	l_n;
 
 	l_n = va_arg(args, unsigned long int);

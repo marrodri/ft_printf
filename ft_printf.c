@@ -43,7 +43,7 @@ int ft_printf(char *str, ...)
 			// }
 			// printf("fi width is %d\n", st_flag->fi_width);
 			// printf("char is %c\n", str[i]);
-			tstr = (set_form(str[i], args));
+			tstr = (set_form(str[i], args, st_flag));
 			if (str != NULL)
 			{
 				tstr = ft_fstr(tstr, str[i], st_flag);

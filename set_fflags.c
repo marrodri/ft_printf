@@ -89,6 +89,7 @@ void	check_fo_flags(char f, t_flags *st_flag)
 	return ;
 }
 
+
 void	set_fflags(char *str, int *i, t_flags **st_flag)
 {
 	int			pos;

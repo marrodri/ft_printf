@@ -16,6 +16,9 @@ char	*d_form(va_list args)
 {
 	char	*num;
 	int		n;
+	int 	h_n;
+	int 	l_n;
+
 
 	n = va_arg(args, int);
 	num = ft_itoa(n);
