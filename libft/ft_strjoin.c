@@ -23,8 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	size = (ft_strlen(s1) + 1) + (ft_strlen(s2) + 1);
-	str = (char *)malloc(size * sizeof(char));
+	size = (ft_strlen(s1)) + (ft_strlen(s2));
+	str = (char *)malloc((size + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -36,6 +36,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		str[i++] = s2[j++];
 	}
+	ft_putstr("passed\n");
 	str[i] = '\0';
 	return (str);
 }

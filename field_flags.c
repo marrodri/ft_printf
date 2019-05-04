@@ -11,16 +11,21 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-char	*hash_flag(char *fstr, char f)
+#include <stdio.h>
+char	*hash_flag(char *str, char f)
 {
 	if (f == 'o')
-		fstr = ft_strjoin("0", fstr);
+	{
+
+		str = ft_strjoin("0", str);
+	}
 	else if (f == 'x')
-		fstr = ft_strjoin("0x", fstr);
+	{
+		str = ft_strjoin("0x", str);
+	}
 	else if (f == 'X')
-		fstr = ft_strjoin("0X", fstr);
-	return (fstr);
+		str = ft_strjoin("0X", str);
+	return (str);
 }
 
 char	*plus_flag(char *fstr, char f)

@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 
+#include <stdio.h>
 char	*field_management(char *fstr, t_flags *st_flags)
 {
 	if (st_flags->fi_flag[1] == 1) // zero flag

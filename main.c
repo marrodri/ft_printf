@@ -16,10 +16,41 @@
 
 int main()
 {
-	static long		l_pos_1 = 22337203685477, l_neg_1 = -22337203685477;
-	printf("%ld", l_pos_1);
-	printf("\n");
-	ft_printf("%ld", l_pos_1);
+
+static char 		ch_pos_1 = 100, ch_neg_1 = -87;
+static short		sh_pos_1 = 3047, sh_neg_1 = -8875;
+static int			i_pos_1 = 878023;
+static long		l_pos_1 = 22337203685477, l_neg_1 = -22337203685477;
+static long long	ll_pos_1 = 22337203685477, ll_neg_1 = -22337203685477;
+static long		lmax	= 9223372036854775807;
+static long		lmin	= -9223372036854775807;
+static long long llmax = 9223372036854775807;
+static long		llmin = -9223372036854775807;
+
+
+//unsigned integers
+static unsigned char 		uch_pos_1 = 100;
+static unsigned short		ush_pos_1 = 3047;
+static unsigned int		ui_pos_1 = 878023;
+static unsigned long		ul_pos_1 = 22337203685477;
+static unsigned long long	ull_pos_1 = 22337203685477;
+static unsigned long long  ullmax = 9223372036854775807;
+static unsigned long  		ulmax = 9223372036854775807;
+
+	// printf("test d\n");
+	// printf("%lld %d %ld", ll_neg_1, i_pos_1, l_pos_1);
+	// printf("\n");
+	// ft_printf("%lld %d %ld", ll_neg_1, i_pos_1, l_pos_1);
+
+
+	// //segfault with the # flag
+	// printf("\n\ntest x\n");
+	// printf("%#lx ", ulmax);
+	// printf("%#llx", ullmax);
+	// printf("\n");
+
+	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT
+	ft_printf("%#llx", ullmax);
 
 	return (0);
 }

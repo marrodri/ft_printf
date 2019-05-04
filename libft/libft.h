@@ -94,6 +94,7 @@ char				*ft_strupper(char *str);
 char				*ft_itoa_base(int value, int base);
 char				*ft_llitoa_base(long long int value, int base);
 char				*ft_uitoa(unsigned int n);
+char				*ft_ullitoa_base(unsigned long long int value, int base);
 char				*ft_strnewc(char f, int size);
 char				*ft_swap_charstr(char *fstr, char c, int pos);
 #endif

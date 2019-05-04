@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_litoa_base.c                                    :+:      :+:    :+:   */
+/*   ft_ullitoa_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marrodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/18 15:19:14 by marrodri          #+#    #+#             */
-/*   Updated: 2019/04/18 15:19:16 by marrodri         ###   ########.fr       */
+/*   Created: 2019/05/03 17:32:44 by marrodri          #+#    #+#             */
+/*   Updated: 2019/05/03 17:32:47 by marrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@ static int		check_size_base(unsigned long long int n, int base)
 	unsigned long long int	size;
 
 	size = 0;
-	if ((n < 0) && (base == 10))
-	{
-		size++;
-		n = n * -1;
-	}
-	else if (n < 0)
-		n = n * -1;
 	while (n > 0)
 	{
 		n = n / base;
@@ -46,22 +39,11 @@ char			*ft_ullitoa_base(unsigned long long int value, int base)
 	{
 		return (ft_strdup("0"));
 	}
-	if (value == -2147483648 && base == 10)
-		return (ft_strdup("-2147483648"));
 	size = check_size_base(value, base);
 	if ((str = (char*)malloc((size + 1) * sizeof(char))) == NULL)
 		return (NULL);
 	str[size + 1] = '\0';
-	if ((value < 0) && (base == 10))
-	{
-		str[0] = '-';
-		value = value * -1;
-		i++;
-	}
-	else if ((value < 0) && (base != 10))
-	{
-		value = value * -1;
-	}
+
 	while (size >= i)
 	{
 		rem = value % base;
