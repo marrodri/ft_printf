@@ -56,25 +56,15 @@ char	*uppx_form(va_list args, t_flags *st_flag)
 	unsigned long long int	n;
 
 	if (st_flag->fo_flag[0] == 1)
-	{
 		n = (unsigned short int)va_arg(args, unsigned int);
-	}
 	else if (st_flag->fo_flag[0] == 2)
-	{
 		n = (unsigned char)va_arg(args, unsigned int);
-	}
 	else if (st_flag->fo_flag[1] == 1)
-	{
 		n = va_arg(args, unsigned long int);
-	}
 	else if (st_flag->fo_flag[1] == 2)
-	{
 		n = va_arg(args, unsigned long long int);
-	}
 	else
-	{
 		n = va_arg(args, unsigned int);
-	}
 	hex = ft_ullitoa_base(n, 16);
 	ft_strupper(hex);
 	return (hex);
@@ -86,30 +76,16 @@ char	*o_form(va_list args, t_flags *st_flag)
 	unsigned long long int	n;
 
 	if (st_flag->fo_flag[0] == 1)
-	{
-		n = va_arg(args, unsigned int);
-		oct = ft_llitoa_base(n, 8);
-	}
+		n = (unsigned short int)va_arg(args, unsigned int);
 	else if (st_flag->fo_flag[0] == 2)
-	{
-		n = va_arg(args, unsigned int);
-		oct = ft_llitoa_base(n, 8);
-	}
+		n = (unsigned char)va_arg(args, unsigned int);
 	else if (st_flag->fo_flag[1] == 1)
-	{
-		n = va_arg(args, unsigned int);
-		oct = ft_llitoa_base(n, 8);
-	}
+		n = va_arg(args, unsigned long int);
 	else if (st_flag->fo_flag[1] == 2)
-	{
-		n = va_arg(args, unsigned int);
-		oct = ft_llitoa_base(n, 8);
-	}
+		n = va_arg(args, unsigned long long int);
 	else
-	{
 		n = va_arg(args, unsigned int);
-		oct = ft_llitoa_base(n, 8);
-	}
+	oct = ft_ullitoa_base(n, 8);
 	return (oct);
 }
 
@@ -119,29 +95,15 @@ char	*u_form(va_list args, t_flags *st_flag)
 	unsigned long long int	n;
 
 	if (st_flag->fo_flag[0] == 1)
-	{
-		n = va_arg(args, unsigned int);
-		u_num = ft_uitoa(n);
-	}
+		n = (unsigned short int)va_arg(args, unsigned int);
 	else if (st_flag->fo_flag[0] == 2)
-	{
-		n = va_arg(args, unsigned int);
-		u_num = ft_uitoa(n);
-	}
+		n = (unsigned char)va_arg(args, unsigned int);
 	else if (st_flag->fo_flag[1] == 1)
-	{
-		n = va_arg(args, unsigned int);
-		u_num = ft_uitoa(n);
-	}
+		n = va_arg(args, unsigned long int);
 	else if (st_flag->fo_flag[1] == 2)
-	{
-		n = va_arg(args, unsigned int);
-		u_num = ft_uitoa(n);
-	}
+		n = va_arg(args, unsigned long long int);
 	else
-	{
 		n = va_arg(args, unsigned int);
-		u_num = ft_uitoa(n);
-	}
+	u_num = ft_ullitoa_base(n, 10);
 	return (u_num);
 }

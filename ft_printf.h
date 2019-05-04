@@ -13,12 +13,12 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # define FI_FLAG_SIZE 5
-# define FO_FLAG_SIZE 2
+# define FO_FLAG_SIZE 3
 # define SPEC_FORM_SIZE 8
 // # define CSP_FORM_SIZE 3
 // # define DIOUX_FORM_SIZE 5
 # define FI_FLAG {'#','0','-','+',' '};
-# define FO_FLAG {'h','l'};
+# define FO_FLAG {'h','l', 'L'};
 # define SPEC_FORM {'c','s','p','d','o','u','x','X'};
 // # define CSP_FORM {'c','s','p'};
 // # define DIOUX_FORM {'d','o','u','x','X'};

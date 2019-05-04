@@ -36,7 +36,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		str[i++] = s2[j++];
 	}
-	ft_putstr("passed\n");
+	//ft_putstr("passed\n");
 	str[i] = '\0';
 	return (str);
 }
