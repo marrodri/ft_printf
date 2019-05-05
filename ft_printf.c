@@ -41,7 +41,7 @@ int ft_printf(char *str, ...)
 			// {
 			// 	printf("fi_flag[%d] is %d\n", x, st_flag->fi_flag[x]);
 			// }
-			// printf("fi width is %d\n", st_flag->fi_width);
+			printf("prec is %d\n", st_flag->prec);
 			// printf("char is %c\n", str[i]);
 			tstr = (set_form(str[i], args, st_flag));
 			if (str != NULL)

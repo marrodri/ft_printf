@@ -30,6 +30,7 @@ void	init_flags(t_flags *st_flag)
 		i++;
 	}
 	st_flag->fi_width = 0;
+	st_flag->prec = 0;
 	return ;
 }
 
@@ -50,7 +51,6 @@ void	check_fi_flags(char f, t_flags *st_flag)
 {
 	int			pos;
 	const char	fi_flags[FI_FLAG_SIZE] = FI_FLAG;
-	// const char	fo_flags[FO_FLAG_SIZE] = FO_FLAG;
 
 	pos = 0;
 	while (pos < FI_FLAG_SIZE)
@@ -63,7 +63,7 @@ void	check_fi_flags(char f, t_flags *st_flag)
 	return ;
 }
 
-void	check_field(char *str, int *i, t_flags *st_flag)
+void	check_field_prec(char *str, int *i, t_flags *st_flag)
 {
 	if (str[*i] >= '1' && str[*i] <= '9')
 	{
@@ -71,12 +71,22 @@ void	check_field(char *str, int *i, t_flags *st_flag)
 		while (str[*i] >= '0' && str[*i] <= '9')
 			*i += 1;
 	}
+	if(str[*i] == '.')
+	{
+		*i += 1;
+		if (str[*i] >= '1' && str[*i] <= '9')
+		{
+			st_flag->prec = ft_atoi(&str[*i]);
+			while (str[*i] >= '0' && str[*i] <= '9')
+				*i += 1;
+		}
+	}
 	return ;
 }
 
 void	check_fo_flags(char f, t_flags *st_flag)
 {
-	int pos;
+	int 		pos;
 	const char	fo_flags[FO_FLAG_SIZE] = FO_FLAG;
 
 	pos = 0;
@@ -89,10 +99,9 @@ void	check_fo_flags(char f, t_flags *st_flag)
 	return ;
 }
 
-
 void	set_fflags(char *str, int *i, t_flags **st_flag)
 {
-	int			pos;
+	int	pos;
 
 	pos = 0;
 	init_flags(*st_flag);
@@ -103,14 +112,11 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 		check_fi_flags(str[*i], *st_flag);
 		*i += 1;
 	}
-	check_field(str, i, *st_flag);
+	check_field_prec(str, i, *st_flag);
 	while ((check_form(str[*i])) == -1)
 	{
 		check_fo_flags(str[*i], *st_flag);
 		*i += 1;
 	}
-	// printf("\nfo flag h is |%d|\n", (*st_flag)->fo_flag[0]);
-	// printf("fo flag l is |%d|\n", (*st_flag)->fo_flag[1]);
 	return ;
-
 }

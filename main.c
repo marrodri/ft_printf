@@ -16,7 +16,6 @@
 
 int main()
 {
-
 static char 		ch_pos_1 = 100, ch_neg_1 = -87;
 static short		sh_pos_1 = 3047, sh_neg_1 = -8875;
 static int			i_pos_1 = 878023;
@@ -37,6 +36,8 @@ static unsigned long long	ull_pos_1 = 22337203685477;
 static unsigned long long  ullmax = 9223372036854775807;
 static unsigned long  		ulmax = 9223372036854775807;
 
+static float fl = 10.496992423423;
+
 	// printf("test d\n");
 	// printf("%lld %d %ld", ll_neg_1, i_pos_1, l_pos_1);
 	// printf("\n");
@@ -49,8 +50,9 @@ static unsigned long  		ulmax = 9223372036854775807;
 	// printf("%#llx", ullmax);
 	// printf("\n");
 
-	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT
-	ft_printf("%#llx", ullmax);
+	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
+	printf("%.4f", fl);
+	ft_printf("%10d", i_pos_1);
 
 	return (0);
 }
