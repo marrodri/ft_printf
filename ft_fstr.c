@@ -31,6 +31,11 @@ char	*field_management(char *fstr, t_flags *st_flags)
 	return (fstr);
 }
 
+char *prec_management(char *fstr, char f, t_flags *st_flags)
+{
+	printf("precision |%d|\n", st_flags->prec);
+}
+
 char	*ft_fstr(char *str, char f, t_flags *st_flags)
 {
 	char *fstr;
@@ -47,6 +52,10 @@ char	*ft_fstr(char *str, char f, t_flags *st_flags)
 	if (st_flags->fi_flag[4] == 1) //space flag
 	{
 		fstr = space_flag(fstr, f);
+	}
+	if(st_flags->prec > 0) //precission managament
+	{
+		fstr = prec_management(fstr, f, st_flags);
 	}
 	if (st_flags->fi_width > 0) //field management
 	{
