@@ -8,7 +8,7 @@ char *f_form(va_list args, t_flags *st_flag)
 
 	if (st_flag->fo_flag[1] == 1)
 	{
-
+		n = va_arg(args, double);
 	}
 	else if (st_flag->fo_flag[2] == 1)
 	{
