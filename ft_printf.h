@@ -50,4 +50,6 @@ char 			*minus_flag(char *fstr, t_flags *st_flag);
 char			*hash_flag(char *fstr, char f);
 char			*plus_flag(char *fstr, char f);
 char			*space_flag(char *fstr, char f);
+
+char			*ft_ldtoa_base(long double value, int base);
 #endif

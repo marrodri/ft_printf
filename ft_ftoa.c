@@ -58,10 +58,10 @@ char *set_float_str(long double num, int prec)
 
 	dif = 0;
 	fl_len = 0;
-	//infinite loop when there's too many 000 in the float
+	//infinite loop when there's too many 000 and if the num is a float, not a long double
 	while ((num < 1) || (fl_len < prec))
 	{
-	printf("loop\n");
+		//printf("loop\n");
 		num = num * 10;
 		fl_len++;
 	}
@@ -81,7 +81,7 @@ char *set_float_str(long double num, int prec)
 	return (str);
 }
 
-char	*ft_ldtoa(long double num, int prec)
+char	*ft_ftoa(long double num, int prec)
 {
 	int			int_n;
 	long double	dec;
@@ -102,13 +102,13 @@ char	*ft_ldtoa(long double num, int prec)
 
 int		main(void)
 {
-	float fl = 123.000000000000105000;
+	long double fl = 123.105000;
 	long int int_n;
 	long double test;
 	long double n_to_int;
 	int i;
-	char *flstr = ft_ldtoa(fl, 8);
-	printf("ans|%.8f|\n", fl);
+	char *flstr = ft_ftoa(fl, 8);
+	printf("ans|%.8Lf|\n", fl);
 	printf("tst|%s|\n", flstr);
 	// i = 0;
 	// int_n = (long int)fl;
