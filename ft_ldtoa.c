@@ -14,12 +14,10 @@
 #include "libft/libft.h"
 #include <stdio.h>
 
-int		ft_deduct(int num)
+int		ft_deduct(long long int num)
 {
-	int i;
-	int tmp;
+	long long int tmp;
 
-	i = 0;
 	tmp = num;
 	if(num > 10)
 	{
@@ -72,27 +70,25 @@ char	*get_dec_str(long double dec, int prec)
 
 	dif = 0;
 	fl_len = 0;
-	// infinite loop when there's too many 000 and if the num is a float, not a long double
 	while (fl_len < (prec + 1))
 	{
 		dec = dec * 10;
 		fl_len++;
 	}
 	fl_len--;
-	dec = ft_deduct((int)dec);
+	dec = ft_deduct((long long int)dec);
 	dec = dec /10;
+	
 	int_len = ft_intlength((int)dec, 10);
 	dif = fl_len - int_len; //check why
 	if (prec > 0)
 	{
 		zero = setzero(dif);
-		str = ft_llitoa_base((int)dec, 10);
+		str = ft_llitoa_base((long long int)dec, 10);
 		str = ft_strjoin(zero, str);
 	}
 	else
-	{
-		str = ft_llitoa_base((int)dec, 10);
-	}
+		str = ft_llitoa_base((long long int)dec, 10);
 	return (str);
 }
 
@@ -105,7 +101,7 @@ char	*ft_ldtoa(long double num, int prec)
 
 	int_n = (int)num;
 	dec = num - (long double)int_n;
-	str_int = ft_itoa(int_n);
+	str_int = ft_llitoa_base(int_n, 10);
 	if (prec > 0)
 	{
 		str_float = get_dec_str(dec, prec);
@@ -117,13 +113,13 @@ char	*ft_ldtoa(long double num, int prec)
 
 int		main(void)
 {
-	long double fl = 123.0000470;
+	long double fl = 123.122;
 	long int int_n;
 	long double test;
 	long double n_to_int;
 	int i;
-	char *flstr = ft_ldtoa(fl, 6);
-	printf("ans|%.6Lf|\n", fl);
+	char *flstr = ft_ldtoa(fl, 11);
+	printf("ans|%.11Lf|\n", fl);
 	printf("tst|%s|\n", flstr);
 	// i = 0;
 	// int_n = (long int)fl;

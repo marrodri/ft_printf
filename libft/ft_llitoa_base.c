@@ -46,10 +46,8 @@ char			*ft_llitoa_base(long long int value, int base)
 	{
 		return (ft_strdup("0"));
 	}
-	if (value == -2147483648 && base == 10)
-		return (ft_strdup("-2147483648"));
 	size = check_size_base(value, base);
-	if ((str = (char*)malloc((size + 1) * sizeof(char))) == NULL)
+	if (!(str = (char*)malloc((size + 1) * sizeof(char))))
 		return (NULL);
 	str[size + 1] = '\0';
 	if ((value < 0) && (base == 10))
