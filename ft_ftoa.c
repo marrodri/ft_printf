@@ -33,30 +33,50 @@ int ft_intlength(int n, int base)
 	return (len);
 }
 
+char *setzero(int n)
+{
+	char *zero;
+	int i;
+
+	i = 0;
+	zero = ft_strnew(n);
+	while(i < n)
+	{
+		zero[i] = '0';
+		i++;
+	}
+	return zero;
+}
+
 char *set_float_str(long double num, int prec)
 {
-	int i;
 	int fl_len;
 	int int_len;
-	char *str;
 	int dif;
+	char *str;
+	char *zero;
 
 	dif = 0;
-	i = 0;
 	fl_len = 0;
-	// if (!(str = (char*)malloc((prec + 1) * sizeof(char))))
-		// return (NULL);
+	//infinite loop when there's too many 000 in the float
 	while ((num < 1) || (fl_len < prec))
 	{
+	printf("loop\n");
 		num = num * 10;
 		fl_len++;
 	}
 	int_len = ft_intlength((int)num, 10); //NOT USED
 	dif = fl_len - int_len;
-	// if(dif > 0)
-	// {
+	if (dif > 0)
+	{
+		zero = setzero(dif);
 		str = ft_llitoa_base((int)num, 10);
-	// }
+		str = ft_strjoin(zero, str);
+	}
+	else
+	{
+		str = ft_llitoa_base((int)num, 10);
+	}
 
 	return (str);
 }
@@ -75,20 +95,20 @@ char	*ft_ldtoa(long double num, int prec)
 	{
 		str_float = set_float_str(dec, prec);
 		str_float = ft_strjoin(".", str_float);
-		str_float = ft_strjoin(str_int, str_float);
+		str_int = ft_strjoin(str_int, str_float);
 	}
-	return (str_float);
+	return (str_int);
 }
 
 int		main(void)
 {
-	long double fl = 123.0105000;
+	float fl = 123.000000000000105000;
 	long int int_n;
 	long double test;
 	long double n_to_int;
 	int i;
-	char *flstr = ft_ldtoa(fl, 6);
-	printf("ans|%Lf|\n", fl);
+	char *flstr = ft_ldtoa(fl, 8);
+	printf("ans|%.8f|\n", fl);
 	printf("tst|%s|\n", flstr);
 	// i = 0;
 	// int_n = (long int)fl;
