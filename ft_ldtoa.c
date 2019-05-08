@@ -80,7 +80,7 @@ char	*get_dec_str(long double dec, int prec)
 	dec = dec /10;
 	
 	int_len = ft_intlength((int)dec, 10);
-	dif = fl_len - int_len; //check why
+	dif = fl_len - int_len;
 	if (prec > 0)
 	{
 		zero = setzero(dif);
@@ -99,7 +99,7 @@ char	*ft_ldtoa(long double num, int prec)
 	char			*str_int;
 	char			*str_float;
 
-	int_n = (int)num;
+	int_n = (long long int)num;
 	dec = num - (long double)int_n;
 	str_int = ft_llitoa_base(int_n, 10);
 	if (prec > 0)
@@ -118,8 +118,8 @@ int		main(void)
 	long double test;
 	long double n_to_int;
 	int i;
-	char *flstr = ft_ldtoa(fl, 11);
-	printf("ans|%.11Lf|\n", fl);
+	char *flstr = ft_ldtoa(fl, 10);
+	printf("ans|%.10Lf|\n", fl);
 	printf("tst|%s|\n", flstr);
 	// i = 0;
 	// int_n = (long int)fl;
