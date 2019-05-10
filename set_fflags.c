@@ -63,7 +63,7 @@ void	check_fi_flags(char f, t_flags *st_flag)
 	return ;
 }
 
-void	check_field_prec(char *str, int *i, t_flags *st_flag)
+void	check_field(char *str, int *i, t_flags *st_flag)
 {
 	if (str[*i] >= '1' && str[*i] <= '9')
 	{
@@ -71,8 +71,27 @@ void	check_field_prec(char *str, int *i, t_flags *st_flag)
 		while (str[*i] >= '0' && str[*i] <= '9')
 			*i += 1;
 	}
+	// if(str[*i] == '.')
+	// {
+	// 	printf("passed\n");
+	// 	st_flag->prec = 0;
+	// 	*i += 1;
+	// 	if (str[*i] >= '1' && str[*i] <= '9')
+	// 	{
+	// 		st_flag->prec = ft_atoi(&str[*i]);
+	// 		while (str[*i] >= '0' && str[*i] <= '9')
+	// 			*i += 1;
+	// 	}
+	// }
+	return ;
+}
+
+void check_prec(char *str, int *i, t_flags *st_flag)
+{
 	if(str[*i] == '.')
 	{
+		printf("passed\n");
+		st_flag->prec = 0;
 		*i += 1;
 		if (str[*i] >= '1' && str[*i] <= '9')
 		{
@@ -81,7 +100,6 @@ void	check_field_prec(char *str, int *i, t_flags *st_flag)
 				*i += 1;
 		}
 	}
-	return ;
 }
 
 void	check_fo_flags(char f, t_flags *st_flag)
@@ -106,13 +124,14 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 	pos = 0;
 	init_flags(*st_flag);
 	//bug when there is no specifier width
-	while ((check_form(str[*i])) == -1 && (!(str[*i] == 'l' || str[*i] == 'h')) 
+	while ((check_form(str[*i])) == -1 && (!(str[*i] == 'l' || str[*i] == 'h' || str[*i] == '.')) 
 		&& (!(str[*i] >= '1' && str[*i] <= '9')))
 	{
 		check_fi_flags(str[*i], *st_flag);
 		*i += 1;
 	}
-	check_field_prec(str, i, *st_flag);
+	check_field(str, i, *st_flag);
+	check_prec(str, i, *st_flag); //doesnt check the point
 	while ((check_form(str[*i])) == -1)
 	{
 		check_fo_flags(str[*i], *st_flag);

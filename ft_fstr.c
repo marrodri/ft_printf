@@ -33,7 +33,9 @@ char	*field_management(char *fstr, t_flags *st_flags)
 
 char *prec_management(char *fstr, char f, t_flags *st_flags)
 {
+	printf("format |%c|\n",f);	
 	printf("precision |%d|\n", st_flags->prec);
+	return fstr;
 }
 
 char	*ft_fstr(char *str, char f, t_flags *st_flags)

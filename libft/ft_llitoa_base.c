@@ -43,9 +43,7 @@ char			*ft_llitoa_base(long long int value, int base)
 	b_val = "0123456789abcdef";
 	i = 0;
 	if (value == 0)
-	{
 		return (ft_strdup("0"));
-	}
 	size = check_size_base(value, base);
 	if (!(str = (char*)malloc((size + 1) * sizeof(char))))
 		return (NULL);

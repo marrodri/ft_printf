@@ -14,10 +14,10 @@
 # define FT_PRINTF_H
 # define FI_FLAG_SIZE 5
 # define FO_FLAG_SIZE 3
-# define SPEC_FORM_SIZE 8
+# define SPEC_FORM_SIZE 9
 # define FI_FLAG {'#','0','-','+',' '};
 # define FO_FLAG {'h','l', 'L'};
-# define SPEC_FORM {'c','s','p','d','o','u','x','X'};
+# define SPEC_FORM {'c','s','p','d','o','u','x','X','f'};
 # include "libft/libft.h"
 # include <stdarg.h>
 
@@ -43,6 +43,7 @@ char			*x_form(va_list args, t_flags *st_flag);
 char			*uppx_form(va_list args,  t_flags *st_flag);
 char			*o_form(va_list args, t_flags *st_flag);
 char			*u_form(va_list args, t_flags *st_flag);
+char			*f_form(va_list args, t_flags *st_flag);
 char			*ft_fstr(char *str, char f, t_flags *st_flag);
 char			*zero_flag(char *fstr, t_flags *st_flag);
 char 			*default_field(char *fstr, t_flags *st_flag);
@@ -51,5 +52,6 @@ char			*hash_flag(char *fstr, char f);
 char			*plus_flag(char *fstr, char f);
 char			*space_flag(char *fstr, char f);
 
-char			*ft_ldtoa_base(long double value, int base);
+//MOVE TO LIBFT FOLDER ONCE WHEN THIS FUNC WORKS PROPERLY
+char			*ft_ldtoa(long double num, int prec);
 #endif

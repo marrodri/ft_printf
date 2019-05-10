@@ -52,7 +52,7 @@ static float fl = 10.496992423423;
 
 	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
 	printf("%.4f", fl);
-	ft_printf("%10d", i_pos_1);
+	ft_printf("%.4f", fl);
 
 	return (0);
 }

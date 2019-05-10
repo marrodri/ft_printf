@@ -18,6 +18,7 @@ SRC = ft_printf.c \
 	ft_fstr.c set_fflags.c \
 	field_man_flag.c char_form.c \
 	int_form.c set_form.c field_flags.c \
+	ft_ldtoa.c float_form.c
 
 OBJ = $(SRC:.c=.o)
 
