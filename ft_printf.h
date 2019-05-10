@@ -45,13 +45,17 @@ char			*uppx_form(va_list args,  t_flags *st_flag);
 char			*o_form(va_list args, t_flags *st_flag);
 char			*u_form(va_list args, t_flags *st_flag);
 char			*f_form(va_list args, t_flags *st_flag);
-char			*ft_fstr(char *str, char f, t_flags *st_flag);
+char			*format_str(char *str, char f, t_flags *st_flags);
 char			*zero_flag(char *fstr, t_flags *st_flag);
 char 			*default_field(char *fstr, t_flags *st_flag);
 char 			*minus_flag(char *fstr, t_flags *st_flag);
 char			*hash_flag(char *fstr, char f);
 char			*plus_flag(char *fstr, char f);
 char			*space_flag(char *fstr, char f);
+
+
+char *s_prec(char *fstr,  t_flags *st_flags);
+char *d_prec(char *fstr, t_flags *st_flag);
 
 //MOVE TO LIBFT FOLDER ONCE WHEN THIS FUNC WORKS PROPERLY
 char			*ft_ldtoa(long double num, int prec);

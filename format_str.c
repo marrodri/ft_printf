@@ -37,17 +37,31 @@ char *prec_management(char *fstr, char f, t_flags *st_flags)
 	//printf("format |%c|\n",f);	
 	//printf("precision |%d|\n", st_flags->prec);
 	if (f == 's')
-		st_flags->prec = 0;
-	else
-		st_flags->prec = 1;
-		return fstr;
+		fstr = s_prec(fstr, st_flags);
+	else if (f == 'd')
+	{
+		fstr = d_prec(fstr, st_flags);
+	}
+	else if (f == 'x' || f == 'X')
+	{
+
+	}
+	else if (f == 'o')
+	{
+
+	}
+		return (fstr);
 }
 
-char	*ft_fstr(char *str, char f, t_flags *st_flags)
+char	*format_str(char *str, char f, t_flags *st_flags)
 {
 	char *fstr;
 
 	fstr = str;
+	if (st_flags->prec_flag == 1)
+	{
+		fstr = prec_management(fstr, f, st_flags);
+	}
 	if (st_flags->fi_flag[0] == 1) //hash flag
 	{
 		fstr = hash_flag(fstr, f);
@@ -60,10 +74,10 @@ char	*ft_fstr(char *str, char f, t_flags *st_flags)
 	{
 		fstr = space_flag(fstr, f);
 	}
-	if(st_flags->prec > 0) //precission managament
-	{
-		fstr = prec_management(fstr, f, st_flags);
-	}
+	// if(st_flags->prec > 0) //precission managament
+	// {
+	// 	fstr = prec_management(fstr, f, st_flags);
+	// }
 	if (st_flags->fi_width > 0) //field management
 	{
 		fstr = field_management(fstr, st_flags);

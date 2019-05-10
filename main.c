@@ -40,7 +40,9 @@ static float fl = 10.496992423423;
 static double db = 10.496992423423;
 static long double Ldb = 10.496992423423;
 
-static char str[] = "hello";
+char *str = "hello";
+static char ch = 'a';
+static int i_num = -1234;
 	// printf("test d\n");
 	// printf("%lld %d %ld", ll_neg_1, i_pos_1, l_pos_1);
 	// printf("\n");
@@ -54,9 +56,16 @@ static char str[] = "hello";
 	// printf("\n");
 
 	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
-	   printf("%u\n", ui_pos_1);
-	   printf("%+16.14d\n", ui_pos_1);
-	ft_printf("%.s", str);
+	char *test;
+	 test = ft_strsub(str, 0, 2);
+	// 	printf("dup|%s|\n", test);
+	//    printf("s|%6.0s|\n", str);
+	//    printf("o|%#.6o|\n", i_num);
+	ft_printf("|%010.d|\n", i_num);
+	printf("|%010.d|\n", i_num);
+		// printf("#7.5x|%#7.5x|\n", i_num);
+		// printf("#8.5x|%#08.x|\n", i_num);
+		// printf("%016d\n", ui_pos_1);
 
 	return (0);
 }

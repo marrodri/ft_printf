@@ -34,7 +34,7 @@ char	*set_form(char f, va_list args, t_flags *st_flag)
 {
 	int				pos;
 	t_char_form		*c_str[SPEC_FORM_SIZE];
-	// t_csp_form	*c_str[CSP_FORM_SIZE];
+
 	if (f == '%')
 	{
 		return ("%");

@@ -15,10 +15,10 @@ CFLAGS = -Wall -Wextra -Werror
 INC = -I libft/
 RM = rm -f
 SRC = ft_printf.c \
-	ft_fstr.c set_fflags.c \
+	format_str.c set_fflags.c \
 	field_man_flag.c char_form.c \
 	int_form.c set_form.c field_flags.c \
-	ft_ldtoa.c float_form.c
+	ft_ldtoa.c float_form.c prec_man_flag.c
 
 OBJ = $(SRC:.c=.o)
 

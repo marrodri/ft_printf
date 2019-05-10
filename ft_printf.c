@@ -41,12 +41,12 @@ int ft_printf(char *str, ...)
 			// {
 			// 	printf("fi_flag[%d] is %d\n", x, st_flag->fi_flag[x]);
 			// }
-			printf("prec is %d\n", st_flag->prec);
+			// printf("prec is %d\n", st_flag->prec);
 			// printf("char is %c\n", str[i]);
 			tstr = (set_form(str[i], args, st_flag));
 			if (str != NULL)
 			{
-				tstr = ft_fstr(tstr, str[i], st_flag);
+				tstr = format_str(tstr, str[i], st_flag);
 				ft_putstr(tstr);
 				sum = sum + (ft_strlen(tstr));
 			}
