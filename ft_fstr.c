@@ -31,11 +31,16 @@ char	*field_management(char *fstr, t_flags *st_flags)
 	return (fstr);
 }
 
+//TODO COMPLETE FOR OTHER FORMATS
 char *prec_management(char *fstr, char f, t_flags *st_flags)
 {
-	printf("format |%c|\n",f);	
-	printf("precision |%d|\n", st_flags->prec);
-	return fstr;
+	//printf("format |%c|\n",f);	
+	//printf("precision |%d|\n", st_flags->prec);
+	if (f == 's')
+		st_flags->prec = 0;
+	else
+		st_flags->prec = 1;
+		return fstr;
 }
 
 char	*ft_fstr(char *str, char f, t_flags *st_flags)

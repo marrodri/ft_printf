@@ -37,7 +37,10 @@ static unsigned long long  ullmax = 9223372036854775807;
 static unsigned long  		ulmax = 9223372036854775807;
 
 static float fl = 10.496992423423;
+static double db = 10.496992423423;
+static long double Ldb = 10.496992423423;
 
+static char str[] = "hello";
 	// printf("test d\n");
 	// printf("%lld %d %ld", ll_neg_1, i_pos_1, l_pos_1);
 	// printf("\n");
@@ -51,8 +54,9 @@ static float fl = 10.496992423423;
 	// printf("\n");
 
 	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
-	printf("%.4f", fl);
-	ft_printf("%.4f", fl);
+	   printf("%u\n", ui_pos_1);
+	   printf("%+16.14d\n", ui_pos_1);
+	ft_printf("%.s", str);
 
 	return (0);
 }

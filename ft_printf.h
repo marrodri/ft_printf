@@ -27,6 +27,7 @@ typedef struct	s_flags
 	int	fi_flag[FI_FLAG_SIZE]; 
 	int fi_width;
 	int prec;
+	int prec_flag;
 }				t_flags;
 
 typedef char	*t_char_form(va_list args, t_flags *st_flag);

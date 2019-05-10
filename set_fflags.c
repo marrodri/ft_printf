@@ -31,6 +31,7 @@ void	init_flags(t_flags *st_flag)
 	}
 	st_flag->fi_width = 0;
 	st_flag->prec = 0;
+	st_flag->prec_flag = 0;
 	return ;
 }
 
@@ -90,8 +91,9 @@ void check_prec(char *str, int *i, t_flags *st_flag)
 {
 	if(str[*i] == '.')
 	{
-		printf("passed\n");
+		//printf("passed\n");
 		st_flag->prec = 0;
+		st_flag->prec_flag = 1;
 		*i += 1;
 		if (str[*i] >= '1' && str[*i] <= '9')
 		{
@@ -131,7 +133,7 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 		*i += 1;
 	}
 	check_field(str, i, *st_flag);
-	check_prec(str, i, *st_flag); //doesnt check the point
+	check_prec(str, i, *st_flag);
 	while ((check_form(str[*i])) == -1)
 	{
 		check_fo_flags(str[*i], *st_flag);

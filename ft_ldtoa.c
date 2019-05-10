@@ -16,6 +16,7 @@
 
 //BUG overflow when the prec is 10 or higher
 
+//change long long to long double
 int		ft_deduct(long long int num)
 {
 	long long int tmp;
@@ -115,13 +116,14 @@ char	*ft_ldtoa(long double num, int prec)
 
 // int		main(void)
 // {
-// 	double fl = 123.0122;
+// 	//prec 10 is fine, 11 and up starts to change
+// 	float fl = 123.0122;
 // 	long int int_n;
 // 	long double test;
 // 	long double n_to_int;
 // 	int i;
-// 	char *flstr = ft_ldtoa(fl, 6);
-// 	printf("ans|%.6Lf|\n", fl);
+// 	char *flstr = ft_ldtoa(fl, 12);
+// 	printf("ans|%.12f|\n", fl);
 // 	printf("tst|%s|\n", flstr);
 // 	// i = 0;
 // 	// int_n = (long int)fl;
