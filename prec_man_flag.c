@@ -10,7 +10,7 @@ char *s_prec(char *fstr,  t_flags *st_flag)
 	return (str);
 }
 
-char *d_prec(char *fstr, t_flags *st_flag)
+char *dux_prec(char *fstr, t_flags *st_flag)
 {
 	char	*zero;
 	int 	i;
@@ -37,10 +37,7 @@ char *d_prec(char *fstr, t_flags *st_flag)
 	return (fstr);
 }
 
-// char *x_prec(char *fstr,  int prec)
-// {
-// 	return NULL;
-// }
+
 
 // char *o_prec(char *fstr, t_flags *st_flag)
 // {

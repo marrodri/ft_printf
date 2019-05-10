@@ -38,13 +38,9 @@ char *prec_management(char *fstr, char f, t_flags *st_flags)
 	//printf("precision |%d|\n", st_flags->prec);
 	if (f == 's')
 		fstr = s_prec(fstr, st_flags);
-	else if (f == 'd')
+	else if (f == 'd' || f == 'x' || f == 'X')
 	{
-		fstr = d_prec(fstr, st_flags);
-	}
-	else if (f == 'x' || f == 'X')
-	{
-
+		fstr = dux_prec(fstr, st_flags);
 	}
 	else if (f == 'o')
 	{
