@@ -61,12 +61,11 @@ static int i_num = 1234;
 	// 	printf("dup|%s|\n", test);
 	//    printf("s|%6.0s|\n", str);
 	//    printf("o|%#.6o|\n", i_num);
-	ft_printf("|%#010.6X|\n", i_num);
-	printf("|%#010.6X|\n", i_num);
+	ft_printf("|%10.3o|\n", i_num);
+	printf("|%10.3o|\n", i_num);
 		// printf("#7.5x|%#7.5x|\n", i_num);
 		// printf("#8.5x|%#08.x|\n", i_num);
 		// printf("%016d\n", ui_pos_1);
-
 	return (0);
 }
 	/*signed char test */

@@ -44,7 +44,7 @@ char *prec_management(char *fstr, char f, t_flags *st_flags)
 	}
 	else if (f == 'o')
 	{
-
+		fstr = o_prec(fstr, st_flags);
 	}
 		return (fstr);
 }
@@ -54,7 +54,7 @@ char	*format_str(char *str, char f, t_flags *st_flags)
 	char *fstr;
 
 	fstr = str;
-	if (st_flags->prec_flag == 1)
+	if (st_flags->prec_flag == 1) //prec management
 	{
 		fstr = prec_management(fstr, f, st_flags);
 	}
@@ -70,10 +70,6 @@ char	*format_str(char *str, char f, t_flags *st_flags)
 	{
 		fstr = space_flag(fstr, f);
 	}
-	// if(st_flags->prec > 0) //precission managament
-	// {
-	// 	fstr = prec_management(fstr, f, st_flags);
-	// }
 	if (st_flags->fi_width > 0) //field management
 	{
 		fstr = field_management(fstr, st_flags);
