@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-#include <stdio.h>
 void	init_flags(t_flags *st_flag)
 {
 	int i;
@@ -38,13 +37,9 @@ void	init_flags(t_flags *st_flag)
 void	ignore_case(t_flags *st_flag)
 {
 	if (st_flag->fi_flag[2] == 1)
-	{
 		st_flag->fi_flag[1] = 0;
-	}
 	if (st_flag->fi_flag[3] == 1)
-	{
 		st_flag->fi_flag[4] = 0;
-	}
 	return ;
 }
 
@@ -72,26 +67,13 @@ void	check_field(char *str, int *i, t_flags *st_flag)
 		while (str[*i] >= '0' && str[*i] <= '9')
 			*i += 1;
 	}
-	// if(str[*i] == '.')
-	// {
-	// 	printf("passed\n");
-	// 	st_flag->prec = 0;
-	// 	*i += 1;
-	// 	if (str[*i] >= '1' && str[*i] <= '9')
-	// 	{
-	// 		st_flag->prec = ft_atoi(&str[*i]);
-	// 		while (str[*i] >= '0' && str[*i] <= '9')
-	// 			*i += 1;
-	// 	}
-	// }
 	return ;
 }
 
-void check_prec(char *str, int *i, t_flags *st_flag)
+void	check_prec(char *str, int *i, t_flags *st_flag)
 {
-	if(str[*i] == '.')
+	if (str[*i] == '.')
 	{
-		//printf("passed\n");
 		st_flag->prec_flag = 1;
 		st_flag->prec = 0;
 		*i += 1;
@@ -106,7 +88,7 @@ void check_prec(char *str, int *i, t_flags *st_flag)
 
 void	check_fo_flags(char f, t_flags *st_flag)
 {
-	int 		pos;
+	int			pos;
 	const char	fo_flags[FO_FLAG_SIZE] = FO_FLAG;
 
 	pos = 0;
@@ -125,8 +107,7 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 
 	pos = 0;
 	init_flags(*st_flag);
-	//bug when there is no specifier width
-	while ((check_form(str[*i])) == -1 && (!(str[*i] == 'l' || str[*i] == 'h' || str[*i] == '.')) 
+	while ((check_form(str[*i])) == -1 && (!(str[*i] == 'l' || str[*i] == 'h' || str[*i] == '.'))
 		&& (!(str[*i] >= '1' && str[*i] <= '9')))
 	{
 		check_fi_flags(str[*i], *st_flag);

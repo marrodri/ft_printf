@@ -16,7 +16,6 @@ char	*hash_flag(char *str, char f)
 {
 	if (f == 'o')
 	{
-
 		str = ft_strjoin("0", str);
 	}
 	else if (f == 'x')

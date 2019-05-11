@@ -14,16 +14,16 @@
 
 char	*d_form(va_list args, t_flags *st_flag)
 {
-	char	*num;
+	char			*num;
 	long long int	n;
 
-	if (st_flag->fo_flag[0] == 1) // h flag
+	if (st_flag->fo_flag[0] == 1)
 		n = (short int)va_arg(args, int);
-	else if (st_flag->fo_flag[0] == 2) //hh flag
+	else if (st_flag->fo_flag[0] == 2)
 		n = (signed char)va_arg(args, int);
-	else if (st_flag->fo_flag[1] == 1) //l flag
+	else if (st_flag->fo_flag[1] == 1)
 		n = va_arg(args, long int);
-	else if (st_flag->fo_flag[1] == 2) //ll flag
+	else if (st_flag->fo_flag[1] == 2)
 		n = va_arg(args, long long int);
 	else
 		n = va_arg(args, int);

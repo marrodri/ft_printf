@@ -18,7 +18,7 @@ int		check_form(char f)
 	const char	form[SPEC_FORM_SIZE] = SPEC_FORM;
 
 	pos = 0;
-	if(f == '%')
+	if (f == '%')
 		return (1);
 	if (f == 'i')
 		return (3);

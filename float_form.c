@@ -13,6 +13,7 @@
 #include "ft_printf.h"
 
 #include <stdio.h>
+//DEBUG THIS
 char *f_form(va_list args, t_flags *st_flag)
 {
 	char 		*f_n;
