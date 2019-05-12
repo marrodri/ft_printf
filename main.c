@@ -74,26 +74,11 @@ static int i_num = 1234;
 	printf("ans|%#.3x|\n", 0);
 	ft_printf("tst|%#.3x|\n", 0);
 
-
-
-	//Pointers - Basic
-   char	a01;
-unsigned char a02;
- short a03;
- unsigned short a04;
-int a05;
-unsigned int a06;
-long a07;
- unsigned long a08;
-long long a09;
-unsigned long long a10;
-char *a11;
-void *a12;
-	//Test 1194:  p_basic
 	//ft_printf returns a negative value, test as how many can reach
-	printf("ans|%p%p%p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
-	ft_printf("tst|%p%p%p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	printf("ans|%-5c|\n", '\0');
+	ft_printf("tst|%-5c|", '\0');
 
+	//test c overflow
 
 	return (0);
 }

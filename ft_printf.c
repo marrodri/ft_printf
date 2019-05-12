@@ -19,7 +19,7 @@
 
 int				ft_printf(char *str, ...)
 {
-	char	sum;
+	int	sum;
 	char	*tstr;
 	int		i;
 	va_list	args;
@@ -41,6 +41,8 @@ int				ft_printf(char *str, ...)
 			{
 				tstr = format_str(tstr, str[i], st_flag);
 				ft_putstr(tstr);
+				if (tstr[0] == '\0' && str[i] == 'c')
+					sum = 1;
 				sum = sum + (ft_strlen(tstr));
 			}
 			else
