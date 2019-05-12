@@ -47,7 +47,7 @@ char			*ft_llitoa_base(long long int value, int base)
 	size = check_size_base(value, base);
 	if (!(str = (char*)malloc((size + 1) * sizeof(char))))
 		return (NULL);
-	str[size + 1] = '\0';
+	str[size] = '\0';
 	if ((value < 0) && (base == 10))
 	{
 		str[0] = '-';

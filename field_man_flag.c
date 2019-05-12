@@ -40,12 +40,19 @@ char	*zero_flag(char *fstr, t_flags *st_flags)
 	return (fstr);
 }
 
-char	*minus_flag(char *fstr, t_flags *st_flags)
+char	*minus_flag(char *fstr, char f, t_flags *st_flags)
 {
 	int		dif;
 	char	*end_space;
+	int 	len;
 
-	if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
+	if(fstr[0] == '\0' && f == 'c')
+		len = 1;
+	else
+		len = ft_strlen(fstr);
+	dif = st_flags->fi_width - len;
+
+	if (dif > 0)
 	{
 		end_space = ft_strnewc(' ', dif);
 		fstr = ft_strjoin(fstr, end_space);
@@ -53,12 +60,18 @@ char	*minus_flag(char *fstr, t_flags *st_flags)
 	return (fstr);
 }
 
-char	*default_field(char *fstr, t_flags *st_flags)
+char	*default_field(char *fstr, char f, t_flags *st_flags)
 {
 	int		dif;
 	char	*space;
+	int 	len;
 
-	if ((dif = st_flags->fi_width - ft_strlen(fstr)) > 0)
+	if(fstr[0] == '\0' && f == 'c')
+		len = 1;
+	else
+		len = ft_strlen(fstr);
+	dif = st_flags->fi_width - len;
+	if (dif > 0)
 	{
 		space = ft_strnewc(' ', dif);
 		fstr = ft_strjoin(space, fstr);

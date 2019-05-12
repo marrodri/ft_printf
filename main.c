@@ -74,9 +74,9 @@ static int i_num = 1234;
 	printf("ans|%#.3x|\n", 0);
 	ft_printf("tst|%#.3x|\n", 0);
 
-	//ft_printf returns a negative value, test as how many can reach
-	printf("ans|%-5c|\n", '\0');
-	ft_printf("tst|%-5c|", '\0');
+	//shows error in test, ask gavin
+	printf("%-5c", '\0');
+	ft_printf("%-5c", '\0');
 
 	//test c overflow
 

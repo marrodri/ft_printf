@@ -12,14 +12,14 @@
 
 #include "ft_printf.h"
 
-char	*field_management(char *fstr, t_flags *st_flags)
+char	*field_management(char *fstr, char f, t_flags *st_flags)
 {
 	if (st_flags->fi_flag[1] == 1)
 		fstr = zero_flag(fstr, st_flags);
 	if (st_flags->fi_flag[2] == 1)
-		fstr = minus_flag(fstr, st_flags);
+		fstr = minus_flag(fstr, f, st_flags);
 	else
-		fstr = default_field(fstr, st_flags);
+		fstr = default_field(fstr, f, st_flags);
 	return (fstr);
 }
 
@@ -48,6 +48,6 @@ char	*format_str(char *str, char f, t_flags *st_flags)
 	if (st_flags->fi_flag[4] == 1)
 		fstr = space_flag(fstr, f);
 	if (st_flags->fi_width > 0)
-		fstr = field_management(fstr, st_flags);
+		fstr = field_management(fstr, f, st_flags);
 	return (fstr);
 }
