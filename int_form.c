@@ -48,6 +48,8 @@ char	*x_form(va_list args, t_flags *st_flag)
 		n = va_arg(args, unsigned long long int);
 	else
 		n = va_arg(args, unsigned int);
+	if (n == 0 && st_flag->prec == 0 && st_flag->prec_flag == 1)
+		return ("");
 	hex = ft_llitoa_base(n, 16);
 	return (hex);
 }
@@ -68,6 +70,8 @@ char	*uppx_form(va_list args, t_flags *st_flag)
 	else
 		n = va_arg(args, unsigned int);
 	hex = ft_ullitoa_base(n, 16);
+	if (n == 0 && st_flag->prec == 0 && st_flag->prec_flag == 1)
+		return ("");
 	ft_strupper(hex);
 	return (hex);
 }

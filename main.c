@@ -63,11 +63,16 @@ static int i_num = 1234;
 
 	//last error in form %d
 	printf("ans|%-37lld|\n", -522337203685470);
-	ft_printf("tst|%-37lld|\n", -522337203685470);
+	ft_printf("tst|%-37lld|\n\n", -522337203685470);
 
-	//unsigned error
-	printf("ans this |%#o| number\n", 0);
-	ft_printf("tst this |%#o| number\n", 0);
+	//hex error
+	//Test  858:  x_basic_zero_af
+	printf("ans this |%#x| number\n", 0);
+	ft_printf("this |%#x| number\n", 0);
+
+	//Test  870:  x_prec_fits_zero_af
+	printf("ans|%#.3x|\n", 0);
+	ft_printf("tst|%#.3x|\n", 0);
 
 		// printf("#7.5x|%#7.5x|\n", i_num);
 		// printf("#8.5x|%#08.x|\n", i_num);

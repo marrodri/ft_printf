@@ -21,10 +21,14 @@ char	*hash_flag(char *str, char f)
 	}
 	else if (f == 'x')
 	{
-		str = ft_strjoin("0x", str);
+		if (str[0] != '\0')
+			str = ft_strjoin("0x", str);
 	}
 	else if (f == 'X')
-		str = ft_strjoin("0X", str);
+	{
+		if (str[0] != '\0')	
+			str = ft_strjoin("0X", str);
+	}
 	return (str);
 }
 
