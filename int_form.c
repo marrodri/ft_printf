@@ -88,6 +88,8 @@ char	*o_form(va_list args, t_flags *st_flag)
 	else
 		n = va_arg(args, unsigned int);
 	oct = ft_ullitoa_base(n, 8);
+	if (n == 0 && st_flag->prec == 0 && st_flag->prec_flag == 1)
+		return ("");
 	return (oct);
 }
 
@@ -108,6 +110,6 @@ char	*u_form(va_list args, t_flags *st_flag)
 		n = va_arg(args, unsigned int);
 	u_num = ft_ullitoa_base(n, 10);
 	if (n == 0 && st_flag->prec == 0 && st_flag->prec_flag == 1)
-		return "";
+		return ("");
 	return (u_num);
 }

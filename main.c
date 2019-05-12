@@ -66,8 +66,8 @@ static int i_num = 1234;
 	ft_printf("tst|%-37lld|\n", -522337203685470);
 
 	//unsigned error
-	printf("ans|%.0u|\n", 0);
-	ft_printf("tst|%.0u|\n", 0);
+	printf("ans this |%#o| number\n", 0);
+	ft_printf("tst this |%#o| number\n", 0);
 
 		// printf("#7.5x|%#7.5x|\n", i_num);
 		// printf("#8.5x|%#08.x|\n", i_num);
