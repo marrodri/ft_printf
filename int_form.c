@@ -28,6 +28,8 @@ char	*d_form(va_list args, t_flags *st_flag)
 	else
 		n = va_arg(args, int);
 	num = ft_llitoa_base(n, 10);
+	if(n == 0 && st_flag->prec == 0 && st_flag->prec_flag == 1)
+		return "";
 	return (num);
 }
 
