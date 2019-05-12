@@ -27,7 +27,7 @@ char	*prec_management(char *fstr, char f, t_flags *st_flags)
 {
 	if (f == 's')
 		fstr = s_prec(fstr, st_flags);
-	else if (f == 'd' || f == 'i' || f == 'x' || f == 'X')
+	else if (f == 'd' || f == 'i' || f == 'x' || f == 'X' || f == 'u')
 		fstr = dux_prec(fstr, st_flags);
 	else if (f == 'o')
 		fstr = o_prec(fstr, st_flags);

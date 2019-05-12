@@ -56,35 +56,21 @@ static int i_num = 1234;
 	// printf("\n");
 
 	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
-	char *test;
-	 test = ft_strsub(str, 0, 2);
-	// 	printf("dup|%s|\n", test);
-	//    printf("s|%6.0s|\n", str);
+
 	//    printf("o|%#.6o|\n", i_num);
 	// printf("ans float prec|%10.3o|\n", i_num);
 	// ft_printf("tst float prec|%10.3o|\n", i_num);
+
+	//last error in form %d
 	printf("ans|%-37lld|\n", -522337203685470);
 	ft_printf("tst|%-37lld|\n", -522337203685470);
+
+	//unsigned error
+	printf("ans|%.0u|\n", 0);
+	ft_printf("tst|%.0u|\n", 0);
+
 		// printf("#7.5x|%#7.5x|\n", i_num);
 		// printf("#8.5x|%#08.x|\n", i_num);
 		// printf("%016d\n", ui_pos_1);
 	return (0);
 }
-	/*signed char test */
-	// signed char char1 = 65; //255
-	// unsigned char char2 = 65; //255
-    // printf("\n\nSigned char : %c\n",char1);
-	// //prints as a SIGNED form, instead of USIGNED
-    // printf("Unsigned char : %c\n",char2);
-
-	/*old tests */
-	//printf("printf char a is |%c|, str b is |%s|, pointer b is|%10s|\n", a,c,c);
-	//ft_printf("ft_printf char a is |%c|, c is |%s|, pointer b is|%p| \n",a,c,c);
-	// printf("   printf is |%-#15x| |%llx|\n", int_max, int_max);
-	// ft_printf("ft_printf is |%-#15x| |%#015x| tweet\n", int_max, int_max);
-
-	/*float and precission test */
-	// float FL1 = 65; //255
-	// float FL2 = 65; //255
-    // printf("\n\nfloat1 |%7.3f|\n",FL1);
-    // printf("float2 |%010.3f|\n",FL2);
