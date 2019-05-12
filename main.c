@@ -61,6 +61,15 @@ static int i_num = 1234;
 	printf("ans|%-37lld|\n", -522337203685470);
 	ft_printf("tst|%-37lld|\n\n", -522337203685470);
 
+
+	//Test  876:  x_prec_width_fit_fit_pos_af
+	// printf("ans|%#8.5x|\n", 34);
+	// ft_printf("tst|%#8.5x|\n", 34);
+
+
+	printf("879ans|%#2.7x|", 3267);
+	ft_printf("879tst|%#2.7x|", 3267);
+
 	//Test  223:  i_size_ll_neg_big_lj same error as %d
 	printf("ans|%-37lli|\n", -522337203685470);
 	ft_printf("tst|%-37lli|\n", -522337203685470);
@@ -71,8 +80,8 @@ static int i_num = 1234;
 	ft_printf("this |%#x| number\n", 0);
 
 	//Test  870:  x_prec_fits_zero_af
-	printf("ans|%#.3x|\n", 0);
-	ft_printf("tst|%#.3x|\n", 0);
+	printf("870ans|%#.3x|\n", 0);
+	ft_printf("870tst|%#.3x|\n", 0);
 
 	//shows error in test, ask gavin
 	printf("%-5c", '\0');

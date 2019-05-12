@@ -49,7 +49,7 @@ char			*format_str(char *str, char f, t_flags *st_flags);
 char			*zero_flag(char *fstr, t_flags *st_flag);
 char 			*default_field(char *fstr, char f, t_flags *st_flag);
 char 			*minus_flag(char *fstr, char f, t_flags *st_flag);
-char			*hash_flag(char *fstr, char f);
+char			*hash_flag(char *fstr, char f, t_flags *st_flags);
 char			*plus_flag(char *fstr, char f);
 char			*space_flag(char *fstr, char f);
 

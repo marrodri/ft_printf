@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 #include <stdio.h>
-char	*hash_flag(char *str, char f)
+char	*hash_flag(char *str, char f, t_flags *st_flags)
 {
 	if (f == 'o')
 	{
@@ -22,11 +22,12 @@ char	*hash_flag(char *str, char f)
 	else if (f == 'x')
 	{
 		if (str[0] != '\0')
+			if (str[0] != '0' || ((ft_atoi(str) != 0) && st_flags->prec_flag == 1))
 			str = ft_strjoin("0x", str);
 	}
 	else if (f == 'X')
 	{
-		if (str[0] != '\0')	
+		if (str[0] != '\0' && str[0] != '0')	
 			str = ft_strjoin("0X", str);
 	}
 	return (str);
