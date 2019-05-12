@@ -29,7 +29,11 @@ char	*s_form(va_list args, t_flags *st_flag)
 
 	st_flag->fo_flag[0] = 0;
 	st_flag->fo_flag[1] = 0;
-	s = va_arg(args, char *);
+
+	if ((s = va_arg(args, char *)) == NULL)
+	{
+		return ("(null)");
+	}
 	return (s);
 }
 

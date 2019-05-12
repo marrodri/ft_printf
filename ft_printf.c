@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-static int		len_var()
-{
-	return 0;
-}
+// static int		len_var()
+// {
+// 	return 0;
+// }
 
 int				ft_printf(char *str, ...)
 {
