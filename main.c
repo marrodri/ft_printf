@@ -57,13 +57,13 @@ static int i_num = 1234;
 
 	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
 
-	//    printf("o|%#.6o|\n", i_num);
-	// printf("ans float prec|%10.3o|\n", i_num);
-	// ft_printf("tst float prec|%10.3o|\n", i_num);
-
 	//last error in form %d
 	printf("ans|%-37lld|\n", -522337203685470);
 	ft_printf("tst|%-37lld|\n\n", -522337203685470);
+
+	//Test  223:  i_size_ll_neg_big_lj same error as %d
+	printf("ans|%-37lli|\n", -522337203685470);
+	ft_printf("tst|%-37lli|\n", -522337203685470);
 
 	//hex error
 	//Test  858:  x_basic_zero_af
@@ -74,8 +74,30 @@ static int i_num = 1234;
 	printf("ans|%#.3x|\n", 0);
 	ft_printf("tst|%#.3x|\n", 0);
 
+
+
+	//Pointers - Basic
+   char	a01;
+unsigned char a02;
+ short a03;
+ unsigned short a04;
+int a05;
+unsigned int a06;
+long a07;
+ unsigned long a08;
+long long a09;
+unsigned long long a10;
+char *a11;
+void *a12;
+	//Test 1194:  p_basic
+	//ft_printf returns a negative value, test as how many can reach
+	printf("ans|%p%p%p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	ft_printf("tst|%p%p%p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+
+
+	return (0);
+}
+
 		// printf("#7.5x|%#7.5x|\n", i_num);
 		// printf("#8.5x|%#08.x|\n", i_num);
 		// printf("%016d\n", ui_pos_1);
-	return (0);
-}
