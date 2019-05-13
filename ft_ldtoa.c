@@ -16,9 +16,22 @@ int		ft_intlength(int n, int base)
 	return (len);
 }
 
-int int_deduct(long long int *int_n)
+int ft_intdeduct(long long int num)
 {
-	return 0;
+	long long int tmp;
+
+	tmp = num;
+	if(num > 10)
+	{
+		while(tmp > 10)
+			tmp = tmp % 10;
+	}
+	if (tmp >= 5)
+	{
+		tmp = 10 - tmp;
+		num = num + tmp;
+	}
+	return (num);
 }
 
 char *ft_ldtoa(long double ld_num, int prec)
@@ -38,12 +51,14 @@ char *ft_ldtoa(long double ld_num, int prec)
 	dec_len = 0;
 	int_n = (long long int)ld_num;
 	ld_dec = ld_num - (long double)int_n;
-	while(prec)
+	while (dec_len <= prec)
 	{
-
+		ld_dec = ld_dec * 10;
+		dec_len++;
 	}
+	int_dec = ft_intdeduct((long long int)ld_dec);
 
-	if(ld_dec >= 100)
+	if (ld_dec >= ft_power_of(10, dec_len))
 	{
 		int_n += 1;
 	}
