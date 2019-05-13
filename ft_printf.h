@@ -60,4 +60,5 @@ char *o_prec(char *fstr, t_flags *st_flags);
 
 //MOVE TO LIBFT FOLDER ONCE WHEN THIS FUNC WORKS PROPERLY
 char			*ft_ldtoa(long double num, int prec);
+int 			ft_strischar(char *str, char c);
 #endif

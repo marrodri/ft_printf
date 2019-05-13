@@ -43,10 +43,6 @@ static long double Ldb = 10.496992423423;
 char *str = "hello";
 static char ch = 'a';
 static int i_num = 1234;
-	// printf("test d\n");
-	// printf("%lld %d %ld", ll_neg_1, i_pos_1, l_pos_1);
-	// printf("\n");
-	// ft_printf("%lld %d %ld", ll_neg_1, i_pos_1, l_pos_1);
 
 
 	// //segfault with the # flag
@@ -57,35 +53,30 @@ static int i_num = 1234;
 
 	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
 
-	//last error in form %d
-	printf("ans|%-37lld|\n", -522337203685470);
-	ft_printf("tst|%-37lld|\n\n", -522337203685470);
 
+	printf("877ans|%#8.5x|\n", 0);
+	ft_printf("877tst|%#8.5x|\n", 0);
 
-	//Test  876:  x_prec_width_fit_fit_pos_af
-	// printf("ans|%#8.5x|\n", 34);
-	// ft_printf("tst|%#8.5x|\n", 34);
+	printf("879ans|%#2.7x|\n", 3267);
+	ft_printf("879tst|%#2.7x|\n", 3267);
 
+	//test 884 : x_prec_width_fit_nofit_pos_lj_af
 
-	printf("879ans|%#2.7x|", 3267);
-	ft_printf("879tst|%#2.7x|", 3267);
+	// printf("884ans|%#-2.7x|\n", 3267);
+	// ft_printf("884tst|%#-2.7x|\n", 3267);
+	
 
-	//Test  223:  i_size_ll_neg_big_lj same error as %d
-	printf("ans|%-37lli|\n", -522337203685470);
-	ft_printf("tst|%-37lli|\n", -522337203685470);
+	// Test  889:  x_prec_width_fn_pos_zpad_af
+	// printf("889ans|%#02.7x|\n", 3267);
+	// ft_printf("889tst|%#02.7x|\n", 3267);
 
-	//hex error
-	//Test  858:  x_basic_zero_af
-	printf("ans this |%#x| number\n", 0);
-	ft_printf("this |%#x| number\n", 0);
-
-	//Test  870:  x_prec_fits_zero_af
-	printf("870ans|%#.3x|\n", 0);
-	ft_printf("870tst|%#.3x|\n", 0);
+	// Test  894:  x_prec_width_fn_pos_lj_zpad_af
+	// printf("894ans|%#0-2.7x|\n", 3267);
+	// ft_printf("894tst|%#0-2.7x|\n", 3267);
 
 	//shows error in test, ask gavin
-	printf("%-5c", '\0');
-	ft_printf("%-5c", '\0');
+	// printf("%-5c", '\0');
+	// ft_printf("%-5c", '\0');
 
 	//test c overflow
 

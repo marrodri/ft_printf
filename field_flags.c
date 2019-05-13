@@ -22,7 +22,7 @@ char	*hash_flag(char *str, char f, t_flags *st_flags)
 	else if (f == 'x')
 	{
 		if (str[0] != '\0')
-			if (str[0] != '0' || ((ft_atoi(str) != 0) && st_flags->prec_flag == 1))
+			if (str[0] != '0' || ((!(ft_strischar(str, 0)) && st_flags->prec_flag == 1)))
 			str = ft_strjoin("0x", str);
 	}
 	else if (f == 'X')
