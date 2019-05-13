@@ -12,6 +12,8 @@
 
 #include "libft/libft.h"
 
+#include <stdio.h>
+
 static int		check_size_base(long long int n, int base)
 {
 	long long int	size;
@@ -20,7 +22,7 @@ static int		check_size_base(long long int n, int base)
 	if ((n < 0) && (base == 10))
 	{
 		size++;
-		n = n *-1;
+		n = n * -1;
 	}
 	else if (n < 0)
 		n = n * -1;
@@ -29,10 +31,10 @@ static int		check_size_base(long long int n, int base)
 		n = n / base;
 		size++;
 	}
-	return (size - 1);
+	return (size);
 }
 
-char		*ft_llitoa_base(long long int value, int base)
+char			*ft_llitoa_base(long long int value, int base)
 {
 	char			*str;
 	char			*b_val;
@@ -43,15 +45,12 @@ char		*ft_llitoa_base(long long int value, int base)
 	b_val = "0123456789abcdef";
 	i = 0;
 	if (value == 0)
-	{
 		return (ft_strdup("0"));
-	}
-	if (value == -2147483648 && base == 10)
-		return (ft_strdup("-2147483648"));
 	size = check_size_base(value, base);
-	if ((str = (char*)malloc((size + 1)*sizeof(char))) == NULL)
-		return NULL;
-	str[size + 1] = '\0';
+	if (!(str = (char*)malloc((size) * sizeof(char))))
+		return (NULL);
+	str[size] = '\0';
+	size--;
 	if ((value < 0) && (base == 10))
 	{
 		str[0] = '-';
@@ -72,10 +71,9 @@ char		*ft_llitoa_base(long long int value, int base)
 	return (str);
 }
 
-#include <stdio.h>
 int main()
 {
-	short int a = 327678;
-	printf("%hd\n",a);
-	printf("%s\n",ft_llitoa_base(a, 10));
+	char *tst = ft_llitoa_base(52233, 10);
+	printf("|%s|", tst);
+	return 0;
 }

@@ -29,7 +29,7 @@ static int		check_size_base(long long int n, int base)
 		n = n / base;
 		size++;
 	}
-	return (size - 1);
+	return (size);
 }
 
 char			*ft_llitoa_base(long long int value, int base)
@@ -48,6 +48,7 @@ char			*ft_llitoa_base(long long int value, int base)
 	if (!(str = (char*)malloc((size + 1) * sizeof(char))))
 		return (NULL);
 	str[size] = '\0';
+	size--;
 	if ((value < 0) && (base == 10))
 	{
 		str[0] = '-';
