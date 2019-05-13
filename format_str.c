@@ -36,18 +36,16 @@ char	*prec_management(char *fstr, char f, t_flags *st_flags)
 
 char	*format_str(char *str, char f, t_flags *st_flags)
 {
-	char *fstr;
 
-	fstr = str;
 	if (st_flags->prec_flag == 1)
-		fstr = prec_management(fstr, f, st_flags);
+		str = prec_management(str, f, st_flags);
 	if (st_flags->fi_flag[0] == 1)
-		fstr = hash_flag(fstr, f);
+		str = hash_flag(str, f);
 	if (st_flags->fi_flag[3] == 1)
-		fstr = plus_flag(fstr, f);
+		str = plus_flag(str, f);
 	if (st_flags->fi_flag[4] == 1)
-		fstr = space_flag(fstr, f);
+		str = space_flag(str, f);
 	if (st_flags->fi_width > 0)
-		fstr = field_management(fstr, f, st_flags);
-	return (fstr);
+		str = field_management(str, f, st_flags);
+	return (str);
 }

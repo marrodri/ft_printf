@@ -22,5 +22,6 @@ char	*ft_strupper(char *str)
 		str[i] = ft_toupper(str[i]);
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }

@@ -44,28 +44,10 @@ char *str = "hello";
 static char ch = 'a';
 static int i_num = 1234;
 
+	printf("ans|%f|\n", 1.0);
+	ft_printf("tst|%f|\n", 1.0);
 
-	// //segfault with the # flag
-	printf("\nanswers ulmax ullmax\n");
-	printf("%#lX ", ulmax);
-	printf("%#llX", ullmax);
-	printf("\n");
-	printf("\ntests ulmax ullmax\n");
-	ft_printf("%#lX ", ulmax);
-	// ft_printf("%#llX", ullmax);
 
-	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
-
-	// //Test 1038:  X_ullmax_af 
-	// printf("877ans|%#8.5x|\n", 0);
-	// ft_printf("877tst|%#8.5x|\n", 0);
-
-	// //Test 1039:  X_ulmax_af 
-	// printf("879ans|%#2.7x|\n", 3267);
-	// ft_printf("879tst|%#2.7x|\n", 3267);
-
-	// printf("this %#x number\n", 0);
-	// ft_printf("this %#x number\n", 0);
 
 
 	//shows error in test, ask gavin
@@ -76,7 +58,3 @@ static int i_num = 1234;
 
 	return (0);
 }
-
-		// printf("#7.5x|%#7.5x|\n", i_num);
-		// printf("#8.5x|%#08.x|\n", i_num);
-		// printf("%016d\n", ui_pos_1);

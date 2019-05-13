@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+
 // static int		len_var()
 // {
 // 	return 0;
@@ -41,7 +41,6 @@ int				ft_printf(char *str, ...)
 			{
 				if (tstr[0] == '\0' && str[i] == 'c')
 					sum++;
-				printf("here?\n");
 				tstr = format_str(tstr, str[i], st_flag);
 				ft_putstr(tstr);
 				sum = sum + (ft_strlen(tstr));

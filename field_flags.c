@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+#include <stdio.h>
 char	*hash_flag(char *str, char f)
 {
 	if (f == 'o')
