@@ -58,9 +58,6 @@ char	*uppx_form(va_list args, t_flags *st_flag)
 {
 	char					*hex;
 	unsigned long long int	n;
-	int 					i;
-
-	i = 0;
 
 	if (st_flag->fo_flag[0] == 1)
 		n = (unsigned short int)va_arg(args, unsigned int);
@@ -75,11 +72,7 @@ char	*uppx_form(va_list args, t_flags *st_flag)
 	hex = ft_ullitoa_base(n, 16);
 	if (n == 0 && st_flag->prec == 0 && st_flag->prec_flag == 1)
 		return ("");
-	while(hex[i])
-	{
-		hex[i] = ft_toupper(hex[i]);
-		i++;
-	}
+	hex = ft_strupper(hex);
 	return (hex);
 }
 
