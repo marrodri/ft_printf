@@ -97,4 +97,5 @@ char				*ft_uitoa(unsigned int n);
 char				*ft_ullitoa_base(unsigned long long int value, int base);
 char				*ft_strnewc(char f, int size);
 char				*ft_swap_charstr(char *fstr, char c, int pos);
+int 				ft_strischar(char *str, char c);
 #endif

@@ -46,33 +46,27 @@ static int i_num = 1234;
 
 
 	// //segfault with the # flag
-	// printf("\n\ntest x\n");
-	// printf("%#lx ", ulmax);
-	// printf("%#llx", ullmax);
-	// printf("\n");
+	printf("\nanswers ulmax ullmax\n");
+	printf("%#lX ", ulmax);
+	printf("%#llX", ullmax);
+	printf("\n");
+	printf("\ntests ulmax ullmax\n");
+	ft_printf("%#lX ", ulmax);
+	// ft_printf("%#llX", ullmax);
 
 	//IMPORTANT CHECK FT_STRJOIN TO FIX THE SEGFAULT when %#llx
 
+	// //Test 1038:  X_ullmax_af 
+	// printf("877ans|%#8.5x|\n", 0);
+	// ft_printf("877tst|%#8.5x|\n", 0);
 
-	printf("877ans|%#8.5x|\n", 0);
-	ft_printf("877tst|%#8.5x|\n", 0);
+	// //Test 1039:  X_ulmax_af 
+	// printf("879ans|%#2.7x|\n", 3267);
+	// ft_printf("879tst|%#2.7x|\n", 3267);
 
-	printf("879ans|%#2.7x|\n", 3267);
-	ft_printf("879tst|%#2.7x|\n", 3267);
+	// printf("this %#x number\n", 0);
+	// ft_printf("this %#x number\n", 0);
 
-	//test 884 : x_prec_width_fit_nofit_pos_lj_af
-
-	// printf("884ans|%#-2.7x|\n", 3267);
-	// ft_printf("884tst|%#-2.7x|\n", 3267);
-	
-
-	// Test  889:  x_prec_width_fn_pos_zpad_af
-	// printf("889ans|%#02.7x|\n", 3267);
-	// ft_printf("889tst|%#02.7x|\n", 3267);
-
-	// Test  894:  x_prec_width_fn_pos_lj_zpad_af
-	// printf("894ans|%#0-2.7x|\n", 3267);
-	// ft_printf("894tst|%#0-2.7x|\n", 3267);
 
 	//shows error in test, ask gavin
 	// printf("%-5c", '\0');

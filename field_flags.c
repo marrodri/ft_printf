@@ -11,24 +11,25 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-char	*hash_flag(char *str, char f, t_flags *st_flags)
+
+char	*hash_flag(char *str, char f)
 {
 	if (f == 'o')
 	{
-		if(str[0] != '0')
+		if (str[0] != '0')
 			str = ft_strjoin("0", str);
 	}
 	else if (f == 'x')
 	{
 		if (str[0] != '\0')
-			if (str[0] != '0' || ((!(ft_strischar(str, 0)) && st_flags->prec_flag == 1)))
-			str = ft_strjoin("0x", str);
+			if ((ft_strischar(str, '0')) == 0)
+				str = ft_strjoin("0x", str);
 	}
 	else if (f == 'X')
 	{
-		if (str[0] != '\0' && str[0] != '0')	
-			str = ft_strjoin("0X", str);
+		if (str[0] != '\0')
+			if ((ft_strischar(str, '0')) == 0)
+				str = ft_strjoin("0X", str);
 	}
 	return (str);
 }
