@@ -3,7 +3,7 @@
 #include "libft/libft.h"
 #include <stdio.h>
 
-int		ft_intlength(int n, int base)
+int		ft_baselength(int n, int base)
 {
 	int len;
 
@@ -37,7 +37,7 @@ int ft_intdeduct(long long int num)
 char *ft_ldtoa(long double ld_num, int prec)
 {
 	long long int	int_n;
-	int				int_dec;
+	long long int	int_dec;
 	long double 	ld_dec;
 	char			*str_num;
 	char			*str_dec;
@@ -45,7 +45,6 @@ char *ft_ldtoa(long double ld_num, int prec)
 	//function check;
 	int i;
 	int dec_len;
-
 
 	i = 0;
 	dec_len = 0;
@@ -57,13 +56,14 @@ char *ft_ldtoa(long double ld_num, int prec)
 		dec_len++;
 	}
 	int_dec = ft_intdeduct((long long int)ld_dec);
-
 	if (ld_dec >= ft_power_of(10, dec_len))
 	{
 		int_n += 1;
 	}
-
-
+	dec_len--;
+	printf("dec_len|%d|\n", dec_len);
+	printf("int_n|%lld|\n", int_n);
+	printf("ind_dec|%lld|\n", int_dec);
 
 	return (NULL);
 }
@@ -71,8 +71,11 @@ char *ft_ldtoa(long double ld_num, int prec)
 int main()
 {
 	char *f;
-	f= ft_ldtoa(1, 2);
-	printf("ans|%.2f|\n", 1.90);
-	printf("tst|%s|\n", f);
+	printf("++++ ft_ldtoa test ++++\n");
+	f= ft_ldtoa(1.90, 1);
+
+	printf("____ printf answer ____\n");
+	printf("ans|%.1f|\n", 1.90);
+	//printf("tst|%s|\n", f);
 	return (0);
 }
