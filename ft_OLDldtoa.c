@@ -17,7 +17,7 @@
 //BUG overflow when the prec is 10 or higher
 
 //change long long to long double
-int		ft_deduct(long long int num)
+long long int		ft_deduct(long long int num)
 {
 	long long int tmp;
 
@@ -35,7 +35,7 @@ int		ft_deduct(long long int num)
 	return (num);
 }
 
-int		ft_intlength(int n, int base)
+long long int		ft_intlength(int n, int base)
 {
 	int len;
 
@@ -63,7 +63,7 @@ char	*setzero(int n)
 	return (zero);
 }
 
-char	*get_dec_str(long double dec, int prec)
+char				*get_dec_str(long double dec, int prec)
 {
 	int		fl_len;
 	int		int_len;
@@ -84,7 +84,7 @@ char	*get_dec_str(long double dec, int prec)
 	
 	int_len = ft_intlength((int)dec, 10);
 	dif = fl_len - int_len;
-	if (prec > 0)
+	if (prec > dif)
 	{
 		zero = setzero(dif);
 		str = ft_llitoa_base((long long int)dec, 10);
@@ -95,7 +95,7 @@ char	*get_dec_str(long double dec, int prec)
 	return (str);
 }
 
-char	*ft_ldtoa(long double num, int prec)
+char			*ft_ldtoa(long double num, int prec)
 {
 	long long int	int_n;
 	long double		dec;
@@ -114,11 +114,11 @@ char	*ft_ldtoa(long double num, int prec)
 	return (str_int);
 }
 
-int main()
-{
-	char *f;
-	f= ft_ldtoa(1.90, 1);
-	printf("ans|%.1f|\n", 1.90);
-	printf("tst|%s|\n", f);
-	return 0;
-}
+// int main()
+// {
+// 	char *f;
+// 	f= ft_ldtoa(1.90, 1);
+// 	printf("ans|%.1f|\n", 1.90);
+// 	printf("tst|%s|\n", f);
+// 	return 0;
+// }
