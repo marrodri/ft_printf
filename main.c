@@ -44,8 +44,11 @@ char *str = "hello";
 static char ch = 'a';
 static int i_num = 1234;
 
-	printf("ans|%.10f|\n", fl);
-	ft_printf("tst|%.10f|\n", fl);
+	printf("ans|%f|\n", 23.0041);
+	ft_printf("tst|%f|\n", 23.0041);
+
+	printf("ans|%f|\n", 1.0);
+	ft_printf("tst|%f|\n", 1.0);
 
 
 

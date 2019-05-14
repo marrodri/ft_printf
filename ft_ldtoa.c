@@ -83,10 +83,17 @@ char *ft_ldtoa(long double ld_num, int prec)
 	int 	dec_len;
 	int 	dif;
 	char	*zero;
+	int 	flag_neg;
 
 	dif = 0;
 	i = 0;
 	dec_len = 0;
+	flag_neg = 0;
+	if (ld_num < 0)
+	{
+		ld_num = ld_num * -1;
+		flag_neg = 1;
+	}
 	int_n = (long long int)ld_num;
 	ld_dec = ld_num - (long double)int_n;
 	while (dec_len <= prec)
@@ -103,15 +110,16 @@ char *ft_ldtoa(long double ld_num, int prec)
 		// printf("passed\n");
 		int_n += 1;
 	}
-	
+	dec_len++;
 	// printf("int_n|%lld|\n", int_n);
 	// printf("int_dec|%lld|\n", int_dec);
 	str_num = ft_llitoa_base(int_n, 10);
-	// printf("dec_len|%lld|\n", dec_len);
+	// printf("dec_len|%d|\n", dec_len);
 	// printf("int_dec length|%lld|\n",ft_baselength(int_dec, 10));
 	if (prec > 0)
 	{
 		dif = dec_len - ft_baselength(int_dec, 10);
+		// printf("dif|%d|\n", dif);
 		if (prec > dif) //check here how to add the zeroes
 		{
 			zero = setzero(dif);
@@ -125,6 +133,11 @@ char *ft_ldtoa(long double ld_num, int prec)
 		}
 		str_num = ft_strjoin(str_num, ".");
 		str_num = ft_strjoin(str_num, str_dec);
+	}
+
+	if(flag_neg == 1)
+	{
+		str_num = ft_strjoin("-", str_num);
 	}
 	return (str_num);
 
