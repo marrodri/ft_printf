@@ -47,8 +47,11 @@ static int i_num = 1234;
 	// printf("ans|%f|\n", -23.0041);
 	// ft_printf("tst|%f|\n", -23.0041);
 
-	printf("this |%.10f| float\n", -1.5);
-	ft_printf("this |%.10f| float\n", -1.5);
+	printf("ans+f_as_prec0p_as|%+.0f|\n", 7.4);
+	ft_printf("tst+f_as_prec0p_as|%+.0f|\n", 7.4);
+
+	printf("ans +.3|%+.3f|\n", 0.0);
+	ft_printf("tst +.3|%+.3f|\n", 0.0);
 
 	printf("ans|%.10f|\n", 23.000000041);
 	ft_printf("tst|%.10f|\n", 23.000000041);

@@ -40,7 +40,7 @@ char	*format_str(char *str, char f, t_flags *st_flags)
 	if (st_flags->prec_flag == 1)
 		str = prec_management(str, f, st_flags);
 	if (st_flags->fi_flag[0] == 1)
-		str = hash_flag(str, f);
+		str = hash_flag(str, f, st_flags);
 	if (st_flags->fi_flag[3] == 1)
 		str = plus_flag(str, f);
 	if (st_flags->fi_flag[4] == 1)
