@@ -43,6 +43,10 @@ typedef struct	s_flags
 typedef char	*t_char_form(va_list args, t_flags *st_flag);
 int				ft_printf(char *str, ...);
 void			set_fflags(char *str, int *i, t_flags **st_flag);
+void			check_fi_flags(char f, t_flags *st_flag);
+void			check_field(char *str, int *i, t_flags *st_flag);
+void			check_prec(char *str, int *i, t_flags *st_flag);
+void			check_fo_flags(char f, t_flags *st_flag);
 char			*set_form(char f, va_list args, t_flags *st_flag);
 int				check_form(char f);
 char			*c_form(va_list args, t_flags *st_flag);
