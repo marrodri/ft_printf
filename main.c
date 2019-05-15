@@ -53,8 +53,11 @@ static int i_num = 1234;
 	printf("ans +.3|%+.3f|\n", 0.0);
 	ft_printf("tst +.3|%+.3f|\n", 0.0);
 
-	printf("ans|%.10f|\n", 23.000000041);
-	ft_printf("tst|%.10f|\n", 23.000000041);
+	printf("ans _05.f|% 05.0f|\n", 7.3);
+	ft_printf("tst _05.f|% 05.0f|\n", 7.3);
+
+	printf("ans _05d|% 05d|\n", 7);
+	ft_printf("tst _05d|% 05d|\n", 7);
 	// printf("this |%Lf| float\n", 1.5l);
 	// ft_printf("this |%Lf| float\n", 1.5l);
 
