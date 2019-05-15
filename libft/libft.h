@@ -99,4 +99,6 @@ char				*ft_strnewc(char f, int size);
 char				*ft_swap_charstr(char *fstr, char c, int pos);
 int 				ft_strischar(char *str, char c);
 long long int		ft_libaselen(long long int n, int base);
+long long int 		ft_llideduct(long long int num);
+long long int		ft_power_of_lli(long long int n, long long int expo);
 #endif

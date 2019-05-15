@@ -1,44 +1,6 @@
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 #include <stdio.h>
-
-long long int 		ft_llideduct(long long int num)
-{
-	long long int tmp;
-
-	tmp = num;
-	if(num > 10)
-	{
-		while(tmp > 10)
-			tmp = tmp % 10;
-	}
-	if (tmp >= 5)
-	{
-		tmp = 10 - tmp;
-		num = num + tmp;
-	}
-	return (num);
-}
-
-long long int	ft_power_of_l(long long int n, long long int expo)
-{
-	long long int i;
-	long long int power;
-
-	i = 1;
-	power = n;
-	if (expo <= 0)
-		return (1);
-	else if (expo == 1)
-		return (n);
-	while (i < expo)
-	{
-		power = power * n;
-		i++;
-	}
-	return (power);
-}
 
 char *ft_ldtoa(long double ld_num, int prec)
 {
@@ -74,7 +36,7 @@ char *ft_ldtoa(long double ld_num, int prec)
 	int_dec = ft_llideduct((long long int)ld_dec);
 	dec_len--;
 	int_dec = int_dec / 10;
-	if (int_dec >= ft_power_of_l(10, dec_len))
+	if (int_dec >= ft_power_of_lli(10, dec_len))
 	{
 		int_n += 1;
 		int_dec = 0;

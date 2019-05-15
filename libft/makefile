@@ -30,7 +30,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	  ft_word_count.c ft_int_to_hex.c ft_power_of.c ft_strupper.c \
 	  ft_dec_to_oct.c ft_itoa_base.c ft_uitoa.c ft_llitoa_base.c \
 	  ft_strnewc.c ft_swap_charstr.c ft_ullitoa_base.c ft_strischar.c \
-	  ft_libaselen.c
+	  ft_libaselen.c ft_lldeduct.c ft_power_of_lli.c
 
 HDR = ./includes/
 
