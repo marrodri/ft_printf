@@ -44,14 +44,13 @@ char	*minus_flag(char *fstr, char f, t_flags *st_flags)
 {
 	int		dif;
 	char	*end_space;
-	int 	len;
+	int		len;
 
-	if(fstr[0] == '\0' && f == 'c')
+	if (fstr[0] == '\0' && f == 'c')
 		len = 1;
 	else
 		len = ft_strlen(fstr);
 	dif = st_flags->fi_width - len;
-
 	if (dif > 0)
 	{
 		end_space = ft_strnewc(' ', dif);
@@ -64,9 +63,9 @@ char	*default_field(char *fstr, char f, t_flags *st_flags)
 {
 	int		dif;
 	char	*space;
-	int 	len;
+	int		len;
 
-	if(fstr[0] == '\0' && f == 'c')
+	if (fstr[0] == '\0' && f == 'c')
 		len = 1;
 	else
 		len = ft_strlen(fstr);

@@ -36,7 +36,6 @@ char	*prec_management(char *fstr, char f, t_flags *st_flags)
 
 char	*format_str(char *str, char f, t_flags *st_flags)
 {
-
 	if (st_flags->prec_flag == 1)
 		str = prec_management(str, f, st_flags);
 	if (st_flags->fi_flag[0] == 1)

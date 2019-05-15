@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+
 char	*hash_flag(char *str, char f, t_flags *st_flags)
 {
 	if (f == 'o')
@@ -33,7 +33,7 @@ char	*hash_flag(char *str, char f, t_flags *st_flags)
 	}
 	else if (f == 'f')
 	{
-		if(st_flags->prec == 0)
+		if (st_flags->prec == 0)
 			str = ft_strjoin(str, ".");
 	}
 	return (str);
@@ -48,8 +48,7 @@ char	*plus_flag(char *fstr, char f)
 
 char	*space_flag(char *fstr, char f)
 {
-	//newly added, check for errors in the future
-	if ((f == 'd' || f == 'i' || f== 'f') && fstr[0] != '-')
+	if ((f == 'd' || f == 'i' || f == 'f') && fstr[0] != '-')
 		fstr = ft_strjoin(" ", fstr);
 	return (fstr);
 }
