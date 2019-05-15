@@ -12,16 +12,20 @@
 
 #include "libft.h"
 
-long long int		ft_libaselen(long long int n, int base)
+long long int		ft_libaselen(long long int n, int base, int f_flag)
 {
-	long long int len;
+	long long int	size;
 
-	len = 0;
+	size = 0;
+	if ((n < 0) && (base == 10) && f_flag == 0)
+	{
+		size++;
+		n = n * -1;
+	}
 	while (n > 0)
 	{
-		n /= base;
-		len++;
+		n = n / base;
+		size++;
 	}
-	len++;
-	return (len);
+	return (size);
 }

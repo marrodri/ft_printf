@@ -12,26 +12,6 @@
 
 #include "libft.h"
 
-static int		check_size_base(long long int n, int base)
-{
-	long long int	size;
-
-	size = 0;
-	if ((n < 0) && (base == 10))
-	{
-		size++;
-		n = n * -1;
-	}
-	else if (n < 0)
-		n = n * -1;
-	while (n > 0)
-	{
-		n = n / base;
-		size++;
-	}
-	return (size);
-}
-
 char			*ft_llitoa_base(long long int value, int base)
 {
 	char			*str;
@@ -44,7 +24,7 @@ char			*ft_llitoa_base(long long int value, int base)
 	i = 0;
 	if (value == 0)
 		return (ft_strdup("0"));
-	size = check_size_base(value, base);
+	size = ft_libaselen(value, base, 0);
 	if (!(str = (char*)malloc((size + 1) * sizeof(char))))
 		return (NULL);
 	str[size] = '\0';

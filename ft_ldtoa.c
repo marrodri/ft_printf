@@ -45,7 +45,7 @@ char *ft_ldtoa(long double ld_num, int prec)
 	str_num = ft_llitoa_base(int_n, 10);
 	if (prec > 0)
 	{
-		dif = dec_len - ft_libaselen(int_dec, 10);
+		dif = dec_len - (ft_libaselen(int_dec, 10, 1)+ 1);
 		if(int_dec == 0)
 			dif--;
 		if (prec > dif) //check here how to add the zeroes
