@@ -50,7 +50,7 @@ void	set_fflags(char *str, int *i, t_flags **st_flag)
 	pos = 0;
 	init_flags(*st_flag);
 	while ((check_form(str[*i])) == -1 &&
-		(!(str[*i] == 'l' || str[*i] == 'h' || str[*i] == '.'))
+		(!(str[*i] == 'l' || str[*i] == 'h' || str[*i] == 'L'|| str[*i] == '.'))
 		&& (!(str[*i] >= '1' && str[*i] <= '9')))
 	{
 		check_fi_flags(str[*i], *st_flag);
