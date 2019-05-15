@@ -3,7 +3,7 @@
 #include "libft/libft.h"
 #include <stdio.h>
 
-long long int		ft_baselength(int n, int base)
+long long int		ft_baselength(long long int n, int base)
 {
 	int len;
 
@@ -122,10 +122,6 @@ char *ft_ldtoa(long double ld_num, int prec)
 		// printf("dif|%d|\n", dif);
 		if(int_dec == 0)
 			dif--;
-		else if(prec == 10)
-		{
-			dif--;
-		}
 		if (prec > dif) //check here how to add the zeroes
 		{
 			zero = setzero(dif);
