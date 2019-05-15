@@ -40,15 +40,9 @@ static float fl = 10.496992423423;
 static double db = 10.496992423423;
 static long double Ldb = 10.496992423423;
 
-char *str = "hello";
-static char ch = 'a';
-static int i_num = 1234;
-
-double special;
-*((unsigned long *)(&special)) =DBL_NAN;
-
-	printf("%f\n",special);
-	ft_printf("%f\n",special);
+	long double tst = 1.5;
+	printf("ans|%Lf|\n",tst);
+	ft_printf("tst|%Lf|\n",tst);
 	// printf("ans|%f|\n", -23.0041);
 	// ft_printf("tst|%f|\n", -23.0041);
 

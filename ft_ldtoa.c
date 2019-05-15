@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ldtoa.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/15 15:11:02 by marrodri          #+#    #+#             */
+/*   Updated: 2019/05/15 15:11:05 by marrodri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 char *ft_ldtoa(long double ld_num, int prec)
 {
@@ -21,6 +31,7 @@ char *ft_ldtoa(long double ld_num, int prec)
 	i = 0;
 	dec_len = 0;
 	flag_neg = 0;
+
 	if (ld_num < 0)
 	{
 		ld_num = ld_num * -1;
@@ -48,24 +59,18 @@ char *ft_ldtoa(long double ld_num, int prec)
 		dif = dec_len - (ft_libaselen(int_dec, 10, 1)+ 1);
 		if(int_dec == 0)
 			dif--;
-		if (prec > dif) //check here how to add the zeroes
+		if (prec > dif)
 		{
 			zero = ft_strnewc('0', dif);
 			str_dec = ft_llitoa_base(int_dec, 10);
 			str_dec = ft_strjoin(zero, str_dec);
 		}
 		else
-		{
 			str_dec = ft_llitoa_base(int_dec, 10);
-		}
 		str_num = ft_strjoin(str_num, ".");
 		str_num = ft_strjoin(str_num, str_dec);
 	}
-
 	if(flag_neg == 1)
-	{
 		str_num = ft_strjoin("-", str_num);
-	}
 	return (str_num);
-
 }

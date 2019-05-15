@@ -64,7 +64,9 @@ void	check_fo_flags(char f, t_flags *st_flag)
 	while (pos < FO_FLAG_SIZE)
 	{
 		if (fo_flags[pos] == f)
+		{
 			st_flag->fo_flag[pos] += 1;
+		}
 		pos++;
 	}
 	return ;
