@@ -17,7 +17,7 @@ long long int		ft_baselength(long long int n, int base)
 	return (len);
 }
 
-long long int 		ft_intdeduct(long long int num)
+long long int 		ft_llideduct(long long int num)
 {
 	long long int tmp;
 
@@ -35,9 +35,9 @@ long long int 		ft_intdeduct(long long int num)
 	return (num);
 }
 
-long long int	ft_power_of_long(int n, int expo)
+long long int	ft_power_of_l(long long int n, long long int expo)
 {
-	int i;
+	long long int i;
 	long long int power;
 
 	i = 1;
@@ -103,23 +103,16 @@ char *ft_ldtoa(long double ld_num, int prec)
 	int_dec = ft_intdeduct((long long int)ld_dec);
 	dec_len--;
 	int_dec = int_dec / 10;
-	// printf("\npower of|%lld|\n", ft_power_of_long(10, dec_len));
 	if (int_dec >= ft_power_of_long(10, dec_len))
 	{
-		// printf("passed\n");
 		int_n += 1;
 		int_dec = 0;
 	}
 	dec_len++;
-	// printf("int_n|%lld|\n", int_n);
-	// printf("int_dec|%lld|\n", int_dec);
 	str_num = ft_llitoa_base(int_n, 10);
-	// printf("dec_len|%d|\n", dec_len);
-	// printf("int_dec length|%lld|\n",ft_baselength(int_dec, 10));
 	if (prec > 0)
 	{
 		dif = dec_len - ft_baselength(int_dec, 10);
-		// printf("dif|%d|\n", dif);
 		if(int_dec == 0)
 			dif--;
 		if (prec > dif) //check here how to add the zeroes
@@ -127,7 +120,6 @@ char *ft_ldtoa(long double ld_num, int prec)
 			zero = setzero(dif);
 			str_dec = ft_llitoa_base(int_dec, 10);
 			str_dec = ft_strjoin(zero, str_dec);
-			// printf("str_dec|%s|\n", str_dec);
 		}
 		else
 		{
