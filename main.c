@@ -44,11 +44,11 @@ char *str = "hello";
 static char ch = 'a';
 static int i_num = 1234;
 
-	printf("ans|%f|\n", 23.0041);
-	ft_printf("tst|%f|\n", 23.0041);
+	printf("ans|%f|\n", -23.0041);
+	ft_printf("tst|%f|\n", -23.0041);
 
-	printf("this |%.10f| float\n", 1.5);
-	ft_printf("this |%.10f| float\n", 1.5);
+	printf("this |%.10f| float\n", -1.5);
+	ft_printf("this |%.10f| float\n", -1.5);
 
 	// printf("this |%Lf| float\n", 1.5l);
 	// ft_printf("this |%Lf| float\n", 1.5l);

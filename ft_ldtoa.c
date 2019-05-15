@@ -54,7 +54,6 @@ long long int	ft_power_of_long(int n, int expo)
 	return (power);
 }
 
-
 char	*setzero(int n)
 {
 	char	*zero;
@@ -123,6 +122,10 @@ char *ft_ldtoa(long double ld_num, int prec)
 		// printf("dif|%d|\n", dif);
 		if(int_dec == 0)
 			dif--;
+		else if(prec == 10)
+		{
+			dif--;
+		}
 		if (prec > dif) //check here how to add the zeroes
 		{
 			zero = setzero(dif);
