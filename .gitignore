@@ -1,3 +1,5 @@
 testing/
 guide/
 includes/
+.vscode/
+a.out.dSYM/
