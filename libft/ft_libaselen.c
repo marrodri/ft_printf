@@ -22,6 +22,8 @@ long long int		ft_libaselen(long long int n, int base, int f_flag)
 		size++;
 		n = n * -1;
 	}
+	else if (n < 0 && f_flag == 0)
+		n = n * -1;
 	while (n > 0)
 	{
 		n = n / base;

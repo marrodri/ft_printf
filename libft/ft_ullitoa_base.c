@@ -43,7 +43,6 @@ char			*ft_ullitoa_base(unsigned long long int value, int base)
 	if ((str = (char*)malloc((size + 1) * sizeof(char))) == NULL)
 		return (NULL);
 	str[size + 1] = '\0';
-
 	while (size >= i)
 	{
 		rem = value % base;

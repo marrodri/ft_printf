@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-int ft_strischar(char *str, char c)
+int		ft_strischar(char *str, char c)
 {
 	int i;
 
 	i = 0;
-	while(str[i] == c)
+	while (str[i] == c)
 	{
 		i++;
 	}

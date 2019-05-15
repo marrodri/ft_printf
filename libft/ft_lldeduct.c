@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-long long int 		ft_llideduct(long long int num)
+long long int	ft_llideduct(long long int num)
 {
 	long long int tmp;
 

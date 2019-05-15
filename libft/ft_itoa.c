@@ -12,23 +12,6 @@
 
 #include "libft.h"
 
-static int		ft_check_size(int n)
-{
-	int	size;
-
-	size = 0;
-	if (n == 0)
-		return (1);
-	if (n <= 0)
-		size = size + 1;
-	while (n != 0)
-	{
-		n = n / 10;
-		size++;
-	}
-	return (size);
-}
-
 char			*ft_itoa(int n)
 {
 	int		size;
@@ -36,7 +19,7 @@ char			*ft_itoa(int n)
 	char	*str;
 
 	i = 0;
-	size = ft_check_size(n);
+	size = ft_libaselen(n, 10, 0);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	str = (char*)malloc((size + 1) * sizeof(char));
