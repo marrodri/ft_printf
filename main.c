@@ -44,20 +44,25 @@ char *str = "hello";
 static char ch = 'a';
 static int i_num = 1234;
 
+double special;
+*((unsigned long *)(&special)) =DBL_NAN;
+
+	printf("%f\n",special);
+	ft_printf("%f\n",special);
 	// printf("ans|%f|\n", -23.0041);
 	// ft_printf("tst|%f|\n", -23.0041);
 
-	printf("ans+f_as_prec0p_as|%+.0f|\n", 7.4);
-	ft_printf("tst+f_as_prec0p_as|%+.0f|\n", 7.4);
+	// printf("ans+f_as_prec0p_as|%+.0f|\n", 7.4);
+	// ft_printf("tst+f_as_prec0p_as|%+.0f|\n", 7.4);
 
-	printf("ans +.3|%+.3f|\n", 0.0);
-	ft_printf("tst +.3|%+.3f|\n", 0.0);
+	// printf("ans +.3|%+.3f|\n", 0.0);
+	// ft_printf("tst +.3|%+.3f|\n", 0.0);
 
-	printf("ans _05.f|% 05.0f|\n", 7.3);
-	ft_printf("tst _05.f|% 05.0f|\n", 7.3);
+	// printf("ans _05.f|% 05.0f|\n", 7.3);
+	// ft_printf("tst _05.f|% 05.0f|\n", 7.3);
 
-	printf("ans _05d|% 05d|\n", 7);
-	ft_printf("tst _05d|% 05d|\n", 7);
+	// printf("ans _05d|% 05d|\n", 7);
+	// ft_printf("tst _05d|% 05d|\n", 7);
 	// printf("this |%Lf| float\n", 1.5l);
 	// ft_printf("this |%Lf| float\n", 1.5l);
 

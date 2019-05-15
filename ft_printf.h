@@ -21,6 +21,16 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
+
+
+
+#define DBL_INF    0x7FF0000000000000
+#define DBL_NINF   0xFFF0000000000000
+#define DBL_NAN    0x7FF0000000100000
+#define DBL_PZERO  0x0000000000000000
+#define DBL_NZERO  0x8000000000000000
+
+
 typedef struct	s_flags
 {
 	int fo_flag[FO_FLAG_SIZE]; 

@@ -144,25 +144,3 @@ char *ft_ldtoa(long double ld_num, int prec)
 	return (str_num);
 
 }
-
-
-
-// int main()
-// {
-// 	static float fl = 10.496992423423;
-// 	char *f;
-
-// 	float test = 1;
-
-// 	// printf("test|%f|\n",test);
-// 	// printf("++++ ft_ldtoa test ++++\n");
-// 	f= ft_ldtoa(10.9, 0);
-
-// 	// printf("____ printf answer ____\n");
-// 	printf("tst|%.0f|\n", 10.9);
-// 	printf("ans|%s|\n", f);
-	
-// 	// printf("fl|%.1f|\n", 1.90);
-// 	//printf("tst|%s|\n", f);
-// 	return (0);
-// }
