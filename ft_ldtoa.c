@@ -3,20 +3,6 @@
 #include "libft/libft.h"
 #include <stdio.h>
 
-long long int		ft_baselength(long long int n, int base)
-{
-	int len;
-
-	len = 0;
-	while (n > 0)
-	{
-		n /= base;
-		len++;
-	}
-	len++;
-	return (len);
-}
-
 long long int 		ft_llideduct(long long int num)
 {
 	long long int tmp;
@@ -54,21 +40,6 @@ long long int	ft_power_of_l(long long int n, long long int expo)
 	return (power);
 }
 
-char	*setzero(int n)
-{
-	char	*zero;
-	int		i;
-
-	i = 0;
-	zero = ft_strnew(n);
-	while(i < n)
-	{
-		zero[i] = '0';
-		i++;
-	}
-	return (zero);
-}
-
 char *ft_ldtoa(long double ld_num, int prec)
 {
 	long long int	int_n;
@@ -100,10 +71,10 @@ char *ft_ldtoa(long double ld_num, int prec)
 		ld_dec = ld_dec * 10;
 		dec_len++;
 	}
-	int_dec = ft_intdeduct((long long int)ld_dec);
+	int_dec = ft_llideduct((long long int)ld_dec);
 	dec_len--;
 	int_dec = int_dec / 10;
-	if (int_dec >= ft_power_of_long(10, dec_len))
+	if (int_dec >= ft_power_of_l(10, dec_len))
 	{
 		int_n += 1;
 		int_dec = 0;
@@ -112,12 +83,12 @@ char *ft_ldtoa(long double ld_num, int prec)
 	str_num = ft_llitoa_base(int_n, 10);
 	if (prec > 0)
 	{
-		dif = dec_len - ft_baselength(int_dec, 10);
+		dif = dec_len - ft_libaselen(int_dec, 10);
 		if(int_dec == 0)
 			dif--;
 		if (prec > dif) //check here how to add the zeroes
 		{
-			zero = setzero(dif);
+			zero = ft_strnewc('0', dif);
 			str_dec = ft_llitoa_base(int_dec, 10);
 			str_dec = ft_strjoin(zero, str_dec);
 		}
