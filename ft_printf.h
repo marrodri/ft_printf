@@ -23,11 +23,11 @@
 
 typedef struct	s_flags
 {
-	int fo_flag[FO_FLAG_SIZE]; 
-	int	fi_flag[FI_FLAG_SIZE]; 
-	int fi_width;
-	int prec;
-	int prec_flag;
+	int		fo_flag[FO_FLAG_SIZE];
+	int		fi_flag[FI_FLAG_SIZE];
+	int		fi_width;
+	int		prec;
+	int		prec_flag;
 }				t_flags;
 
 typedef char	*t_char_form(va_list args, t_flags *st_flag);
@@ -44,20 +44,20 @@ char			*c_form(va_list args, t_flags *st_flag);
 char			*percen_char(va_list args, t_flags *st_flag);
 char			*s_form(va_list args, t_flags *st_flag);
 char			*p_form(va_list args, t_flags *st_flag);
-char			*d_form(va_list args,  t_flags *st_flag);
+char			*d_form(va_list args, t_flags *st_flag);
 char			*x_form(va_list args, t_flags *st_flag);
-char			*uppx_form(va_list args,  t_flags *st_flag);
+char			*uppx_form(va_list args, t_flags *st_flag);
 char			*o_form(va_list args, t_flags *st_flag);
 char			*u_form(va_list args, t_flags *st_flag);
 char			*f_form(va_list args, t_flags *st_flag);
 char			*format_str(char *str, char f, t_flags *st_flags);
 char			*zero_flag(char *fstr, t_flags *st_flag);
-char 			*default_field(char *fstr, char f, t_flags *st_flag);
-char 			*minus_flag(char *fstr, char f, t_flags *st_flag);
+char			*default_field(char *fstr, char f, t_flags *st_flag);
+char			*minus_flag(char *fstr, char f, t_flags *st_flag);
 char			*hash_flag(char *str, char f, t_flags *st_flags);
 char			*plus_flag(char *fstr, char f);
 char			*space_flag(char *fstr, char f);
-char			*s_prec(char *fstr,  t_flags *st_flags);
+char			*s_prec(char *fstr, t_flags *st_flags);
 char			*dux_prec(char *fstr, t_flags *st_flag);
 char			*o_prec(char *fstr, t_flags *st_flags);
 #endif

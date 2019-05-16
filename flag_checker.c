@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-// #include <stdio.h>
 void	check_fi_flags(char f, t_flags *st_flag)
 {
 	int			pos;
@@ -64,7 +63,6 @@ void	check_fo_flags(char f, t_flags *st_flag)
 	pos = 0;
 	while (pos < FO_FLAG_SIZE)
 	{
-		// printf("passed fo_flag = %c\n", fo_flags[pos]);
 		if (fo_flags[pos] == f)
 		{
 			st_flag->fo_flag[pos] += 1;

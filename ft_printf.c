@@ -12,16 +12,32 @@
 
 #include "ft_printf.h"
 
-int		var_len(char *tstr, char *str, int *i, va_list args)
+int		var_len(char *str, int *i, va_list args)
 {
+	int		sum;
+	char	*tstr;
+	t_flags	*st_flag;
 
+	sum = 0;
+	if ((st_flag = malloc(sizeof(t_flags))) == NULL)
+		return (0);
+	set_fflags(str, &(*i), &st_flag);
+	tstr = (set_form(str[*i], args, st_flag));
+	if (str != NULL)
+	{
+		if (tstr[0] == '\0' && str[*i] == 'c')
+			sum++;
+		tstr = format_str(tstr, str[*i], st_flag);
+		ft_putstr(tstr);
+		sum = sum + (ft_strlen(tstr));
+	}
+	return (sum);
 }
 
-int		print_len(char *str, t_flags *st_flag, va_list args)
+int		print_len(char *str, va_list args)
 {
 	int		sum;
 	int		i;
-	char	*tstr;
 
 	sum = 0;
 	i = 0;
@@ -30,16 +46,7 @@ int		print_len(char *str, t_flags *st_flag, va_list args)
 		if (str[i] == '%')
 		{
 			i++;
-			set_fflags(str, &i, &st_flag);
-			tstr = (set_form(str[i], args, st_flag));
-			if (str != NULL)
-			{
-				if (tstr[0] == '\0' && str[i] == 'c')
-					sum++;
-				tstr = format_str(tstr, str[i], st_flag);
-				ft_putstr(tstr);
-				sum = sum + (ft_strlen(tstr));
-			}
+			sum = sum + var_len(str, &i, args);
 			i++;
 		}
 		if (str[i] != '%' && str[i])
@@ -56,12 +63,9 @@ int		ft_printf(char *str, ...)
 {
 	int		sum;
 	va_list	args;
-	t_flags	*st_flag;
 
 	va_start(args, str);
-	if ((st_flag = malloc(sizeof(t_flags))) == NULL)
-		return (0);
-	sum = print_len(str, st_flag, args);
+	sum = print_len(str, args);
 	va_end(args);
 	return (sum);
 }
