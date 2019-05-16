@@ -41,8 +41,8 @@ static double db = 10.496992423423;
 static long double Ldb = 10.496992423423;
 
 	long double tst = 1.5;
-	printf("ans|%.12f|\n", -0.87650894255);
-	ft_printf("tst|%.12f|\n", -1.87650894255);
+	printf("|%-05|\n");
+	ft_printf("|%-05|\n");
 	// printf("ans|%f|\n", -23.0041);
 	// ft_printf("tst|%f|\n", -23.0041);
 

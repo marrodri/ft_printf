@@ -12,24 +12,19 @@
 
 #include "ft_printf.h"
 
-// static int		len_var()
-// {
-// 	return 0;
-// }
-
-int				ft_printf(char *str, ...)
+int		var_len(char *tstr, char *str, int *i, va_list args)
 {
-	int	sum;
-	char	*tstr;
-	int		i;
-	va_list	args;
-	t_flags	*st_flag;
 
-	va_start(args, str);
-	i = 0;
+}
+
+int		print_len(char *str, t_flags *st_flag, va_list args)
+{
+	int		sum;
+	int		i;
+	char	*tstr;
+
 	sum = 0;
-	if ((st_flag = malloc(sizeof(t_flags))) == NULL)
-		return (0);
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -45,11 +40,6 @@ int				ft_printf(char *str, ...)
 				ft_putstr(tstr);
 				sum = sum + (ft_strlen(tstr));
 			}
-			else
-			{
-				ft_putchar(str[i]);
-				ft_putstr("format not included");
-			}
 			i++;
 		}
 		if (str[i] != '%' && str[i])
@@ -59,6 +49,19 @@ int				ft_printf(char *str, ...)
 			sum++;
 		}
 	}
+	return (sum);
+}
+
+int		ft_printf(char *str, ...)
+{
+	int		sum;
+	va_list	args;
+	t_flags	*st_flag;
+
+	va_start(args, str);
+	if ((st_flag = malloc(sizeof(t_flags))) == NULL)
+		return (0);
+	sum = print_len(str, st_flag, args);
 	va_end(args);
 	return (sum);
 }

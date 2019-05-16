@@ -37,7 +37,7 @@ void			check_fi_flags(char f, t_flags *st_flag);
 void			check_field(char *str, int *i, t_flags *st_flag);
 void			check_prec(char *str, int *i, t_flags *st_flag);
 void			check_fo_flags(char f, t_flags *st_flag);
-void	ignore_case(t_flags *st_flag);
+void			ignore_case(t_flags *st_flag);
 char			*set_form(char f, va_list args, t_flags *st_flag);
 int				check_form(char f);
 char			*c_form(va_list args, t_flags *st_flag);
@@ -60,7 +60,4 @@ char			*space_flag(char *fstr, char f);
 char			*s_prec(char *fstr,  t_flags *st_flags);
 char			*dux_prec(char *fstr, t_flags *st_flag);
 char			*o_prec(char *fstr, t_flags *st_flags);
-
-//MOVE TO LIBFT FOLDER ONCE WHEN THIS FUNC WORKS PROPERLY
-char			*ft_ldtoa(long double num, int prec);
 #endif
