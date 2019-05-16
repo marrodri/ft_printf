@@ -12,47 +12,14 @@
 
 #include "ft_printf.h"
 
-char *ft_ldtoa(long double ld_num, int prec)
+char *set_strdec(long long int int_n, long long int int_dec, int prec, int dec_len)
 {
-	long long int	int_n;
-	long long int	int_dec;
-	long double 	ld_dec;
-	char			*str_num;
-	char			*str_dec;
-
-	//function check;
-	int 	i;
-	int 	dec_len;
-	int 	dif;
+	char	*str_num;
+	char	*str_dec;
 	char	*zero;
-	int 	flag_neg;
+	int		dif;
 
 	dif = 0;
-	i = 0;
-	dec_len = 0;
-	flag_neg = 0;
-
-	if (ld_num < 0)
-	{
-		ld_num = ld_num * -1;
-		flag_neg = 1;
-	}
-	int_n = (long long int)ld_num;
-	ld_dec = ld_num - (long double)int_n;
-	while (dec_len <= prec)
-	{
-		ld_dec = ld_dec * 10;
-		dec_len++;
-	}
-	int_dec = ft_llideduct((long long int)ld_dec);
-	dec_len--;
-	int_dec = int_dec / 10;
-	if (int_dec >= ft_power_of_lli(10, dec_len))
-	{
-		int_n += 1;
-		int_dec = 0;
-	}
-	dec_len++;
 	str_num = ft_llitoa_base(int_n, 10);
 	if (prec > 0)
 	{
@@ -70,6 +37,53 @@ char *ft_ldtoa(long double ld_num, int prec)
 		str_num = ft_strjoin(str_num, ".");
 		str_num = ft_strjoin(str_num, str_dec);
 	}
+	return (str_num);
+}
+
+int		neg_flag(long double *n)
+{
+	if (*n < 0)
+	{
+		*n *= -1;
+		return (1);
+	}
+	return (0);
+}
+
+void ld_int_ded(long long *int_n, long long int *int_dec, int dec_len)
+{
+	if (*int_dec >= ft_power_of_lli(10, dec_len))
+	{
+		*int_n += 1;
+		*int_dec = 0;
+	}
+	return ;
+}
+
+char	*ft_ldtoa(long double ld_num, int prec)
+{
+	long long int	int_n;
+	long long int	int_dec;
+	long double 	ld_dec;
+	char			*str_num;
+	int 			dec_len;
+	int 			flag_neg;
+
+	dec_len = 0;
+	flag_neg = neg_flag(&ld_num);
+	int_n = (long long int)ld_num;
+	ld_dec = ld_num - (long double)int_n;
+	while (dec_len <= prec)
+	{
+		ld_dec = ld_dec * 10;
+		dec_len++;
+	}
+	int_dec = ft_llideduct((long long int)ld_dec);
+	dec_len--;
+	int_dec = int_dec / 10;
+	ld_int_ded(&int_n, &int_dec, dec_len);
+	dec_len++;
+	str_num = set_strdec(int_n, int_dec, prec, dec_len);
 	if(flag_neg == 1)
 		str_num = ft_strjoin("-", str_num);
 	return (str_num);
