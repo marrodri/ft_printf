@@ -23,7 +23,7 @@ int		var_len(char *str, int *i, va_list args)
 		return (0);
 	set_fflags(str, &(*i), &st_flag);
 	tstr = (set_form(str[*i], args, st_flag));
-	if (str != NULL)
+	if (tstr != NULL)
 	{
 		if (tstr[0] == '\0' && str[*i] == 'c')
 			sum++;

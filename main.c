@@ -43,8 +43,8 @@ static long double Ldb = 10.496992423423;
 	long double tst = 1.5;
 	// printf("|%-05|\n");
 	// ft_printf("|%-05|\n");
-	printf("ans|%f| and |%s|\n", -23.0041, "tweet");
-	ft_printf("tst|%f| and |%s|\n", -23.0041, "tweet");
+	printf("|%c|", -0);
+	ft_printf("|%c|", -0);
 
 	// printf("ans+f_as_prec0p_as|%+.0f|\n", 7.4);
 	// ft_printf("tst+f_as_prec0p_as|%+.0f|\n", 7.4);

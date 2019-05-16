@@ -14,12 +14,11 @@
 
 char	*c_form(va_list args, t_flags *st_flag)
 {
-	static char c[2];
+	static char c[1];
 
 	st_flag->fo_flag[0] = 0;
 	st_flag->fo_flag[1] = 0;
 	c[0] = (char)va_arg(args, int);
-	c[1] = '\0';
 	return (c);
 }
 
