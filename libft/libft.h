@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # define BUFF_SIZE 1
+# define LLI long long int
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -23,6 +24,8 @@ typedef	struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef long long int	t_lli;
 
 char				*ft_strdup(char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
@@ -101,4 +104,5 @@ int					ft_strischar(char *str, char c);
 long long int		ft_libaselen(long long int n, int base, int f_flag);
 long long int		ft_llideduct(long long int num);
 long long int		ft_power_of_lli(long long int n, long long int expo);
+char				*ft_ldtoa(long double ld_num, int prec);
 #endif
